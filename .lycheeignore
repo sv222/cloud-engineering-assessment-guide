@@ -1,0 +1,9 @@
+# Hosts that block automated requests or respond unreliably to link checkers
+^https?://(www\.)?linkedin\.com
+
+# Local addresses that only resolve on a developer machine
+^https?://localhost
+^https?://127\.0\.0\.1
+
+# Reserved example domains used in placeholder text
+^https?://example\.(com|org)
