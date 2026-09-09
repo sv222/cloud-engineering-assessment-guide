@@ -334,13 +334,20 @@ Auto-scaling is a powerful tool that can help you to optimize your cloud-based a
 
 ### Cloud migration strategy and how to plan it
 
-A cloud migration strategy is a plan for moving your IT resources from an on-premises environment to the cloud. It should include a detailed assessment of your current environment, your goals for migrating to the cloud, and the steps you will take to achieve those goals.
+Cloud migration is the process of moving applications, data and other workloads from an on-premises environment, another cloud or another provider into a cloud environment, or between clouds. A cloud migration strategy is a plan for doing this. It should include a detailed assessment of your current environment, your goals for migrating to the cloud, and the steps you will take to achieve those goals.
 
 To plan a cloud migration strategy, you should:
 
 1. **Assess your current environment:** This includes understanding your current IT infrastructure, your applications, and your data.
 2. **Define your goals:** What are you hoping to achieve by migrating to the cloud? Do you want to improve performance, reduce costs, or increase agility?
-3. **Choose a cloud migration strategy:** There are a number of different cloud migration strategies, such as rehost (lift-and-shift), replatform, and refactor. The best strategy for you will depend on your specific goals and environment.
+3. **Choose a cloud migration strategy:** Most migrations use one or more of the 7 Rs, as described in the [AWS Prescriptive Guidance](https://docs.aws.amazon.com/prescriptive-guidance/latest/large-migration-guide/migration-strategies.html). The best strategy for each application will depend on your specific goals and environment.
+   * **Retire:** Turn off applications that are no longer needed instead of migrating them.
+   * **Retain:** Keep applications where they are for now and revisit them later.
+   * **Rehost (lift and shift):** Move applications and data to the cloud as they are, with no changes to the code or architecture.
+   * **Relocate:** Move servers or clusters at the hypervisor level, such as moving a VMware environment to VMware Cloud on AWS, without new hardware or application changes.
+   * **Repurchase (drop and shop):** Replace the application with a different product, often a SaaS platform.
+   * **Replatform (lift, tinker and shift):** Make a few cloud optimizations, such as moving to a managed database, while the core architecture stays the same.
+   * **Refactor (re-architect):** Rebuild the application to be cloud-native, often using microservices, serverless and managed services.
 4. **Develop a migration plan:** Your migration plan should include a detailed timeline, budget, and risk assessment.
 5. **Execute your migration plan:** Once you have developed your migration plan, you need to execute it carefully and monitor your progress.
 
@@ -492,11 +499,11 @@ The components of a cloud network architecture typically include:
 
 There are a number of ways to handle data migration in the cloud, including:
 
-* **Lift-and-shift:** Lift-and-shift migration involves moving your existing applications and data to the cloud without making any changes to them.
-* **Refactor:** Refactor migration involves redesigning applications to take full advantage of cloud-native capabilities, such as managed services, microservices, and serverless architectures.
-* **Replatform:** Replatform migration involves making targeted improvements, such as moving to a managed database, without changing the core application architecture.
+* **Rehost (lift and shift):** Move data and the applications that use it as they are, with no changes to the data structure or code. Online tools such as AWS DataSync (files and objects) or AWS Database Migration Service (databases) can copy the data over the network, and offline transfer is an option when the data set is too large to move over the network in a reasonable time.
+* **Replatform (lift, tinker and shift):** Make a few changes, such as moving a self-managed database to a managed database service, while the core data model and architecture stay the same.
+* **Refactor (re-architect):** Redesign the data store and the application to take full advantage of cloud-native capabilities, such as managed services, microservices and serverless architectures.
 
-The best data migration strategy for you will depend on your specific needs and environment.
+These are the three strategies that move data most often. The full list of 7 Rs (also Retire, Retain, Relocate and Repurchase) is in [Cloud migration strategy and how to plan it](#cloud-migration-strategy-and-how-to-plan-it). The best data migration strategy for you will depend on your specific needs and environment.
 
 ### Role of a reverse proxy in a cloud environment
 
