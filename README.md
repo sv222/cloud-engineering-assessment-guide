@@ -1266,7 +1266,7 @@ IAM is a critical part of any AWS deployment. It helps customers to protect thei
 
 **Amazon RDS** (Relational Database Service) is a managed database service that makes it easy to set up, operate, and scale a relational database in the cloud. Amazon RDS supports a variety of database engines, including MySQL, PostgreSQL, Oracle, and SQL Server.
 
-**Amazon DynamoDB** is a fully managed, multi-region, multi-master, durable NoSQL database with built-in security, backup and restore, and in-memory caching for internet-scale applications. Amazon DynamoDB offers single-digit millisecond performance at any scale.
+**Amazon DynamoDB** is a fully managed, serverless, key-value and document NoSQL database with built-in security, backup and restore, and in-memory caching for internet-scale applications. Amazon DynamoDB offers single-digit millisecond performance at any scale.
 
 #### Key differences between Amazon RDS and Amazon DynamoDB:
 
@@ -1274,7 +1274,7 @@ IAM is a critical part of any AWS deployment. It helps customers to protect thei
 |---|---|---|
 | Database model | Relational | NoSQL |
 | Schema | Required | Optional |
-| Consistency | Strong | Eventual |
+| Consistency | Strong | Eventual by default; strongly consistent reads are optional |
 | Querying | SQL | Key-value, document, and secondary indexes |
 | Use cases | Web applications, enterprise applications, and OLTP workloads | Mobile applications, gaming applications, and IoT applications |
 
@@ -1310,7 +1310,7 @@ ELB can be used to distribute traffic across multiple AZs in a region; for routi
 
 ### What is Amazon Elastic Beanstalk, and how does it work?
 
-Amazon Elastic Beanstalk is a platform that makes it easy to deploy and manage web applications on AWS. Elastic Beanstalk takes care of all the infrastructure details, such as provisioning and managing servers, load balancing, and auto scaling. This allows developers to focus on writing and deploying their applications.
+AWS Elastic Beanstalk is a platform that makes it easy to deploy and manage web applications on AWS. Elastic Beanstalk takes care of all the infrastructure details, such as provisioning and managing servers, load balancing, and auto scaling. This allows developers to focus on writing and deploying their applications.
 
 To use Elastic Beanstalk, developers create an application and then choose a platform (such as Java, PHP, or Ruby). Elastic Beanstalk will then create the necessary infrastructure and deploy the application.
 
@@ -1385,7 +1385,7 @@ To secure your AWS resources using security groups and NACLs, you can follow the
 
 ### What is Amazon Aurora, and how does it differ from other databases?
 
-Amazon Aurora is a fully managed relational database that combines the performance and availability of high-end commercial databases with the simplicity and cost-effectiveness of open source databases. Aurora is up to five times faster than traditional MySQL and PostgreSQL databases, and it provides up to 99.99% availability.
+Amazon Aurora is a fully managed relational database that combines the performance and availability of high-end commercial databases with the simplicity and cost-effectiveness of open source databases. Aurora is up to five times faster than standard MySQL and up to three times faster than standard PostgreSQL databases, and it provides up to 99.99% availability.
 
 Aurora is different from other databases because it uses a distributed storage and compute architecture. This architecture allows Aurora to scale to very large databases, and it also provides high availability and durability.
 
@@ -1419,7 +1419,7 @@ Route 53 is a significant service because it can help you to improve the perform
 
 ### What is Amazon ElastiCache, and how does it improve application performance?
 
-Amazon ElastiCache is a managed in-memory data store service that improves the performance of web applications by caching frequently accessed data in memory. ElastiCache supports two popular in-memory data stores: Memcached and Redis.
+Amazon ElastiCache is a managed in-memory data store service that improves the performance of web applications by caching frequently accessed data in memory. ElastiCache supports popular in-memory data stores: Memcached, Redis OSS, and Valkey.
 
 ElastiCache can improve application performance by reducing the number of database queries that are required. ElastiCache can also improve application performance by reducing the latency of database queries.
 
@@ -1447,12 +1447,12 @@ Kubernetes is an open-source container orchestration platform that automates man
 
 ### Describe the features of Amazon Redshift.
 
-Amazon Redshift is a fully managed, petabyte-scale data warehouse service in the cloud. Redshift makes it easy to analyze all your data using standard SQL and your existing BI tools. Redshift is 10x faster than traditional data warehouses and costs up to 90% less.
+Amazon Redshift is a fully managed, petabyte-scale data warehouse service in the cloud. Redshift makes it easy to analyze all your data using standard SQL and your existing BI tools. Redshift is up to 10x faster than traditional data warehouses and costs up to 90% less.
 
 Some of the features of Amazon Redshift include:
 
 * **Scalability:** Redshift can scale to petabytes of data and thousands of concurrent users.
-* **Performance:** Redshift is 10x faster than traditional data warehouses.
+* **Performance:** Redshift is up to 10x faster than traditional data warehouses.
 * **Cost:** Redshift costs up to 90% less than traditional data warehouses.
 * **Ease of use:** Redshift is easy to use and manage. You can use standard SQL and your existing BI tools to analyze your data.
 
@@ -1588,7 +1588,7 @@ CRR works by creating a replication configuration. A replication configuration d
 
 ### What is AWS Inspector, and how does it enhance security?
 
-AWS Inspector is a service that helps you to identify and remediate security vulnerabilities in your AWS resources. Inspector scans your resources for vulnerabilities and provides you with a report of the findings.
+Amazon Inspector is a service that helps you to identify and remediate security vulnerabilities in your AWS resources. Inspector scans your resources for vulnerabilities and provides you with a report of the findings.
 
 Inspector can enhance security by helping you to identify and remediate security vulnerabilities before they can be exploited by attackers. Inspector can also help you to improve your security posture by providing you with recommendations for how to remediate vulnerabilities.
 
@@ -1666,7 +1666,7 @@ When a function is invoked asynchronously, Lambda retries failed events a set nu
 
 AWS WAF is a web application firewall that helps to protect your web applications from common attack vectors, such as SQL injection, cross-site scripting (XSS), and denial of service (DoS) attacks.
 
-WAF works by inspecting incoming HTTP and HTTPS traffic and filtering out malicious requests. You associate a web ACL with supported resources, such as CloudFront distributions, API Gateway APIs, Application Load Balancers, App Sync, or App Runner services.
+WAF works by inspecting incoming HTTP and HTTPS traffic and filtering out malicious requests. You associate a web ACL with supported resources, such as CloudFront distributions, API Gateway REST APIs, Application Load Balancers, AWS AppSync, or App Runner services.
 
 ### What is AWS Glue, and how is it used for data transformation?
 
@@ -1734,7 +1734,7 @@ Once the disaster has been resolved, you can fail back to your production enviro
 
 ### What is Amazon Cognito, and how is it used for user authentication?
 
-Amazon Cognito is a managed user identity and access management (IAM) service that makes it easy to add user authentication and authorization to your web and mobile applications. Cognito provides a number of features that make it easy to authenticate users, including:
+Amazon Cognito is a managed user identity and access management service that makes it easy to add user authentication and authorization to your web and mobile applications. Cognito provides a number of features that make it easy to authenticate users, including:
 
 * **Social login:** Cognito allows users to log in to your applications using their social media accounts, such as Facebook, Google, and Amazon.
 * **Custom login:** Cognito allows you to create your own custom login forms.
@@ -1746,9 +1746,9 @@ Cognito can also be used to authorize users to access your applications' resourc
 
 An Amazon Machine Image (AMI) is a template that contains a preconfigured operating system and applications. AMIs can be used to launch EC2 instances.
 
-To create a custom AMI, you can use the AWS Systems Manager (SSM) Image Builder service. SSM Image Builder allows you to create AMIs from your existing EC2 instances or from scratch.
+To create a custom AMI, you can use the EC2 Image Builder service. EC2 Image Builder allows you to create AMIs from a base image using a recipe.
 
-SSM Image Builder also provides a number of features that make it easy to create custom AMIs, such as:
+EC2 Image Builder also provides a number of features that make it easy to create custom AMIs, such as:
 
 * **Recipes:** Recipes define the base image, components, and build configuration for an AMI; components contain the customization scripts.
 * **Components:** Components are software packages that can be installed on AMIs.
@@ -1832,7 +1832,7 @@ Step Functions provides a number of features that make it easy to build and run 
 
 ### What is the difference between Amazon Kinesis Data Streams and Kinesis Firehose?
 
-Amazon Kinesis Data Streams and Kinesis Firehose are both services for ingesting and processing streaming data. However, there are some key differences between the two services.
+Amazon Kinesis Data Streams and Amazon Data Firehose are both services for ingesting and processing streaming data. However, there are some key differences between the two services.
 
 Kinesis Data Streams is a real-time data streaming service that can be used to ingest and process streaming data from a variety of sources, such as web applications, sensors, and social media feeds. Kinesis Data Streams provides a durable and scalable platform for processing streaming data in real time.
 
@@ -1846,11 +1846,11 @@ Here are some examples of when to use Kinesis Data Streams:
 * To build a social media monitoring application that analyzes tweets and other social media posts in real time.
 * To build a fraud detection application that analyzes transactions in real time to identify fraudulent activity.
 
-Here are some examples of when to use Kinesis Firehose:
+Here are some examples of when to use Amazon Data Firehose:
 
 * To load streaming data into a data lake, such as Amazon S3.
-* To load streaming data into a data store, such as Amazon Redshift or Amazon DynamoDB.
-* To load streaming data into an analytics service, such as Amazon Athena or Amazon Kinesis Analytics.
+* To load streaming data into a data store, such as Amazon Redshift or Amazon OpenSearch Service.
+* To load streaming data into an analytics service, such as Amazon Athena or Splunk.
 
 ### How do you implement high availability in AWS?
 
@@ -1863,7 +1863,7 @@ There are a number of ways to implement high availability in AWS. Some common me
 
 ### Describe the use cases for AWS Greengrass.
 
-AWS Greengrass is a service that extends AWS cloud capabilities to local devices. It allows devices to collect and analyze data closer to the source, while also securely communicating with each other on local networks.
+AWS IoT Greengrass is a service that extends AWS cloud capabilities to local devices. It allows devices to collect and analyze data closer to the source, while also securely communicating with each other on local networks.
 
 Some common use cases for AWS Greengrass include:
 
@@ -1882,10 +1882,10 @@ Global Accelerator is a good choice for applications that need to be highly avai
 
 There are a number of ways to secure data in Amazon S3 buckets. Some common methods include:
 
-* **Server-side encryption (SSE):** SSE encrypts your data at rest in S3. You can choose to encrypt your data using AWS managed keys or your own encryption keys.
+* **Server-side encryption (SSE):** SSE encrypts your data at rest in S3. You can choose to encrypt your data using AWS managed keys or your own encryption keys. Since January 2023, Amazon S3 applies SSE-S3 to all new objects by default.
 * **Client-side encryption (CSE):** CSE encrypts your data before it is uploaded to S3. You can choose to encrypt your data using AWS managed keys or your own encryption keys.
 * **Bucket policies:** Bucket policies can be used to control access to your S3 buckets. You can use bucket policies to restrict who can access your buckets and what they can do with them.
-* **Object ACLs:** Object ACLs can be used to control access to individual objects in your S3 buckets. You can use object ACLs to restrict who can access the objects and what they can do with them.
+* **Object ACLs:** Object ACLs can be used to control access to individual objects in your S3 buckets. You can use object ACLs to restrict who can access the objects and what they can do with them. AWS recommends disabling ACLs where possible, and new buckets have ACLs disabled by default.
 
 ### Explain the concept of AWS Elemental MediaConvert.
 
@@ -1968,7 +1968,7 @@ PrivateLink improves network security by providing a private and encrypted way t
 
 ### Explain the use of AWS Greengrass Core.
 
-**AWS Greengrass Core** is a software agent that runs on local devices and enables them to communicate with AWS cloud services. It provides local compute, messaging, data caching, and synchronization capabilities. Greengrass Core also provides security features such as encryption and authentication.
+**AWS IoT Greengrass Core** is a software agent that runs on local devices and enables them to communicate with AWS cloud services. It provides local compute, messaging, data caching, and synchronization capabilities. Greengrass Core also provides security features such as encryption and authentication.
 
 Greengrass Core can be used in a variety of ways, including:
 
@@ -1981,7 +1981,7 @@ Greengrass Core can be used in a variety of ways, including:
 
 To set up AWS IAM Identity Center (the successor to AWS SSO), you enable it in your organization, connect your identity source, and then assign users and groups to accounts and applications through permission sets.
 
-Once you have configured AWS SSO, you can enable users to log in to your applications using their AWS SSO credentials.
+Once you have configured AWS IAM Identity Center, you can enable users to log in to your applications using their IAM Identity Center credentials.
 
 ### What is AWS Cost Explorer, and how does it help in cost analysis?
 
@@ -2168,7 +2168,7 @@ To use AWS Data Pipeline for data integration, you first need to create a pipeli
 
 ### Describe the features of AWS CodeGuru
 
-AWS CodeGuru is a service that helps you to improve the quality of your code. CodeGuru uses machine learning to analyze your code and identify potential problems, such as security vulnerabilities, performance bottlenecks, and bugs.
+AWS CodeGuru is a service that helps you to improve the quality of your code. CodeGuru uses machine learning to analyze your code and identify potential problems, such as security vulnerabilities, performance bottlenecks, and bugs. Note that Amazon CodeGuru Reviewer closed to new customers in November 2025, and Amazon CodeGuru Security ended support on November 20, 2025.
 
 #### Features of AWS CodeGuru
 
