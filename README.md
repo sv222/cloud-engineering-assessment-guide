@@ -2199,7 +2199,7 @@ AWS CodeGuru provides a number of features to help you improve the quality of yo
 - **Amazon Relational Database Service (RDS):** Managed relational database service for SQL databases.
 - **Amazon Aurora:** Relational database service that is MySQL- and PostgreSQL-compatible.
 - **Amazon Neptune:** Managed graph database service.
-- **Amazon Timestream:** Fully managed, serverless time-series database.
+- **Amazon Timestream:** Fully managed, serverless time-series database (Timestream for LiveAnalytics closed to new customers in June 2025; see Timestream for InfluxDB).
 - **Amazon Redshift:** A fully managed, petabyte-scale data warehouse service in the cloud, designed to handle large analytical workloads with high performance and scalability. Redshift is built on top of massively parallel processing (MPP) technology, which allows it to distribute queries across multiple nodes to process data in parallel.
 - **Amazon DynamoDB:** A fully managed, serverless, key-value and document database service that provides single-digit millisecond performance at any scale.
 - **Amazon DynamoDB Accelerator (DAX):** A fully managed, highly available, in-memory cache for DynamoDB that delivers up to 10x performance improvement.
@@ -2234,7 +2234,7 @@ AWS CodeGuru provides a number of features to help you improve the quality of yo
 ### Messaging
 
 - **Amazon Simple Notification Service (SNS):** Pub/sub messaging service for sending messages and notifications.
-- **Amazon Pinpoint:** A multichannel messaging service for engaging customers across SMS, email, push notifications, and in-app messages. AWS closed Pinpoint to new customers in May 2025, and its engagement features reach end of support on October 30, 2026 (replacements include AWS End User Messaging, Amazon SES, and Amazon Connect).
+- **Amazon Pinpoint:** A multichannel messaging service for engaging customers across SMS, email, push notifications, and in-app messages. AWS closed Pinpoint to new customers in May 2025, and its engagement features reached end of support on October 30, 2026 (replacements include AWS End User Messaging, Amazon SES, and Amazon Connect).
 
 ### Queuing
 
@@ -2245,7 +2245,7 @@ AWS CodeGuru provides a number of features to help you improve the quality of yo
 
 ### Machine Learning and AI
 
-- **Amazon SageMaker:** A fully managed machine learning (ML) service allows to build, train, and deploy ML models quickly and easily.
+- **Amazon SageMaker AI** (formerly Amazon SageMaker): A fully managed machine learning (ML) service allows to build, train, and deploy ML models quickly and easily.
 - **Amazon Rekognition:** Image and video analysis service for object detection and recognition.
 - **Amazon Polly:** Text-to-speech service.
 - **Amazon Comprehend:** Natural language processing service for text analysis.
@@ -2253,9 +2253,9 @@ AWS CodeGuru provides a number of features to help you improve the quality of yo
 - **Amazon Transcribe:** Automatic speech recognition service.
 - **Amazon Comprehend Medical:** Natural language processing for medical text.
 - **Amazon CodeGuru:** AI service for code reviews and application performance recommendations.
-- **Amazon Lookout for Vision:** Find defects in images using computer vision.
-- **Amazon Lookout for Equipment:** Detect abnormal equipment behavior using machine learning.
-- **Amazon Lookout for Metrics:** Find anomalies in metrics using machine learning.
+- **Amazon Lookout for Vision:** Find defects in images using computer vision (end of support in October 2025).
+- **Amazon Lookout for Equipment:** Detect abnormal equipment behavior using machine learning (end of support in October 2025).
+- **Amazon Lookout for Metrics:** Find anomalies in metrics using machine learning (end of support in October 2025).
 - **Amazon Fraud Detector:** Machine learning for detecting fraud by analyzing a variety of data points, such as transaction history, customer demographics, and device information.
 - **Amazon Personalize:**  A machine learning service that helps you create personalized experiences for your customers.
 - **Amazon Kendra:** A cloud-based enterprise search service that uses machine learning to index and search all of your enterprise content.
@@ -2272,7 +2272,7 @@ AWS CodeGuru provides a number of features to help you improve the quality of yo
 - **AWS CodeBuild:** A fully managed continuous integration (CI) service that compiles source code, runs tests, and produces software packages that are ready to deploy.
 - **AWS CodeDeploy:** Deployment service for applications to Amazon EC2 instances.
 - **AWS CloudFormation:** Infrastructure as Code service for provisioning AWS resources.
-- **AWS Cloud9:** Cloud-based integrated development environment (IDE).
+- **AWS Cloud9:** Cloud-based integrated development environment (IDE) (closed to new customers in July 2024).
 - **AWS Cloud Development Kit (CDK):** An open-source software development framework to model and provision your cloud application resources using familiar programming languages.
 - **AWS Serverless Application Model (SAM):** An open-source framework that makes it easy to build, deploy, and manage serverless applications on AWS. SAM applications are made up of AWS Lambda functions, Amazon API Gateway APIs, and other AWS resources.
 - **AWS SDK:** A collection of software development kits (SDKs) that you can use to access and manage AWS services (for a variety of programming languages).
@@ -2323,7 +2323,7 @@ AWS CodeGuru provides a number of features to help you improve the quality of yo
 - **Amazon EKS Anywhere:** Run Kubernetes clusters on your own infrastructure.
 - **Amazon EKS with Fargate:** Run Kubernetes pods on serverless Fargate compute.
 - **AWS App Runner:** Service for building and running containerized applications.
-- **AWS App Mesh:** Service mesh for microservices.
+- **AWS App Mesh:** Service mesh for microservices (end of support September 30, 2026; Amazon VPC Lattice is the suggested replacement).
 - **AWS Fargate Spot:** Serverless compute engine using spare capacity.
 - **Amazon Elastic Container Registry (ECR):** Fully managed Docker container registry.
 
@@ -2393,7 +2393,7 @@ AWS CodeGuru provides a number of features to help you improve the quality of yo
 ### Blockchain
 
 - **Amazon Managed Blockchain:** Create and manage scalable blockchain networks.
-- **Amazon Quantum Ledger Database (QLDB):**  A fully managed ledger database that provides a transparent, immutable, and cryptographically verifiable transaction log.
+- **Amazon Quantum Ledger Database (QLDB):**  A fully managed ledger database that provides a transparent, immutable, and cryptographically verifiable transaction log (end of support July 31, 2025; Amazon Aurora PostgreSQL is the suggested replacement).
 
 ### Satellite
 
@@ -2422,7 +2422,7 @@ AWS CodeGuru provides a number of features to help you improve the quality of yo
 ### End User Computing
 
 - **Amazon WorkSpaces:** A managed, secure cloud desktop service that provides users with a persistent, desktop computing experience in the cloud.
-- **Amazon AppStream:** A fully managed, secure application streaming service that delivers a high-quality app experience to users on any device, anywhere.
+- **Amazon AppStream 2.0:** A fully managed, secure application streaming service that delivers a high-quality app experience to users on any device, anywhere.
 
 ### Management Tools
 
