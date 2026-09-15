@@ -147,7 +147,7 @@ The major cloud service providers are:
 
 These providers offer a wide range of cloud services, including IaaS, PaaS, and SaaS. Some of their core services include:
 
-* **AWS:** Compute (EC2), storage (S3), databases (RDS), networking (VPC), analytics (RedShift), machine learning (SageMaker), and more.
+* **AWS:** Compute (EC2), storage (S3), databases (RDS), networking (VPC), analytics (Redshift), machine learning (SageMaker), and more.
 * **Azure:** Compute (Virtual Machines), storage (Blob Storage), databases (SQL Database), networking (Virtual Network), analytics (Synapse Analytics), machine learning (Azure ML), and more.
 * **GCP:** Compute (Compute Engine), storage (Cloud Storage), databases (Cloud SQL), networking (Cloud Networking), analytics (BigQuery), machine learning (Vertex AI), and more.
 
@@ -612,7 +612,7 @@ Serverless databases are databases that are managed by a cloud provider. Serverl
 
 Here are some examples of serverless databases:
 
-* Amazon Aurora Serverless
+* Amazon Aurora Serverless v2
 * Google Cloud Firestore
 * Microsoft Azure Cosmos DB
 
@@ -678,7 +678,7 @@ Cloud serverless compute platforms are platforms that allow you to run code with
 Here are some examples of cloud serverless compute platforms:
 
 * AWS Lambda
-* Google Cloud Functions
+* Google Cloud Functions (now Cloud Run functions)
 * Microsoft Azure Functions
 
 Cloud serverless compute platforms can be a good choice for a variety of workloads, such as:
@@ -760,7 +760,7 @@ Infrastructure as Code (IaC) is a practice of managing and provisioning cloud in
 * Improve consistency and repeatability.
 * Facilitate collaboration.
 
-There are a number of different IaC tools available, such as Terraform, AWS CloudFormation, and Azure Resource Manager.
+There are a number of different IaC tools available, such as Terraform, AWS CloudFormation, and Azure Resource Manager (ARM) templates or Bicep.
 
 To manage cloud resources using IaC, you can follow these steps:
 
