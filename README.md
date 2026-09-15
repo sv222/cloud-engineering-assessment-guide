@@ -1,21 +1,22 @@
-# A Comprehensive Collection of Interview Questions for Cloud Engineers
+# Cloud and Platform Engineering Handbook: AWS, Azure and GCP Competencies
 
-1. [Cloud Computing Interview Questions](#cloud-computing-interview-questions)
-2. [Amazon Web Services (AWS) Interview Questions](#amazon-web-services-aws-interview-questions)
+This competency handbook for cloud and platform engineers covers AWS, Azure and Google Cloud (GCP), from core cloud computing concepts to service-by-service questions with concise answers on architecture, security, networking, serverless, containers, infrastructure as code (IaC), cost and migration. Use it to check your skills against real work and find gaps to grow, for self-assessment, onboarding, design reviews and team skill mapping. Read a topic, answer from your own experience first, compare with the answer here, and follow the official docs for depth.
+
+1. [Cloud Computing Fundamentals](#cloud-computing-fundamentals)
+2. [Amazon Web Services (AWS)](#amazon-web-services-aws)
     * [All AWS services with brief description](#list-of-aws-services-with-brief-description)
-3. [Microsoft Azure Interview Questions](#microsoft-azure-interview-questions)
-4. [Google Cloud Platform (GCP) Interview Questions](#google-cloud-platform-gcp-interview-questions)
+3. [Microsoft Azure](#microsoft-azure)
+4. [Google Cloud Platform (GCP)](#google-cloud-platform-gcp)
+5. [Contributing to This Repository](#contributing-to-this-repository)
+6. [License](#license)
 
+## About this handbook
 
-## Brief description
+Content is organized by provider: AWS, Microsoft Azure and Google Cloud (GCP) each have their own section, and the AWS section also lists services with a brief description. Answers are concise starting points, not complete references, so compare them with your own experience and consult the official AWS, Azure and Google Cloud documentation for depth. Service names and statuses were refreshed in 2026; the providers change them often, so check the docs before relying on a detail.
 
-This GitHub repository is a meticulously curated and constantly evolving collection of interview questions for cloud engineers, specifically tailored for various cloud platforms, including AWS, Azure, and Google Cloud. We've organized these questions to help both interviewees and interviewers prepare for technical discussions and assessments in the cloud computing domain.
+## Cloud Computing Fundamentals
 
-The primary goal of this repository is to provide an extensive resource that encompasses a wide range of topics relevant to cloud engineering. The questions are categorized by cloud provider to facilitate targeted preparation. Whether you're aiming for a career in AWS, Azure, Google Cloud, or other cloud platforms, this repository has you covered.
-
-## Cloud Computing Interview Questions
-
-Here is a generated table of contents for the provided Markdown file:
+Topics in this section:
 
 1. [What is cloud computing, and what are its key characteristics?](#what-is-cloud-computing-and-what-are-its-key-characteristics)
 2. [Explain the differences between IaaS, PaaS, and SaaS.](#explain-the-differences-between-iaas-paas-and-saas)
@@ -1125,7 +1126,7 @@ Cloud compliance reporting is the process of generating reports on the complianc
 * **Identify compliance gaps:** Cloud compliance reports can be used to identify compliance gaps in your cloud environment.
 * **Remediate compliance gaps:** Cloud compliance reports can be used to remediate compliance gaps in your cloud environment.
 
-## Amazon Web Services (AWS) Interview Questions
+## Amazon Web Services (AWS)
 
  1. [What is AWS and how does it work?](#what-is-aws-and-how-does-it-work)
  2. [Explain the difference between EC2 and Lambda.](#explain-the-difference-between-ec2-and-lambda)
@@ -2443,7 +2444,7 @@ AWS CodeGuru provides a number of features to help you improve the quality of yo
 - **AWS Server Migration Service (SMS):** AWS discontinued SMS in March 2022; its successor, AWS Application Migration Service (MGN, now AWS Transform MGN), automates lift-and-shift migrations with minimal downtime.
 - **AWS Snowball:** Transfer large amounts of data to and from AWS using secure devices.
 
-## Microsoft Azure Interview Questions
+## Microsoft Azure
 
 ### 1. What is Microsoft Azure, and how does it work?
 Microsoft Azure is a cloud computing platform that provides a wide range of services, like storage, computing, and databases, hosted in Microsoft data centers. It lets businesses build, deploy, and manage applications globally, using tools and frameworks of their choice.
@@ -2582,7 +2583,7 @@ Microsoft Entra ID (formerly Azure Active Directory, or Azure AD, renamed in 202
 99. What is Azure IoT Central, and how does it simplify IoT solutions?
 100. Describe the use of Azure CycleCloud for HPC (High-Performance Computing) workloads.
 
-## Google Cloud Platform (GCP) Interview Questions
+## Google Cloud Platform (GCP)
 
 1. What is Google Cloud Platform (GCP), and how does it work?
 2. Explain the core services provided by GCP.
@@ -2687,7 +2688,7 @@ Microsoft Entra ID (formerly Azure Active Directory, or Azure AD, renamed in 202
 
 ## Contributing to This Repository
 
-We welcome contributions from the community. If you have any suggestions for new questions or answers, please feel free to open an issue or submit a pull request.
+We welcome contributions from the community. If you have any suggestions for new topics or answers, please feel free to open an issue or submit a pull request.
 
 ## License
 This project is licensed under the MIT License.
