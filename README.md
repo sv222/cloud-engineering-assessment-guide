@@ -2501,7 +2501,7 @@ Microsoft Entra ID (formerly Azure Active Directory, or Azure AD, renamed in 202
 18. How do you implement high availability in Azure?
 19. What is Azure CDN (Content Delivery Network), and when is it used?
 20. Describe the benefits of Azure Functions for event-driven applications.
-21. How does Azure Monitor and Azure Log Analytics work for cloud monitoring?
+21. How does Azure Monitor (including its Log Analytics feature) work for cloud monitoring?
 22. What is Azure ExpressRoute, and how does it enable private network connections?
 23. Explain Azure Machine Learning and its applications.
 24. How do you secure data in Azure Storage and databases?
@@ -2519,7 +2519,7 @@ Microsoft Entra ID (formerly Azure Active Directory, or Azure AD, renamed in 202
 36. Explain the features of Azure Event Grid for event-driven architectures.
 37. How do you manage Azure resources using Azure PowerShell?
 38. What is Azure Firewall, and how does it enhance network security?
-39. Describe the use of Azure Blueprints for governance and compliance.
+39. Describe the use of Azure Blueprints (retired July 2026) for governance and compliance.
 40. What is Azure IoT Hub, and how does it enable IoT device communication?
 41. How does Azure Sphere enhance IoT security?
 42. What is Azure Service Bus, and how does it facilitate messaging?
@@ -2534,7 +2534,7 @@ Microsoft Entra ID (formerly Azure Active Directory, or Azure AD, renamed in 202
 51. What is Azure Private Link, and how does it enhance security?
 52. Describe the use of Azure Stream Analytics for real-time data processing.
 53. How do you monitor Azure resources using Azure Application Insights?
-54. What is Azure Cognitive Services, and how does it enable AI capabilities?
+54. What is Azure AI services (formerly Azure Cognitive Services), and how does it enable AI capabilities?
 55. Explain Azure DevTest Labs and its use for development and testing.
 56. How do you achieve cross-region and cross-cloud redundancy in Azure?
 57. What is Azure Front Door, and how does it optimize global application delivery?
@@ -2547,7 +2547,7 @@ Microsoft Entra ID (formerly Azure Active Directory, or Azure AD, renamed in 202
 64. Describe the benefits of Azure Stack for hybrid cloud deployments.
 65. How does Azure Data Explorer (ADX) enable data exploration and analysis?
 66. What is Azure Firewall Manager, and how does it enhance network security management?
-67. Explain Azure Time Series Insights for IoT data analysis.
+67. Explain Azure Time Series Insights (retired in 2025) for IoT data analysis.
 68. How do you manage Azure resources using Azure CLI?
 69. What is Azure Lighthouse, and how does it facilitate cross-tenant management?
 70. Describe the use of Azure SignalR Service for real-time communication.
@@ -2561,10 +2561,10 @@ Microsoft Entra ID (formerly Azure Active Directory, or Azure AD, renamed in 202
 78. What is Azure Container Instances (ACI), and how does it simplify container deployment?
 79. Explain Azure Queue Storage and its role in messaging.
 80. How do you implement disaster recovery in Azure?
-81. What is Azure Front Door Rules Engine, and how does it enhance routing and security?
+81. What is Azure Front Door Rules Engine (now rule sets in Azure Front Door Standard and Premium), and how does it enhance routing and security?
 82. Describe the benefits of Azure Arc-enabled Kubernetes for hybrid cloud management.
 83. How do you use Azure Kubernetes Service (AKS) for container orchestration?
-84. What is Azure Blueprint, and how does it enable regulatory compliance?
+84. What is Azure Blueprint (retired July 2026), and how does it enable regulatory compliance?
 85. Explain Azure IoT Edge for deploying AI and custom logic to edge devices.
 86. How do you optimize costs in Azure?
 87. What is Azure Sphere Security Service, and how does it secure IoT devices?
@@ -2574,7 +2574,7 @@ Microsoft Entra ID (formerly Azure Active Directory, or Azure AD, renamed in 202
 91. Explain Azure Functions Premium Plan and its scalability features.
 92. How do you achieve compliance in Azure with built-in policies?
 93. What is Azure Stream Analytics on IoT Edge, and how does it enable real-time analytics at the edge?
-94. Describe the benefits of Azure Cognitive Search for AI-powered search capabilities.
+94. Describe the benefits of Azure AI Search (formerly Azure Cognitive Search) for AI-powered search capabilities.
 95. How do you handle data replication in Azure services?
 96. What is Azure Sphere Guardian Module, and how does it enhance IoT security?
 97. Explain Azure Cost Management and Billing for cost analysis.
@@ -2592,9 +2592,9 @@ Microsoft Entra ID (formerly Azure Active Directory, or Azure AD, renamed in 202
 6. What is Google Kubernetes Engine (GKE), and how does container orchestration work in GCP?
 7. Explain the concept of Google Cloud Storage and its various storage classes.
 8. How do you ensure data redundancy and disaster recovery in GCP?
-9. What is Google Cloud Functions, and how does serverless computing work in GCP?
+9. What is Google Cloud Functions (now Cloud Run functions), and how does serverless computing work in GCP?
 10. How do you optimize costs in GCP?
-11. Describe the role of Google Cloud Deployment Manager in infrastructure as code (IaC).
+11. Describe the role of Google Cloud Deployment Manager (deprecated; Infrastructure Manager and Terraform are the successors) in infrastructure as code (IaC).
 12. What is Google Cloud Pub/Sub, and how does it facilitate event-driven architectures?
 13. Explain the use of Google Cloud Bigtable for NoSQL data storage.
 14. How does Google Cloud Load Balancing work, and what are the types of load balancers in GCP?
@@ -2604,10 +2604,10 @@ Microsoft Entra ID (formerly Azure Active Directory, or Azure AD, renamed in 202
 18. What is Google Cloud CDN (Content Delivery Network), and when is it used?
 19. Explain the concept of Google Cloud Security Command Center and its role in security.
 20. How do you set up Google Cloud Identity-Aware Proxy (IAP) for securing applications?
-21. What is Google Cloud AutoML, and how does it enable machine learning for non-experts?
-22. Describe the use of Google Cloud Datastore for NoSQL data storage.
+21. What is Google Cloud AutoML (now Vertex AI AutoML), and how does it enable machine learning for non-experts?
+22. Describe the use of Google Cloud Datastore (now Firestore in Datastore mode) for NoSQL data storage.
 23. How does Google Cloud Monitoring and Google Cloud Logging work for cloud monitoring?
-24. What is Google Cloud VPN, and how does it facilitate secure connectivity?
+24. What is Google Cloud VPN (HA VPN is recommended; Classic VPN is deprecated), and how does it facilitate secure connectivity?
 25. Explain Google Cloud Spanner and its features for distributed databases.
 26. How do you secure data in Google Cloud Storage and Google Cloud SQL?
 27. What is Google Cloud Run, and how does it enable containerized applications?
@@ -2617,7 +2617,7 @@ Microsoft Entra ID (formerly Azure Active Directory, or Azure AD, renamed in 202
 31. Explain the use of Google Cloud Dataprep for data preparation.
 32. How do you set up Google Cloud Access Context Manager for resource-level access control?
 33. What is Google Cloud Memorystore, and how does it provide in-memory data storage?
-34. Describe the role of Google Cloud Identity Platform for identity management.
+34. Describe the role of Identity Platform (formerly Google Cloud Identity Platform) for identity management.
 35. How do you handle data backup and recovery in GCP?
 36. What is Google Cloud Armor, and how does it protect web applications?
 37. Explain the concept of Google Cloud Healthcare API for healthcare data management.
@@ -2625,20 +2625,20 @@ Microsoft Entra ID (formerly Azure Active Directory, or Azure AD, renamed in 202
 39. Google Cloud IoT Core was retired in August 2023 - what are the options for IoT device management on GCP today?
 40. Describe the benefits of Google Cloud Firestore for NoSQL document databases.
 41. How do you achieve data encryption in Google Cloud services?
-42. What is Google Cloud Private Catalog, and how does it help manage and distribute software catalogs?
+42. What is Google Cloud Private Catalog (now Service Catalog), and how does it help manage and distribute software catalogs?
 43. Explain the use of Google Cloud Composer for orchestrating workflows.
 44. How do you optimize costs in GCP with Google Cloud Billing?
 45. What is Google Cloud Dataprep by Trifacta, and how does it assist in data preparation?
 46. Describe the use of Google Cloud Build for continuous integration and continuous delivery (CI/CD).
 47. How does Google Cloud Scheduler enable cron job scheduling in GCP?
-48. What is Google Cloud Life Sciences, and how does it support genomics data analysis?
+48. What is Google Cloud Life Sciences (discontinued in 2025; Cloud Batch is the successor), and how does it support genomics data analysis?
 49. Explain the principles of Google Cloud VPC (Virtual Private Cloud) and network connectivity.
 50. How do you use Google Cloud Natural Language API for text analysis and language understanding?
-51. What is Google Cloud VPN for securing site-to-site connections?
+51. What is Google Cloud VPN (HA VPN is recommended; Classic VPN is deprecated) for securing site-to-site connections?
 52. Describe the benefits of Google Cloud Video Intelligence for video content analysis.
 53. How does Google Cloud CDN optimize content delivery?
 54. What is Google Cloud Dataflow, and how does it enable real-time and batch data processing?
-55. Explain the concept of Google Cloud Security Scanner for web application security.
+55. Explain the concept of Google Cloud Security Scanner (now Web Security Scanner) for web application security.
 56. How do you secure Google Cloud Endpoints for API protection?
 57. Google Cloud IoT Edge was retired alongside IoT Core in August 2023 - how would you extend cloud capabilities to edge devices on GCP today?
 58. Describe the use of Vertex AI (formerly AI Platform) for machine learning model development.
@@ -2646,7 +2646,7 @@ Microsoft Entra ID (formerly Azure Active Directory, or Azure AD, renamed in 202
 60. What is Google Cloud Tasks, and how does it facilitate the handling of asynchronous tasks?
 61. Explain the role of Google Cloud Spanner in managing globally distributed databases.
 62. How do you achieve data replication and synchronization in GCP?
-63. What is Google Cloud Data Loss Prevention (DLP), and how does it protect sensitive data?
+63. What is Google Cloud Data Loss Prevention (DLP, now Sensitive Data Protection), and how does it protect sensitive data?
 64. Describe the benefits of Google Cloud Text-to-Speech for converting text into natural-sounding speech.
 65. How does Google Cloud Ingestion support data transfer and integration?
 66. What is Google Cloud Speech-to-Text, and how does it convert spoken language into text?
@@ -2654,9 +2654,9 @@ Microsoft Entra ID (formerly Azure Active Directory, or Azure AD, renamed in 202
 68. How do you ensure data privacy and compliance in GCP?
 69. What is Google Cloud Load Balancing, and how does it distribute traffic across instances?
 70. Describe the role of Google Cloud SQL for PostgreSQL for managed relational databases.
-71. How do you set up Google Cloud Functions for serverless event-driven functions?
-72. What is Google Cloud Genomics, and how does it enable large-scale genetic data analysis?
-73. Explain the concept of Google Cloud Identity Platform for authentication and authorization.
+71. How do you set up Google Cloud Functions (now Cloud Run functions) for serverless event-driven functions?
+72. What is Google Cloud Genomics (retired; merged into Cloud Life Sciences, which was discontinued in 2025), and how does it enable large-scale genetic data analysis?
+73. Explain the concept of Identity Platform (formerly Google Cloud Identity Platform) for authentication and authorization.
 74. How does Google Cloud Armor protect applications from distributed denial of service (DDoS) attacks?
 75. What is Google Cloud Storage Transfer Service, and how does it enable data transfer to GCP?
 76. Describe the use of Google Cloud KMS (Key Management Service) for encryption key management.
@@ -2681,7 +2681,7 @@ Microsoft Entra ID (formerly Azure Active Directory, or Azure AD, renamed in 202
 95. How do you ensure data integrity in Google Cloud Storage and databases?
 96. What is Google Cloud Filestore, and how does it provide NFS storage for applications?
 97. Explain the concept of Google Cloud Tasks for task orchestration.
-98. How does Google Cloud Identity Platform facilitate user authentication and identity management?
+98. How does Identity Platform (formerly Google Cloud Identity Platform) facilitate user authentication and identity management?
 99. What is Google Cloud Video Intelligence, and how does it enable video content analysis?
 100. Describe the benefits of Google Cloud Healthcare API for healthcare data integration and analysis.
 
