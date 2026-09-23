@@ -2600,7 +2600,7 @@ Microsoft Entra ID (formerly Azure Active Directory, or Azure AD, renamed in 202
 8. How do you ensure data redundancy and disaster recovery in GCP?
 9. What is Google Cloud Functions (now Cloud Run functions), and how does serverless computing work in GCP?
 10. How do you optimize costs in GCP?
-11. Describe the role of Google Cloud Deployment Manager (deprecated; Infrastructure Manager and Terraform are the successors) in infrastructure as code (IaC).
+11. Describe the role of Google Cloud Deployment Manager (end of support March 2026; Infrastructure Manager and Terraform are the successors) in infrastructure as code (IaC).
 12. What is Google Cloud Pub/Sub, and how does it facilitate event-driven architectures?
 13. Explain the use of Google Cloud Bigtable for NoSQL data storage.
 14. How does Google Cloud Load Balancing work, and what are the types of load balancers in GCP?
