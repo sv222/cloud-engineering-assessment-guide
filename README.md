@@ -2553,7 +2553,7 @@ Microsoft Entra ID (formerly Azure Active Directory, or Azure AD, renamed in 202
 64. Describe the benefits of Azure Stack for hybrid cloud deployments.
 65. How does Azure Data Explorer (ADX) enable data exploration and analysis?
 66. What is Azure Firewall Manager, and how does it enhance network security management?
-67. Explain Azure Time Series Insights (retired in 2025) for IoT data analysis.
+67. Explain Azure Time Series Insights (retired July 2024) for IoT data analysis.
 68. How do you manage Azure resources using Azure CLI?
 69. What is Azure Lighthouse, and how does it facilitate cross-tenant management?
 70. Describe the use of Azure SignalR Service for real-time communication.
