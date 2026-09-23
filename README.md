@@ -2326,7 +2326,7 @@ AWS CodeGuru provides a number of features to help you improve the quality of yo
 - **Amazon EKS Anywhere:** Run Kubernetes clusters on your own infrastructure.
 - **Amazon EKS with Fargate:** Run Kubernetes pods on serverless Fargate compute.
 - **AWS App Runner:** Service for building and running containerized applications.
-- **AWS App Mesh:** Service mesh for microservices (end of support September 30, 2026; Amazon VPC Lattice is the suggested replacement).
+- **AWS App Mesh:** Service mesh for microservices (reached end of support on September 30, 2026; Amazon VPC Lattice is the suggested replacement).
 - **AWS Fargate Spot:** Serverless compute engine using spare capacity.
 - **Amazon Elastic Container Registry (ECR):** Fully managed Docker container registry.
 
