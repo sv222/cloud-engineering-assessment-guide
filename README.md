@@ -2256,9 +2256,9 @@ AWS CodeGuru provides a number of features to help you improve the quality of yo
 - **Amazon Transcribe:** Automatic speech recognition service.
 - **Amazon Comprehend Medical:** Natural language processing for medical text.
 - **Amazon CodeGuru:** AI service for code reviews and application performance recommendations.
-- **Amazon Lookout for Vision:** Find defects in images using computer vision (end of support in October 2025).
-- **Amazon Lookout for Equipment:** Detect abnormal equipment behavior using machine learning (end of support in October 2025).
-- **Amazon Lookout for Metrics:** Find anomalies in metrics using machine learning (end of support in October 2025).
+- **Amazon Lookout for Vision:** Find defects in images using computer vision (end of support October 7, 2026).
+- **Amazon Lookout for Equipment:** Detect abnormal equipment behavior using machine learning (end of support October 7, 2026).
+- **Amazon Lookout for Metrics:** Find anomalies in metrics using machine learning (end of support October 7, 2026).
 - **Amazon Fraud Detector:** Machine learning for detecting fraud by analyzing a variety of data points, such as transaction history, customer demographics, and device information.
 - **Amazon Personalize:** A machine learning service that helps you create personalized experiences for your customers.
 - **Amazon Kendra:** A cloud-based enterprise search service that uses machine learning to index and search all of your enterprise content.
