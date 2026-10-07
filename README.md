@@ -1206,7 +1206,7 @@ Cloud compliance reporting is the process of generating reports on the complianc
  76. [How does AWS Artifact enhance compliance and security?](#how-does-aws-artifact-enhance-compliance-and-security)
  77. [What is AWS PrivateLink, and how does it improve network security?](#what-is-aws-privatelink-and-how-does-it-improve-network-security)
  78. [Explain the use of AWS Greengrass Core.](#explain-the-use-of-aws-greengrass-core)
- 79. [How do you set up AWS Single Sign-On (SSO)?](#how-do-you-set-up-aws-single-sign-on-sso)
+ 79. [How do you set up AWS IAM Identity Center (formerly AWS SSO)?](#how-do-you-set-up-aws-iam-identity-center-formerly-aws-sso)
  80. [What is AWS Cost Explorer, and how does it help in cost analysis?](#what-is-aws-cost-explorer-and-how-does-it-help-in-cost-analysis)
  81. [Describe the use cases for AWS Organizations.](#describe-the-use-cases-for-aws-organizations)
  82. [What is the AWS CDK (Cloud Development Kit)?](#what-is-the-aws-cdk-cloud-development-kit)
@@ -1980,7 +1980,7 @@ Greengrass Core can be used in a variety of ways, including:
 * To control edge devices from the cloud
 * To provide local caching and synchronization for edge devices
 
-### How do you set up AWS Single Sign-On (SSO)?
+### How do you set up AWS IAM Identity Center (formerly AWS SSO)?
 
 To set up AWS IAM Identity Center (the successor to AWS SSO), you enable it in your organization, connect your identity source, and then assign users and groups to accounts and applications through permission sets.
 
