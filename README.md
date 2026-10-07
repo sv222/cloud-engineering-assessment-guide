@@ -2540,7 +2540,7 @@ Microsoft Entra ID (formerly Azure Active Directory, or Azure AD, renamed in 202
 51. What is Azure Private Link, and how does it enhance security?
 52. Describe the use of Azure Stream Analytics for real-time data processing.
 53. How do you monitor Azure resources using Azure Application Insights?
-54. What is Azure AI services (formerly Azure Cognitive Services), and how does it enable AI capabilities?
+54. What are Foundry Tools (formerly Azure AI services and Azure Cognitive Services), and how does it enable AI capabilities?
 55. Explain Azure DevTest Labs and its use for development and testing.
 56. How do you achieve cross-region and cross-cloud redundancy in Azure?
 57. What is Azure Front Door, and how does it optimize global application delivery?
