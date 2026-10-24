@@ -27,87 +27,85 @@ Topics in this section:
 7. [Cloud security and common challenges](#cloud-security-and-common-challenges)
 8. [What is the difference between public, private, and hybrid clouds?](#what-is-the-difference-between-public-private-and-hybrid-clouds)
 9. [Cloud data storage options and their use cases](#cloud-data-storage-options-and-their-use-cases)
-10. [Ensuring data redundancy and disaster recovery in the cloud](#ensuring-data-redundancy-and-disaster-recovery-in-the-cloud)
-11. [Advantages of serverless computing in the cloud](#advantages-of-serverless-computing-in-the-cloud)
-12. [Components of a cloud network architecture](#components-of-a-cloud-network-architecture)
-13. [How to handle data migration in the cloud](#how-to-handle-data-migration-in-the-cloud)
-14. [Role of a reverse proxy in a cloud environment](#role-of-a-reverse-proxy-in-a-cloud-environment)
-15. [Principles of cloud data warehousing](#principles-of-cloud-data-warehousing)
-16. [Cloud bursting and when it is useful](#cloud-bursting-and-when-it-is-useful)
-17. [How to monitor and manage cloud resource performance](#how-to-monitor-and-manage-cloud-resource-performance)
-18. [Role of a Content Delivery Network (CDN) in cloud content delivery](#role-of-a-content-delivery-network-cdn-in-cloud-content-delivery)
-19. [Significance of cloud monitoring and management tools](#significance-of-cloud-monitoring-and-management-tools)
-20. [How auto-scaling works in cloud environments](#how-auto-scaling-works-in-cloud-environments)
-21. [Cloud migration strategy and how to plan it](#cloud-migration-strategy-and-how-to-plan-it)
-22. [Role of load balancers in the cloud](#role-of-load-balancers-in-the-cloud)
-23. [Managing cloud resources using automation](#managing-cloud-resources-using-automation)
-24. [Multi-cloud and its advantages and challenges](#multi-cloud-and-its-advantages-and-challenges)
-25. [Principles of microservices architecture in the cloud](#principles-of-microservices-architecture-in-the-cloud)
-26. [Cloud virtual private network (VPN)](#cloud-virtual-private-network-vpn)
-27. [How do you secure cloud-based applications and data?](#how-do-you-secure-cloud-based-applications-and-data)
-28. [Explain the concept of cloud networking and its components.](#explain-the-concept-of-cloud-networking-and-its-components)
-29. [What is cloud billing and cost management?](#what-is-cloud-billing-and-cost-management)
-30. [How do you achieve data backup and recovery in the cloud?](#how-do-you-achieve-data-backup-and-recovery-in-the-cloud)
-31. [Describe the use of cloud-based databases.](#describe-the-use-of-cloud-based-databases)
-32. [What are serverless functions, and when do you use them?](#what-are-serverless-functions-and-when-do-you-use-them)
-33. [Role of Identity and Access Management (IAM) in the cloud](#role-of-identity-and-access-management-iam-in-the-cloud)
-34. [Cloud application programming interface (API)](#cloud-application-programming-interface-api)
-35. [How to troubleshoot cloud-based applications](#how-to-troubleshoot-cloud-based-applications)
-36. [Serverless computing and its benefits](#serverless-computing-and-its-benefits)
-37. [Use of containers in cloud computing](#use-of-containers-in-cloud-computing)
-38. [How to ensure data encryption in the cloud](#how-to-ensure-data-encryption-in-the-cloud)
-39. [Cloud Security Alliance (CSA)](#cloud-security-alliance-csa)
-40. [Principles of disaster recovery in the cloud](#principles-of-disaster-recovery-in-the-cloud)
-41. [How to choose the right cloud service model for a project](#how-to-choose-the-right-cloud-service-model-for-a-project)
-42. [Cloud application architecture pattern](#cloud-application-architecture-pattern)
-43. [Use of serverless databases in the cloud](#use-of-serverless-databases-in-the-cloud)
-44. [How to implement high availability in a cloud infrastructure](#how-to-implement-high-availability-in-a-cloud-infrastructure)
-45. [Role of cloud identity and access management](#role-of-cloud-identity-and-access-management)
-46. [Continuous integration and continuous deployment (CI/CD) in the cloud](#continuous-integration-and-continuous-deployment-cicd-in-the-cloud)
-47. [How to achieve data replication in the cloud](#how-to-achieve-data-replication-in-the-cloud)
-48. [Cloud DNS service and how it works](#cloud-dns-service-and-how-it-works)
-49. [Benefits of cloud serverless compute platforms](#benefits-of-cloud-serverless-compute-platforms)
-50. [How to handle cloud storage security and access control](#how-to-handle-cloud-storage-security-and-access-control)
-51. [Cloud architecture diagram and its importance](#cloud-architecture-diagram-and-its-importance)
-52. [Principles of cloud compliance and auditing](#principles-of-cloud-compliance-and-auditing)
-53. [How to design a resilient cloud architecture](#how-to-design-a-resilient-cloud-architecture)
-54. [Cloud cost optimization and how to achieve it](#cloud-cost-optimization-and-how-to-achieve-it)
-55. [Use of cloud-native application development](#use-of-cloud-native-application-development)
-56. [How to manage cloud resources using Infrastructure as Code (IaC)](#how-to-manage-cloud-resources-using-infrastructure-as-code-iac)
-57. [Cloud-native container orchestration platform](#cloud-native-container-orchestration-platform)
-58. [Principles of cloud application performance tuning](#principles-of-cloud-application-performance-tuning)
-59. [How to achieve data governance in the cloud](#how-to-achieve-data-governance-in-the-cloud)
-60. [Role of cloud access control policies](#role-of-cloud-access-control-policies)
-61. [Use of cloud-based message queues](#use-of-cloud-based-message-queues)
-69. [How to design a cloud data warehouse](#how-to-design-a-cloud-data-warehouse)
-70. [Cloud backup and recovery strategy](#cloud-backup-and-recovery-strategy)
-71. [Principles of cloud load balancing](#principles-of-cloud-load-balancing)
-72. [How to secure data transfer in a cloud environment](#how-to-secure-data-transfer-in-a-cloud-environment)
-73. [Cloud disaster recovery planning](#cloud-disaster-recovery-planning)
-74. [Use of cloud API gateways](#use-of-cloud-api-gateways)
-75. [How to achieve cloud network segmentation](#how-to-achieve-cloud-network-segmentation)
-76. [Role of a cloud management console](#role-of-a-cloud-management-console)
-77. [Principles of cloud data archiving](#principles-of-cloud-data-archiving)
-78. [How to manage cloud-based databases](#how-to-manage-cloud-based-databases)
-79. [Cloud-native service mesh](#cloud-native-service-mesh)
-80. [Use of cloud resource tagging](#use-of-cloud-resource-tagging)
-81. [How to design a cloud content delivery strategy](#how-to-design-a-cloud-content-delivery-strategy)
-82. [Cloud governance and policy enforcement](#cloud-governance-and-policy-enforcement)
-83. [Principles of cloud application scaling](#principles-of-cloud-application-scaling)
-84. [How to achieve compliance in a multi-cloud environment](#how-to-achieve-compliance-in-a-multi-cloud-environment)
-85. [Role of cloud encryption at rest and in transit](#role-of-cloud-encryption-at-rest-and-in-transit)
-86. [Use of cloud-based data lakes](#use-of-cloud-based-data-lakes)
-87. [Cloud resource lifecycle management](#cloud-resource-lifecycle-management)
-88. [Cloud security incident response plan](#cloud-security-incident-response-plan)
-89. [Principles of cloud application monitoring](#principles-of-cloud-application-monitoring)
-90. [How to ensure data privacy in the cloud](#how-to-ensure-data-privacy-in-the-cloud)
-91. [Cloud network optimization](#cloud-network-optimization)
-92. [Use of cloud-based container registries](#use-of-cloud-based-container-registries)
-93. [Cloud access management strategy](#cloud-access-management-strategy)
-94. [Cloud disaster recovery testing plan](#cloud-disaster-recovery-testing-plan)
-95. [Principles of cloud application logging](#principles-of-cloud-application-logging)
-96. [How to achieve cost transparency in the cloud](#how-to-achieve-cost-transparency-in-the-cloud)
-97. [Role of cloud compliance reporting](#role-of-cloud-compliance-reporting)
+10. [Data redundancy and disaster recovery](#data-redundancy-and-disaster-recovery)
+11. [Advantages of serverless computing](#advantages-of-serverless-computing)
+12. [How to handle data migration in the cloud](#how-to-handle-data-migration-in-the-cloud)
+13. [Role of a reverse proxy in a cloud environment](#role-of-a-reverse-proxy-in-a-cloud-environment)
+14. [Principles of cloud data warehousing](#principles-of-cloud-data-warehousing)
+15. [Cloud bursting and when it is useful](#cloud-bursting-and-when-it-is-useful)
+16. [How to monitor and manage cloud resource performance](#how-to-monitor-and-manage-cloud-resource-performance)
+17. [Role of a Content Delivery Network (CDN)](#role-of-a-content-delivery-network-cdn)
+18. [Significance of cloud monitoring and management tools](#significance-of-cloud-monitoring-and-management-tools)
+19. [How auto-scaling works in cloud environments](#how-auto-scaling-works-in-cloud-environments)
+20. [Cloud migration strategy and how to plan it](#cloud-migration-strategy-and-how-to-plan-it)
+21. [Role of load balancers in the cloud](#role-of-load-balancers-in-the-cloud)
+22. [Managing cloud resources using automation](#managing-cloud-resources-using-automation)
+23. [Multi-cloud and its advantages and challenges](#multi-cloud-and-its-advantages-and-challenges)
+24. [Principles of microservices architecture in the cloud](#principles-of-microservices-architecture-in-the-cloud)
+25. [Cloud virtual private network (VPN)](#cloud-virtual-private-network-vpn)
+26. [How do you secure cloud-based applications and data?](#how-do-you-secure-cloud-based-applications-and-data)
+27. [Explain the concept of cloud networking and its components.](#explain-the-concept-of-cloud-networking-and-its-components)
+28. [What is cloud billing and cost management?](#what-is-cloud-billing-and-cost-management)
+29. [How do you achieve data backup and recovery in the cloud?](#how-do-you-achieve-data-backup-and-recovery-in-the-cloud)
+30. [Describe the use of cloud-based databases.](#describe-the-use-of-cloud-based-databases)
+31. [What are serverless functions, and when do you use them?](#what-are-serverless-functions-and-when-do-you-use-them)
+32. [Role of Identity and Access Management (IAM) in the cloud](#role-of-identity-and-access-management-iam-in-the-cloud)
+33. [Cloud application programming interface (API)](#cloud-application-programming-interface-api)
+34. [How to troubleshoot cloud-based applications](#how-to-troubleshoot-cloud-based-applications)
+35. [Use of containers in cloud computing](#use-of-containers-in-cloud-computing)
+36. [How to ensure data encryption in the cloud](#how-to-ensure-data-encryption-in-the-cloud)
+37. [Cloud Security Alliance (CSA)](#cloud-security-alliance-csa)
+38. [Principles of disaster recovery in the cloud](#principles-of-disaster-recovery-in-the-cloud)
+39. [How to choose the right cloud service model for a project](#how-to-choose-the-right-cloud-service-model-for-a-project)
+40. [Cloud application architecture pattern](#cloud-application-architecture-pattern)
+41. [Use of serverless databases in the cloud](#use-of-serverless-databases-in-the-cloud)
+42. [How to implement high availability in a cloud infrastructure](#how-to-implement-high-availability-in-a-cloud-infrastructure)
+43. [Role of cloud identity and access management](#role-of-cloud-identity-and-access-management)
+44. [Continuous integration and continuous deployment (CI/CD) in the cloud](#continuous-integration-and-continuous-deployment-cicd-in-the-cloud)
+45. [How to achieve data replication in the cloud](#how-to-achieve-data-replication-in-the-cloud)
+46. [Cloud DNS service and how it works](#cloud-dns-service-and-how-it-works)
+47. [Benefits of cloud serverless compute platforms](#benefits-of-cloud-serverless-compute-platforms)
+48. [How to handle cloud storage security and access control](#how-to-handle-cloud-storage-security-and-access-control)
+49. [Cloud architecture diagram and its importance](#cloud-architecture-diagram-and-its-importance)
+50. [Principles of cloud compliance and auditing](#principles-of-cloud-compliance-and-auditing)
+51. [How to design a resilient cloud architecture](#how-to-design-a-resilient-cloud-architecture)
+52. [Cloud cost optimization and how to achieve it](#cloud-cost-optimization-and-how-to-achieve-it)
+53. [Use of cloud-native application development](#use-of-cloud-native-application-development)
+54. [How to manage cloud resources using Infrastructure as Code (IaC)](#how-to-manage-cloud-resources-using-infrastructure-as-code-iac)
+55. [Cloud-native container orchestration platform](#cloud-native-container-orchestration-platform)
+56. [Principles of cloud application performance tuning](#principles-of-cloud-application-performance-tuning)
+57. [How to achieve data governance in the cloud](#how-to-achieve-data-governance-in-the-cloud)
+58. [Role of cloud access control policies](#role-of-cloud-access-control-policies)
+59. [Use of cloud-based message queues](#use-of-cloud-based-message-queues)
+60. [How to design a cloud data warehouse](#how-to-design-a-cloud-data-warehouse)
+61. [Cloud backup and recovery strategy](#cloud-backup-and-recovery-strategy)
+62. [Principles of cloud load balancing](#principles-of-cloud-load-balancing)
+63. [How to secure data transfer in a cloud environment](#how-to-secure-data-transfer-in-a-cloud-environment)
+64. [Cloud disaster recovery planning](#cloud-disaster-recovery-planning)
+65. [Use of cloud API gateways](#use-of-cloud-api-gateways)
+66. [How to achieve cloud network segmentation](#how-to-achieve-cloud-network-segmentation)
+67. [Role of a cloud management console](#role-of-a-cloud-management-console)
+68. [Principles of cloud data archiving](#principles-of-cloud-data-archiving)
+69. [How to manage cloud-based databases](#how-to-manage-cloud-based-databases)
+70. [Cloud-native service mesh](#cloud-native-service-mesh)
+71. [Use of cloud resource tagging](#use-of-cloud-resource-tagging)
+72. [How to design a cloud content delivery strategy](#how-to-design-a-cloud-content-delivery-strategy)
+73. [Cloud governance and policy enforcement](#cloud-governance-and-policy-enforcement)
+74. [Principles of cloud application scaling](#principles-of-cloud-application-scaling)
+75. [How to achieve compliance in a multi-cloud environment](#how-to-achieve-compliance-in-a-multi-cloud-environment)
+76. [Role of cloud encryption at rest and in transit](#role-of-cloud-encryption-at-rest-and-in-transit)
+77. [Use of cloud-based data lakes](#use-of-cloud-based-data-lakes)
+78. [Cloud resource lifecycle management](#cloud-resource-lifecycle-management)
+79. [Cloud security incident response plan](#cloud-security-incident-response-plan)
+80. [Principles of cloud application monitoring](#principles-of-cloud-application-monitoring)
+81. [How to ensure data privacy in the cloud](#how-to-ensure-data-privacy-in-the-cloud)
+82. [Cloud network optimization](#cloud-network-optimization)
+83. [Use of cloud-based container registries](#use-of-cloud-based-container-registries)
+84. [Cloud access management strategy](#cloud-access-management-strategy)
+85. [Cloud disaster recovery testing plan](#cloud-disaster-recovery-testing-plan)
+86. [Principles of cloud application logging](#principles-of-cloud-application-logging)
+87. [How to achieve cost transparency in the cloud](#how-to-achieve-cost-transparency-in-the-cloud)
+88. [Role of cloud compliance reporting](#role-of-cloud-compliance-reporting)
 
 ### What is cloud computing, and what are its key characteristics?
 
@@ -131,12 +129,12 @@ Topics in this section:
 
 ### Comparison of IaaS, PaaS, and SaaS:
 
-| Feature | IaaS | PaaS | SaaS |
+| Responsibility | IaaS | PaaS | SaaS |
 |---|---|---|---|
-| Computing resources | Yes | Yes | No |
-| Operating system | Yes | No | No |
-| Applications | Yes | Yes | No |
-| Management responsibility | Infrastructure, OS, middleware | Runtime, middleware | None (access only) |
+| Data and access policies | You | You | You |
+| Applications | You | You | Provider |
+| Runtime, middleware, OS | You | Provider | Provider |
+| Virtualization, servers, storage, networking | Provider | Provider | Provider |
 
 ### What are the major cloud service providers, and what are their core services?
 
@@ -186,14 +184,14 @@ Cloud security is the practice of protecting cloud computing systems and data fr
 
 Some of the common cloud security challenges include:
 
-* **Data breaches:** Cloud providers are often targeted by attackers who are trying to steal data.
+* **Data breaches:** Data stored in the cloud is a common target. Exposed storage buckets and stolen credentials are frequent causes.
 * **Misconfigurations:** Cloud resources can be misconfigured, which can expose them to attack.
 * **Insider threats:** Malicious insiders can steal data or sabotage cloud systems.
 * **Shared responsibility:** Cloud providers and customers share responsibility for cloud security. It is important for customers to understand their security responsibilities and to take steps to protect their data and applications.
 
 ### What is the difference between public, private, and hybrid clouds?
 
-**Public cloud** services are shared by multiple organizations over the public internet. They are the most cost-effective and scalable cloud computing option, but they offer the least amount of control and security.
+**Public cloud** services are shared by multiple organizations over the public internet. They are often the most cost-effective and scalable option, but they offer less control over the underlying infrastructure.
 
 **Private cloud** services are dedicated to a single organization. They can be hosted on-premises or by a third-party provider. Private clouds offer more control and security than public clouds, but they are more expensive and less scalable.
 
@@ -214,7 +212,7 @@ The most common cloud data storage options are:
 * **Cloud application development and hosting:** Cloud data storage can be used to store and host data and applications. This allows organizations to develop and deploy applications quickly and easily without having to invest in their own infrastructure.
 * **Cloud content delivery:** Cloud data storage can be used to deliver content, such as images and videos, to users around the world. This allows organizations to scale their content delivery networks without having to invest in their own infrastructure.
 
-### Ensuring data redundancy and disaster recovery in the cloud
+### Data redundancy and disaster recovery
 
 There are a number of ways to ensure data redundancy and disaster recovery in the cloud, including:
 
@@ -222,7 +220,7 @@ There are a number of ways to ensure data redundancy and disaster recovery in th
 * **Backups:** Backups are copies of data that can be restored in the event of a disaster. Backups can be stored in the cloud or on-premises.
 * **Snapshots:** Snapshots are point-in-time copies of data. They can be used to restore data to a previous state in the event of a data loss or corruption.
 
-### Advantages of serverless computing in the cloud
+### Advantages of serverless computing
 
 Serverless computing is a cloud computing model in which the cloud provider automatically manages the server infrastructure. This allows developers to focus on writing code without having to worry about managing servers.
 
@@ -245,8 +243,8 @@ Cloud orchestration is the process of automating the deployment, management, and
 There are a number of ways to optimize costs in a cloud environment, including:
 
 * **Rightsizing:** Rightsizing is the process of ensuring that you are using the right amount of resources for your needs. This can be done by monitoring your resource usage and adjusting your resource allocation accordingly.
-* **Reserved instances:** Reserved instances are a pricing model that offers a discount in exchange for a one-year or three-year commitment to use capacity in a region. Reserved instances are typically less expensive than on-demand resources.
-* **Spot instances:** Spot instances are cloud resources that are available at a discounted price. Spot instances are typically used for workloads that can be interrupted, such as batch processing jobs.
+* **Reserved instances and savings plans:** Reserved Instances (AWS), Reservations (Azure), and Savings Plans (AWS and Azure) offer a discount in exchange for a one-year or three-year commitment. Committed pricing is typically cheaper than on-demand.
+* **Spot instances:** Spot Instances (AWS) and Spot VMs (Azure) are spare capacity sold at a discount. The provider can reclaim them at short notice, so use them for interruptible workloads such as batch processing jobs.
 * **Discounts:** Cloud providers offer a variety of discounts, such as volume discounts and discounts for committed use.
 
 ### Infrastructure as Code (IaC)
@@ -307,21 +305,11 @@ There are a number of ways to ensure high availability in a cloud-based applicat
 * **Using health checks:** Health checks monitor the health of your application instances. If a health check fails, the application instance is restarted or removed from the load balancer.
 * **Using monitoring and alerting:** Monitoring and alerting tools can help you to identify and respond to problems with your application.
 
-### Benefits of using a Content Delivery Network (CDN) in the cloud
-
-A Content Delivery Network (CDN) is a network of servers that deliver content to users based on their geographic location. CDNs can improve the performance, reliability, and security of your cloud-based applications.
-
-Some of the benefits of using a CDN in the cloud include:
-
-* **Improved performance:** CDNs can improve the performance of your cloud-based applications by delivering content to users from servers that are located close to them. This can reduce latency and improve the overall user experience.
-* **Increased reliability:** CDNs can increase the reliability of your cloud-based applications by distributing traffic across multiple servers. This can help to prevent outages and ensure that your applications are always available.
-* **Improved security:** CDNs can improve the security of your cloud-based applications by caching content and filtering out malicious traffic.
-
 ### Significance of cloud monitoring and management tools
 
 Cloud monitoring and management tools are essential for managing cloud-based applications. These tools can help you to:
 
-* **Monitor your cloud resources:** Cloud monitoring tools can help you to monitor the performance and health of your cloud resources. This includes monitoring your CPU usage, memory usage, and disk usage.
+* **Monitor your cloud resources:** Cloud monitoring tools can help you to monitor the performance and health of your cloud resources. This includes monitoring your CPU usage, memory usage, and disk usage. On Amazon EC2, memory and disk space metrics are not published to CloudWatch by default and require the CloudWatch agent.
 * **Manage your cloud resources:** Cloud management tools can help you to manage your cloud resources. This includes managing your cloud accounts, users, and permissions.
 * **Automate cloud tasks:** Cloud automation tools can help you to automate cloud tasks, such as deploying new applications and scaling your applications up or down.
 
@@ -394,7 +382,7 @@ A cloud virtual private network (VPN) is a secure tunnel between your on-premise
 
 Cloud VPNs are typically used to connect on-premises networks to public clouds. However, they can also be used to connect on-premises networks to private clouds and hybrid clouds.
 
-Cloud VPNs can be used to improve the security of your cloud resources by encrypting traffic between your on-premises network and the cloud. They can also be used to improve the performance of your cloud resources by reducing latency.
+Cloud VPNs can be used to improve the security of traffic between your on-premises network and the cloud by encrypting it. A VPN does not reduce latency; it adds some overhead.
 
 ### How do you secure cloud-based applications and data?
 
@@ -412,8 +400,7 @@ Cloud networking is the network infrastructure that is used to connect cloud res
 * **Virtual private networks (VPNs):** VPNs create a secure tunnel between your on-premises network and the cloud.
 * **Load balancers:** Load balancers distribute traffic across multiple instances of an application.
 * **Firewalls:** Firewalls protect your cloud resources from unauthorized access.
-* **Routers:** Routers direct traffic between different cloud networks.
-* **Switches:** Switches connect devices to each other on the same cloud network.
+* **Routing:** Route tables direct traffic between subnets, gateways, and other networks. Providers abstract away physical routers and switches.
 
 ### What is cloud billing and cost management?
 
@@ -439,7 +426,7 @@ Cloud-based databases are databases that are hosted and managed by a cloud provi
 
 ### What are serverless functions, and when do you use them?
 
-Serverless functions are a type of cloud computing service that allows you to run code without having to provision or manage servers. Serverless functions are typically used to run event-driven workloads, such as processing payments or sending notifications.
+Serverless functions are a type of cloud computing service that allows you to run code without having to provision or manage servers. Serverless functions are typically used to run event-driven workloads, such as processing payments or sending notifications. Common examples are AWS Lambda, Azure Functions, and Cloud Run functions (formerly Cloud Functions) in Google Cloud.
 
 Serverless functions are a good choice for workloads that are unpredictable or that need to be scaled up or down quickly. They are also a good choice for workloads that are infrequently accessed, as you only pay for the time that your functions are running.
 
@@ -476,31 +463,11 @@ There are a number of ways to troubleshoot cloud-based applications, including:
 * **Debugging:** Debugging can help you to identify and fix specific problems with your cloud-based applications.
 * **Support:** Cloud providers offer a variety of support options to help you troubleshoot problems with your cloud-based applications.
 
-### Serverless computing and its benefits
-
-Serverless computing is a cloud computing model in which the cloud provider automatically manages the server infrastructure. This allows developers to focus on writing code without having to worry about managing servers.
-
-Serverless computing offers a number of benefits, including:
-
-* **Scalability:** Serverless computing is highly scalable, so you can easily scale your applications up or down to meet your changing needs.
-* **Cost savings:** Serverless computing can help you to save money on server costs, as you only pay for the resources that you use.
-* **Ease of use:** Serverless computing is easy to use, so developers can focus on writing code without having to worry about managing servers.
-
-### Components of a cloud network architecture
-
-The components of a cloud network architecture typically include:
-
-* **Virtual private networks (VPNs):** VPNs create a secure tunnel between your on-premises network and the cloud.
-* **Load balancers:** Load balancers distribute traffic across multiple instances of an application.
-* **Firewalls:** Firewalls protect your cloud resources from unauthorized access.
-* **Routers:** Routers direct traffic between different cloud networks.
-* **Switches:** Switches connect devices to each other on the same cloud network.
-
 ### How to handle data migration in the cloud
 
 There are a number of ways to handle data migration in the cloud, including:
 
-* **Rehost (lift and shift):** Move data and the applications that use it as they are, with no changes to the data structure or code. Online tools such as AWS DataSync (files and objects) or AWS Database Migration Service (databases) can copy the data over the network, and offline transfer is an option when the data set is too large to move over the network in a reasonable time.
+* **Rehost (lift and shift):** Move data and the applications that use it as they are, with no changes to the data structure or code. Online tools such as AWS DataSync (files and objects) or AWS Database Migration Service (databases) can copy the data over the network, and offline transfer is an option when the data set is too large to move over the network in a reasonable time. AWS Snow Family devices reach end of support on December 31, 2026, so check current options first.
 * **Replatform (lift, tinker and shift):** Make a few changes, such as moving a self-managed database to a managed database service, while the core data model and architecture stay the same.
 * **Refactor (re-architect):** Redesign the data store and the application to take full advantage of cloud-native capabilities, such as managed services, microservices and serverless architectures.
 
@@ -519,11 +486,7 @@ In a cloud environment, reverse proxies can be used to:
 
 ### Principles of cloud data warehousing
 
-Cloud data warehousing is the use of cloud computing to build and manage data warehouses. Cloud data warehouses offer a number of advantages over on-premises data warehouses, such as:
-
-* Scalability: Cloud data warehouses are highly scalable, so you can easily scale them up or down to meet your changing needs.
-* Reliability: Cloud data warehouses are highly reliable, and cloud providers offer a variety of services to ensure the reliability of your data warehouses.
-* Security: Cloud data warehouses are secure, and cloud providers offer a variety of security services to protect your data.
+Cloud data warehousing is the use of cloud computing to build and manage data warehouses. Managed options include Amazon Redshift, Google BigQuery, and Azure Synapse Analytics. Many of these services scale compute and storage independently, and they are billed by compute time, storage, or data scanned, depending on the product.
 
 ### Cloud bursting and when it is useful
 
@@ -544,7 +507,7 @@ There are a number of ways to monitor and manage cloud resource performance, inc
 * **Alerting:** Alerting can help you to be notified of performance problems with your cloud resources so that you can take corrective action.
 * **Optimization:** Optimization can help you to improve the performance of your cloud resources by making changes to your configuration or code.
 
-### Role of a Content Delivery Network (CDN) in cloud content delivery
+### Role of a Content Delivery Network (CDN)
 
 A Content Delivery Network (CDN) is a network of servers that deliver content to users based on their geographic location. CDNs can be used to improve the performance, reliability, and security of cloud content delivery.
 
@@ -562,7 +525,7 @@ Containers can be used in cloud computing to:
 
 * Deploy applications to multiple cloud providers.
 * Scale applications up or down quickly and easily.
-* Improve the performance of applications by sharing resources.
+* Start faster and use less overhead than VMs, because containers share the host operating system kernel.
 * Reduce the cost of running applications by reducing the number of servers that are needed.
 
 ### How to ensure data encryption in the cloud
@@ -570,7 +533,7 @@ Containers can be used in cloud computing to:
 There are a number of ways to ensure data encryption in the cloud, including:
 
 * **Client-side encryption:** Client-side encryption encrypts data before it is uploaded to the cloud. This gives you more control over your data encryption keys.
-* **Server-side encryption:** Server-side encryption encrypts data after it is uploaded to the cloud. This is the most common type of cloud encryption.
+* **Server-side encryption:** The provider encrypts data at rest after it is received. Major object storage services enable this by default.
 * **Transit encryption:** Transit encryption encrypts data while it is being transmitted between your on-premises environment and the cloud.
 
 ### Cloud Security Alliance (CSA)
