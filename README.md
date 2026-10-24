@@ -1,6 +1,6 @@
-# Cloud and Platform Engineering Handbook: AWS, Azure and GCP Competencies
+# Cloud Engineering Handbook
 
-This competency handbook for cloud and platform engineers covers AWS, Azure and Google Cloud (GCP), from core cloud computing concepts to service-by-service questions with concise answers on architecture, security, networking, serverless, containers, infrastructure as code (IaC), cost and migration. Use it to check your skills against real work and find gaps to grow, for self-assessment, onboarding, design reviews and team skill mapping. Read a topic, answer from your own experience first, compare with the answer here, and follow the official docs for depth.
+A competency handbook for cloud and platform engineers working with AWS, Azure and Google Cloud. It pairs core cloud concepts with short, service-by-service answers on architecture, security, networking, serverless, containers, infrastructure as code, cost and migration. Use it for self-assessment, onboarding, design reviews and team skill mapping: read a topic, answer from your own experience first, then compare with the answer here and follow the official docs for depth.
 
 1. [Cloud Computing Fundamentals](#cloud-computing-fundamentals)
 2. [Amazon Web Services (AWS)](#amazon-web-services-aws)
