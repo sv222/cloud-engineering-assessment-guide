@@ -1091,7 +1091,7 @@ Cloud compliance reporting is the process of generating reports on the complianc
  8. [What is an S3 bucket?](#what-is-an-s3-bucket)
  9. [What is Amazon CloudWatch, and how is it used?](#what-is-amazon-cloudwatch-and-how-is-it-used)
  10. [Define the term "Elastic Load Balancing" in AWS.](#define-the-term-elastic-load-balancing-in-aws)
- 11. [What is Amazon Elastic Beanstalk, and how does it work?](#what-is-amazon-elastic-beanstalk-and-how-does-it-work)
+ 11. [What is AWS Elastic Beanstalk, and how does it work?](#what-is-aws-elastic-beanstalk-and-how-does-it-work)
  12. [Describe the use cases for Amazon SNS and Amazon SQS.](#describe-the-use-cases-for-amazon-sns-and-amazon-sqs)
  13. [How does AWS Lambda handle concurrent executions?](#how-does-aws-lambda-handle-concurrent-executions)
  14. [What are AWS CloudFormation templates, and how do they work?](#what-are-aws-cloudformation-templates-and-how-do-they-work)
@@ -1113,7 +1113,7 @@ Cloud compliance reporting is the process of generating reports on the complianc
  30. [Explain the use of AWS Direct Connect.](#explain-the-use-of-aws-direct-connect)
  31. [What is AWS Elastic File System (EFS)?](#what-is-aws-elastic-file-system-efs)
  32. [Describe the benefits of using AWS CloudTrail.](#describe-the-benefits-of-using-aws-cloudtrail)
- 33. [What is AWS Elastic Load Balancing (ELB)?](#what-is-aws-elastic-load-balancing-elb)
+ 33. [What are the types of Elastic Load Balancing?](#what-are-the-types-of-elastic-load-balancing)
  34. [How do you optimize costs in AWS?](#how-do-you-optimize-costs-in-aws)
  35. [What are AWS Organizations, and how are they used?](#what-are-aws-organizations-and-how-are-they-used)
  36. [Explain the benefits of using AWS Fargate.](#explain-the-benefits-of-using-aws-fargate)
@@ -1123,7 +1123,7 @@ Cloud compliance reporting is the process of generating reports on the complianc
  40. [What is AWS DataSync, and how does it work?](#what-is-aws-datasync-and-how-does-it-work)
  41. [Explain the concept of AWS Auto Scaling.](#explain-the-concept-of-aws-auto-scaling)
  42. [How do you set up AWS Cross-Region Replication for S3?](#how-do-you-set-up-aws-cross-region-replication-for-s3)
- 43. [What is AWS Inspector, and how does it enhance security?](#what-is-aws-inspector-and-how-does-it-enhance-security)
+ 43. [What is Amazon Inspector, and how does it enhance security?](#what-is-amazon-inspector-and-how-does-it-enhance-security)
  44. [Describe AWS App Runner and its use cases.](#describe-aws-app-runner-and-its-use-cases)
  45. [How do you back up and restore AWS RDS databases?](#how-do-you-back-up-and-restore-aws-rds-databases)
  46. [What is Amazon S3 Select?](#what-is-amazon-s3-select)
@@ -1170,17 +1170,16 @@ Cloud compliance reporting is the process of generating reports on the complianc
  87. [Describe the features of AWS Control Tower.](#describe-the-features-of-aws-control-tower)
  88. [What is the AWS Partner Network (APN), and how does it support customers?](#what-is-the-aws-partner-network-apn-and-how-does-it-support-customers)
  89. [How do you configure Amazon CloudFront with SSL?](#how-do-you-configure-amazon-cloudfront-with-ssl)
- 90. [What is AWS OpsWorks, and how does it automate infrastructure management?](#what-is-aws-opsworks-and-how-does-it-automate-infrastructure-management)
- 91. [Explain the AWS Elastic Transcoder service.](#explain-the-aws-elastic-transcoder-service)
- 92. [What is AWS Transit Gateway Network Manager?](#what-is-aws-transit-gateway-network-manager)
- 93. [How does AWS PrivateLink work with service endpoints?](#how-does-aws-privatelink-work-with-service-endpoints)
- 94. [Describe AWS DMS (Database Migration Service) and its use cases.](#describe-aws-dms-database-migration-service-and-its-use-cases)
- 95. [What is AWS Chime, and how does it facilitate video conferencing?](#what-is-aws-chime-and-how-does-it-facilitate-video-conferencing)
- 96. [How do you use AWS Organizations to consolidate billing?](#how-do-you-use-aws-organizations-to-consolidate-billing)
- 97. [What is Amazon Polly, and how does it convert text to speech?](#what-is-amazon-polly-and-how-does-it-convert-text-to-speech)
- 98. [Explain the concept of AWS EventBridge.](#explain-the-concept-of-aws-eventbridge)
- 99. [How do you use AWS Data Pipeline for data integration?](#how-do-you-use-aws-data-pipeline-for-data-integration)
- 100. [Describe the features of AWS CodeGuru.](#describe-the-features-of-aws-codeguru)
+ 90. [Explain the AWS Elastic Transcoder service.](#explain-the-aws-elastic-transcoder-service)
+ 91. [What is AWS Transit Gateway Network Manager?](#what-is-aws-transit-gateway-network-manager)
+ 92. [How does AWS PrivateLink work with service endpoints?](#how-does-aws-privatelink-work-with-service-endpoints)
+ 93. [Describe AWS DMS (Database Migration Service) and its use cases.](#describe-aws-dms-database-migration-service-and-its-use-cases)
+ 94. [What is AWS Chime, and how does it facilitate video conferencing?](#what-is-aws-chime-and-how-does-it-facilitate-video-conferencing)
+ 95. [How do you use AWS Organizations to consolidate billing?](#how-do-you-use-aws-organizations-to-consolidate-billing)
+ 96. [What is Amazon Polly, and how does it convert text to speech?](#what-is-amazon-polly-and-how-does-it-convert-text-to-speech)
+ 97. [Explain the concept of AWS EventBridge.](#explain-the-concept-of-aws-eventbridge)
+ 98. [How do you use AWS Data Pipeline for data integration?](#how-do-you-use-aws-data-pipeline-for-data-integration)
+ 99. [Describe the features of AWS CodeGuru.](#describe-the-features-of-aws-codeguru)
 
 ### What is AWS and how does it work?
 
@@ -1214,8 +1213,6 @@ The AWS Well-Architected Framework is a set of best practices and design princip
 
 AWS IAM is a service that allows customers to manage access to AWS resources. IAM allows customers to create users and groups, and to assign them permissions to AWS services and resources. IAM also allows customers to control access to AWS resources using policies.
 
-IAM is a critical part of any AWS deployment. It helps customers to protect their resources and to ensure that only authorized users have access to them.
-
 ### What is the difference between Amazon RDS and Amazon DynamoDB?
 
 **Amazon RDS** (Relational Database Service) is a managed database service that makes it easy to set up, operate, and scale a relational database in the cloud. Amazon RDS supports a variety of database engines, including MySQL, PostgreSQL, Oracle, and SQL Server.
@@ -1228,7 +1225,7 @@ IAM is a critical part of any AWS deployment. It helps customers to protect thei
 |---|---|---|
 | Database model | Relational | NoSQL |
 | Schema | Required | Optional |
-| Consistency | Strong | Eventual by default; strongly consistent reads are optional |
+| Consistency | Strong on the primary instance; read replicas are asynchronous | Eventual by default; strongly consistent reads are optional |
 | Querying | SQL | Key-value, document, and secondary indexes |
 | Use cases | Web applications, enterprise applications, and OLTP workloads | Mobile applications, gaming applications, and IoT applications |
 
@@ -1236,7 +1233,7 @@ IAM is a critical part of any AWS deployment. It helps customers to protect thei
 
 Amazon VPC (Virtual Private Cloud) is a service that allows customers to create a logically isolated section of the AWS Cloud where they can launch AWS resources in a private network. A VPC can be used to create a secure and isolated environment for running applications, storing data, and deploying development environments.
 
-A subnet is a range of IP addresses within a VPC. Subnets are used to group AWS resources together and to control how they interact with each other. For example, you could create a subnet for your web servers and another subnet for your database servers.
+A subnet is a range of IP addresses within a VPC. Each subnet is located in exactly one Availability Zone. Subnets are used to group AWS resources together and to control how they interact with each other. For example, you could create a subnet for your web servers and another subnet for your database servers.
 
 ### What is the significance of an AWS Availability Zone?
 
@@ -1246,55 +1243,51 @@ When you launch an AWS resource, such as an EC2 instance, you can choose to laun
 
 ### What is an S3 bucket?
 
-An Amazon S3 bucket is a storage unit that holds objects in the AWS cloud. S3 buckets are designed to be highly scalable and durable, and they can be used to store a variety of data types, including web files, images, videos, and backups.
+An Amazon S3 bucket is a container for objects (files and their metadata) in a specific AWS Region. Bucket names are globally unique. Buckets commonly hold web assets, images, videos, and backups.
 
-S3 buckets are a popular choice for storing data because they are easy to use and offer a variety of features, such as versioning, encryption, and life cycle management.
+Buckets support versioning, default encryption, and lifecycle rules.
 
 ### What is Amazon CloudWatch, and how is it used?
 
 Amazon CloudWatch is a monitoring and observability service that provides data and insights to help customers monitor their AWS resources and applications. CloudWatch collects metrics, logs, and events from AWS resources and applications, and then stores this data in a secure and highly available data store.
 
-CloudWatch can be used to monitor a variety of things, such as CPU utilization, memory usage, network traffic, and application errors. CloudWatch also provides features such as alarms, dashboards, and analytics to help customers to visualize and understand their monitoring data.
+CloudWatch can be used to monitor a variety of things, such as CPU utilization, network traffic, disk I/O, and application errors. Memory and disk-space metrics are not published for EC2 instances by default and require the CloudWatch agent. CloudWatch also provides alarms, dashboards, and Logs Insights queries for analyzing log data.
 
 ### Define the term "Elastic Load Balancing" in AWS.
 
-Elastic Load Balancing (ELB) is a service that distributes traffic across multiple AWS resources, such as EC2 instances, Auto Scaling groups, and containers. ELB helps to improve the performance, availability, and scalability of web applications.
+Elastic Load Balancing (ELB) distributes incoming traffic across registered targets, such as EC2 instances, IP addresses, Lambda functions, and containers. It sends requests only to healthy targets, which improves availability.
 
-ELB can be used to distribute traffic across multiple AZs in a region; for routing across multiple regions, services such as AWS Global Accelerator or Route 53 are used. ELB also provides features such as health checks, sticky sessions, and automatic scaling to help customers to manage their traffic load.
+A load balancer distributes traffic across the Availability Zones it is enabled in, within one Region. For routing across Regions, use Route 53 or AWS Global Accelerator. ELB provides health checks and sticky sessions (on ALB and CLB). Automatic scaling is done by EC2 Auto Scaling, not by ELB.
 
-### What is Amazon Elastic Beanstalk, and how does it work?
+### What is AWS Elastic Beanstalk, and how does it work?
 
 AWS Elastic Beanstalk is a platform that makes it easy to deploy and manage web applications on AWS. Elastic Beanstalk takes care of all the infrastructure details, such as provisioning and managing servers, load balancing, and auto scaling. This allows developers to focus on writing and deploying their applications.
 
 To use Elastic Beanstalk, developers create an application and then choose a platform (such as Java, PHP, or Ruby). Elastic Beanstalk will then create the necessary infrastructure and deploy the application.
 
-Elastic Beanstalk can be used to deploy applications of all sizes, from small personal websites to large enterprise applications. It is also a good choice for applications that need to be scalable and highly available.
-
 ### Describe the use cases for Amazon SNS and Amazon SQS.
 
-Amazon SNS (Simple Notification Service) is a messaging service that allows customers to decouple microservices, distributed systems, and serverless applications. SNS publishes messages to multiple subscribers, such as AWS Lambda functions, HTTP/S endpoints, and mobile devices.
+Amazon SNS (Simple Notification Service) is a pub/sub messaging service. Publishers send messages to a topic, and SNS delivers them to subscribers such as SQS queues, Lambda functions, HTTP/S endpoints, email, and SMS.
 
-Amazon SQS (Simple Queue Service) is a fully managed message queuing service that enables you to decouple and scale microservices, distributed systems, and serverless applications. SQS enables you to decouple microservices, distributed systems, and serverless applications by asynchronously exchanging messages between components.
+Amazon SQS (Simple Queue Service) is a fully managed message queue. Producers send messages to a queue, and consumers poll and process them asynchronously. Standard queues offer at-least-once delivery with best-effort ordering. FIFO queues provide exactly-once processing and ordering within a message group.
 
 #### Use cases for Amazon SNS:
 
 * Sending notifications to users, such as email, SMS, or push notifications.
 * Decoupling microservices by sending messages between them.
 * Triggering AWS Lambda functions.
-* Integrating with other AWS services, such as Amazon Kinesis and Amazon DynamoDB.
 
 #### Use cases for Amazon SQS:
 
 * Decoupling microservices by asynchronously exchanging messages between them.
 * Buffering messages between applications.
-* Load balancing traffic between multiple applications.
-* Retrying failed messages.
+* Holding messages that fail processing in a dead-letter queue (DLQ) after a set number of receives.
 
 ### How does AWS Lambda handle concurrent executions?
 
-AWS Lambda can handle concurrent executions by scaling the number of containers that are running the function. Lambda will automatically scale up the number of containers as needed to handle the increased load.
+Lambda runs each in-flight request in its own execution environment, so concurrency is the number of requests being processed at once. The default account quota is 1,000 concurrent executions per Region, and it can be raised. New accounts can start with lower quotas.
 
-Each request is handled in its own execution environment, and Lambda scales the number of concurrent executions as needed, up to the account-level concurrency limit. You can also configure reserved concurrency or provisioned concurrency for functions that need predictable capacity.
+Reserved concurrency caps a function's concurrency and reserves capacity for it. Provisioned concurrency keeps initialized environments ready to avoid cold starts. Requests above the limit are throttled for synchronous invocations and retried for asynchronous ones.
 
 ### What are AWS CloudFormation templates, and how do they work?
 
@@ -1306,29 +1299,28 @@ CloudFormation templates are a good way to automate the deployment of AWS resour
 
 ### Explain the differences between Amazon S3, EBS, and EFS.
 
-**Amazon S3 (Simple Storage Service)** is a highly scalable, object storage service that offers industry-leading scalability, data availability, security, and performance. Amazon S3 is designed to store and retrieve any amount of data, at any time, from anywhere on the web.
+**Amazon S3 (Simple Storage Service)** is object storage. You store objects (files and their metadata) in buckets and access them over HTTP(S) through the S3 API.
 
-**Amazon EBS (Elastic Block Store)** is a highly available and durable block storage service designed for use with Amazon EC2 instances. EBS volumes provide persistent storage for EC2 instances, and can be used to store a variety of data types, including boot files, databases, and application files.
+**Amazon EBS (Elastic Block Store)** is block storage for EC2 instances. A volume exists in a single Availability Zone and attaches to an instance in that AZ. It can outlive the instance, depending on its DeleteOnTermination setting. Typical uses are boot volumes and databases.
 
-**Amazon EFS (Elastic File System)** is a fully managed, scalable, and performant network file system for use with Amazon Elastic Compute Cloud (Amazon EC2) instances. Amazon EFS provides a simple, scalable, and cost-effective way to share files across multiple EC2 instances.
+**Amazon EFS (Elastic File System)** is a managed NFS file system. Many EC2 instances, including instances in different AZs, can mount the same file system at once.
 
 #### Differences between Amazon S3, EBS, and EFS:
 
 | Feature | Amazon S3 | Amazon EBS | Amazon EFS |
 |---|---|---|---|
-| Storage type | Object storage | Block storage | Network file system |
-| Use cases | Storing static and dynamic web content, archiving data, disaster recovery | Storing boot files, databases, and application files | Sharing files across multiple EC2 instances |
-| Durability | Durable | Durable | Durable |
-| Scalability | Highly scalable | Highly scalable | Highly scalable |
-| Performance | Good performance for most use cases | Good performance for most use cases | Good performance for most use cases |
+| Storage type | Object storage | Block storage | Network file system (NFS) |
+| Access | HTTP(S) API | One EC2 instance at a time (Multi-Attach is limited to some io1 and io2 volumes) | Many EC2 instances, mounted over NFS |
+| Availability scope | Regional, data stored redundantly across AZs | Single AZ | Regional (One Zone option available) |
+| Use cases | Static and dynamic web content, archives, backups, disaster recovery | Boot volumes, databases, application files | Files shared across multiple EC2 instances |
 
 ### How do you secure your AWS resources using Security Groups and NACLs?
 
 Security groups and NACLs are two complementary security features that can be used to protect your AWS resources.
 
-**Security groups** are firewall rules that control inbound and outbound traffic to your EC2 instances. Security groups can be applied to EC2 instances at launch or at any time.
+**Security groups** are stateful firewalls attached to resources such as EC2 instances, RDS databases, and load balancers. They contain allow rules only, and return traffic is allowed automatically. You can change the groups attached to a resource at any time.
 
-**NACLs (Network Access Control Lists)** are firewall rules that control inbound and outbound traffic at the subnet level. NACLs are applied to all resources in a subnet, regardless of whether they are EC2 instances, RDS databases, or other types of resources.
+**NACLs (Network Access Control Lists)** are stateless firewalls attached to subnets. They have numbered allow and deny rules evaluated in order, and return traffic must be allowed explicitly.
 
 To secure your AWS resources using security groups and NACLs, you can follow these best practices:
 
@@ -1339,21 +1331,21 @@ To secure your AWS resources using security groups and NACLs, you can follow the
 
 ### What is Amazon Aurora, and how does it differ from other databases?
 
-Amazon Aurora is a fully managed relational database that combines the performance and availability of high-end commercial databases with the simplicity and cost-effectiveness of open source databases. Aurora is up to five times faster than standard MySQL and up to three times faster than standard PostgreSQL databases, and it provides up to 99.99% availability.
+Amazon Aurora is a fully managed relational database that combines the performance and availability of high-end commercial databases with the simplicity and cost-effectiveness of open source databases. AWS states that Aurora can be up to five times faster than standard MySQL and up to three times faster than standard PostgreSQL. Multi-AZ clusters carry a 99.99% monthly uptime SLA.
 
-Aurora is different from other databases because it uses a distributed storage and compute architecture. This architecture allows Aurora to scale to very large databases, and it also provides high availability and durability.
+Aurora separates compute from a distributed storage layer that keeps six copies of the data across three AZs. This storage design is the main difference from standard RDS engines.
 
 ### Describe the AWS Global Accelerator service.
 
-AWS Global Accelerator is a service that improves the performance of your global applications. Global Accelerator works by routing traffic to the closest regional endpoint, which can improve latency and reduce packet loss.
+AWS Global Accelerator gives your application static anycast IP addresses. Client traffic enters the AWS global network at the edge location nearest the user and travels over the AWS backbone to the nearest healthy regional endpoint, such as an ALB, NLB, EC2 instance, or Elastic IP address.
 
-Global Accelerator can be used to improve the performance of a variety of applications, such as web applications, gaming applications, and video streaming applications.
+It suits applications that need static IP addresses, fast regional failover, or TCP and UDP traffic, such as gaming and real-time services.
 
 ### What is the AWS Trusted Advisor?
 
 AWS Trusted Advisor is a service that helps you to improve the security, performance, and cost-effectiveness of your AWS resources. Trusted Advisor analyzes your AWS resources and provides recommendations for improvement.
 
-Trusted Advisor can be used to identify security vulnerabilities, performance bottlenecks, and cost savings opportunities.
+Checks cover cost optimization, performance, security, fault tolerance, and service limits. Basic and Developer support plans get only the core checks. Business and Enterprise plans get the full set.
 
 ### How does AWS handle data encryption at rest and in transit?
 
@@ -1363,19 +1355,17 @@ AWS offers a variety of data encryption features to help you to protect your dat
 
 **Data encryption in transit** means that your data is encrypted when it is transmitted over the network. AWS uses a variety of protocols, such as HTTPS and TLS, to encrypt your data in transit.
 
-You can also use your own encryption keys to encrypt your data at rest and in transit. This is known as using customer managed keys (CMKs) in AWS KMS. CMKs give you control over key policies, aliases, and usage, subject to IAM permissions and KMS safeguards.
+You can also use customer managed keys (CMKs) in AWS KMS to encrypt data at rest. CMKs let you control key policies, aliases, and rotation, subject to IAM permissions and KMS safeguards. Encryption in transit comes from TLS, not from KMS keys.
 
 ### Explain the significance of Amazon Route 53.
 
 Amazon Route 53 is a highly available and scalable DNS service that can be used to route traffic to your applications and websites. Route 53 supports a variety of DNS features, such as traffic management, health checks, and failover.
 
-Route 53 is a significant service because it can help you to improve the performance, availability, and security of your applications and websites.
-
 ### What is Amazon ElastiCache, and how does it improve application performance?
 
 Amazon ElastiCache is a managed in-memory data store service that improves the performance of web applications by caching frequently accessed data in memory. ElastiCache supports popular in-memory data stores: Memcached, Redis OSS, and Valkey.
 
-ElastiCache can improve application performance by reducing the number of database queries that are required. ElastiCache can also improve application performance by reducing the latency of database queries.
+Serving repeated reads from the cache reduces database load and read latency. The common pattern is cache-aside: the application checks the cache first and loads from the database on a miss.
 
 ### How do you scale an application on AWS?
 
@@ -1383,9 +1373,7 @@ There are a number of ways to scale an application on AWS. Some common scaling m
 
 * **Horizontal scaling:** This involves adding more instances of your application to handle increased traffic.
 * **Vertical scaling:** This involves adding more resources to your existing instances, such as CPU, memory, and storage.
-* **Autoscaling:** This involves using AWS services to automatically scale your application based on demand.
-
-The best way to scale your application will depend on your specific needs.
+* **Auto Scaling:** An Auto Scaling group adds or removes EC2 instances based on scaling policies or schedules.
 
 ### What is the AWS Serverless Application Model (SAM)?
 
@@ -1399,24 +1387,21 @@ AWS Elastic Container Service (ECS) is a managed container orchestration service
 
 Kubernetes is an open-source container orchestration platform that automates many of the manual processes involved in managing containers. Kubernetes provides a number of features that make it easy to deploy, manage, and scale containerized applications.
 
+Amazon EKS is AWS's managed Kubernetes service. ECS uses AWS-native task definitions and services. Choose ECS for an AWS-only workflow, and EKS when you need Kubernetes APIs or tooling.
+
 ### Describe the features of Amazon Redshift.
 
-Amazon Redshift is a fully managed, petabyte-scale data warehouse service in the cloud. Redshift makes it easy to analyze all your data using standard SQL and your existing BI tools. Redshift is up to 10x faster than traditional data warehouses and costs up to 90% less.
+Amazon Redshift is a managed, petabyte-scale data warehouse. It stores data in columns and runs queries in parallel across nodes. You query it with standard SQL and existing BI tools.
 
-Some of the features of Amazon Redshift include:
-
-* **Scalability:** Redshift can scale to petabytes of data and thousands of concurrent users.
-* **Performance:** Redshift is up to 10x faster than traditional data warehouses.
-* **Cost:** Redshift costs up to 90% less than traditional data warehouses.
-* **Ease of use:** Redshift is easy to use and manage. You can use standard SQL and your existing BI tools to analyze your data.
+Redshift is available as provisioned clusters (RA3 node types) and as Redshift Serverless.
 
 ### How does AWS Step Functions work, and what are its use cases?
 
 AWS Step Functions is a serverless workflow orchestration service that makes it easy to build and run state machines and workflows. Step Functions helps you to coordinate the execution of multiple steps across multiple AWS services.
 
-Step Functions works by defining a state machine, a workflow written in Amazon States Language (JSON or YAML). The state machine defines the steps in the workflow, the order in which the steps are executed, and the transitions between steps; Workflow Studio provides a visual editor for it.
+Step Functions works by defining a state machine in Amazon States Language (ASL), a JSON-based language. The state machine defines the steps, their order, and the transitions between them. Workflow Studio provides a visual editor.
 
-Step Functions then executes the state machine and manages the flow of data between steps. Step Functions also handles errors and retries, so you don't have to worry about managing these yourself.
+Step Functions runs the state machine and passes data between steps. Retry and Catch rules in each state handle errors and retries.
 
 Step Functions can be used to build a variety of workflows, such as:
 
@@ -1428,23 +1413,21 @@ Step Functions can be used to build a variety of workflows, such as:
 
 ### What is AWS Lambda Layers?
 
-AWS Lambda Layers are a way to package and share reusable code and resources with Lambda functions. Layers can be used to share common libraries, utilities, and data.
+AWS Lambda layers package libraries and other dependencies separately from function code, so they can be shared across functions.
 
-Layers can make it easier to develop and maintain Lambda functions. They can also help to improve the performance of Lambda functions by reducing the amount of code that needs to be downloaded and executed each time a function is invoked.
+A function can use up to five layers. The unzipped size of the function code plus all of its layers must stay within the 250 MB unzipped deployment package quota.
 
 ### How do you migrate an on-premises database to AWS?
 
 There are a number of ways to migrate an on-premises database to AWS. Some common migration methods include:
 
-* **Database dump and restore:** This involves dumping your on-premises database to a file and then restoring the file to an AWS database.
-* **Database replication:** This involves replicating your on-premises database to an AWS database in real time.
-* **Database tools:** There are a number of database tools that can help you to migrate your on-premises database to AWS.
-
-The best way to migrate your database to AWS will depend on your specific needs.
+* **Dump and restore:** Export with a native tool (for example, `pg_dump` or `mysqldump`) and import into RDS or Aurora. This suits small databases that can tolerate downtime.
+* **AWS Database Migration Service (DMS):** Full load plus ongoing change data capture (CDC), which keeps the target in sync until cutover.
+* **AWS Schema Conversion Tool (SCT):** Converts schema and code for heterogeneous migrations, such as Oracle to PostgreSQL. Use it alongside DMS.
 
 ### Explain the use of AWS Direct Connect.
 
-AWS Direct Connect is a dedicated network connection between your on-premises data center and AWS. Direct Connect provides a secure, reliable, and high-performance connection to AWS.
+AWS Direct Connect is a private network connection between your on-premises data center and AWS, using a dedicated or hosted connection. Direct Connect does not encrypt traffic by default. For encryption, use MACsec on dedicated connections, or an IPsec Site-to-Site VPN over a public or transit virtual interface, which also works on hosted connections.
 
 Direct Connect can be used for a variety of purposes, such as:
 
@@ -1454,13 +1437,15 @@ Direct Connect can be used for a variety of purposes, such as:
 
 ### What is AWS Elastic File System (EFS)?
 
-AWS Elastic File System (EFS) is a fully managed, scalable, and performant network file system for use with Amazon Elastic Compute Cloud (Amazon EC2) instances. Amazon EFS provides a simple, scalable, and cost-effective way to share files across multiple EC2 instances.
+EFS grows and shrinks automatically as files are added and removed. Mount targets in each AZ let instances in different AZs mount the same file system over NFS.
 
-EFS can be used to store a variety of data types, including application files, user data, and log files.
+Storage classes include Standard, Infrequent Access (IA), and Archive, with lifecycle management to move files between them. One Zone variants store data in a single AZ.
 
 ### Describe the benefits of using AWS CloudTrail.
 
 AWS CloudTrail is a service that records AWS API calls and related events. CloudTrail can be used to audit your AWS account activity and to track changes to your AWS resources.
+
+Event history keeps 90 days of management events per Region with no setup. For longer retention, create a trail that delivers log files to an S3 bucket.
 
 Some of the benefits of using AWS CloudTrail include:
 
@@ -1468,19 +1453,22 @@ Some of the benefits of using AWS CloudTrail include:
 * **Security:** CloudTrail can help you to identify and investigate security threats.
 * **Troubleshooting:** CloudTrail can help you to troubleshoot problems with your AWS applications and resources.
 
-### What is AWS Elastic Load Balancing (ELB)?
+### What are the types of Elastic Load Balancing?
 
-AWS Elastic Load Balancing (ELB) is a service that distributes traffic across multiple AWS resources, such as EC2 instances, Auto Scaling groups, and containers. ELB helps to improve the performance, availability, and scalability of web applications.
+Elastic Load Balancing has four load balancer types:
 
-ELB can be used to distribute traffic across multiple AZs in a region; for routing across multiple regions, services such as AWS Global Accelerator or Route 53 are used. ELB also provides features such as health checks, sticky sessions, and automatic scaling to help customers to manage their traffic load.
+* **Application Load Balancer (ALB):** Layer 7. Routes HTTP and HTTPS requests by path, host, or header.
+* **Network Load Balancer (NLB):** Layer 4. Routes TCP, UDP, and TLS traffic and provides a static IP address per Availability Zone.
+* **Gateway Load Balancer (GWLB):** Layer 3. Inserts third-party appliances, such as firewalls, into the traffic path.
+* **Classic Load Balancer (CLB):** Legacy. Use ALB or NLB for new workloads.
 
 ### How do you optimize costs in AWS?
 
 There are a number of ways to optimize costs in AWS. Some common cost optimization techniques include:
 
 * **Choose the right instance type:** AWS offers a variety of instance types, each with a different price-performance ratio. Choose the instance type that is best suited for your workload.
-* **Use reserved instances:** Reserved instances offer a significant discount on EC2 instances. If you know that you will need to use an EC2 instance for a long period of time, consider using a reserved instance.
-* **Spot instances:** Spot instances are unused EC2 instances that are available at a discounted price. Spot instances are ideal for workloads that can be interrupted, such as batch processing jobs.
+* **Commit to usage:** Savings Plans and Reserved Instances (1- or 3-year terms) give lower prices in exchange for a commitment to steady usage.
+* **Spot instances:** Spare EC2 capacity at a discount. AWS can interrupt a Spot instance with a two-minute notice, so use Spot for fault-tolerant work such as batch processing.
 * **Use managed services:** AWS offers a variety of managed services that can help you to optimize your costs. For example, Amazon RDS is a managed database service that can help you to reduce the cost of managing your own database servers.
 * **Monitor your costs:** Use AWS Cost Explorer to track your AWS costs. Cost Explorer can help you to identify areas where you can optimize your costs.
 
@@ -1488,7 +1476,7 @@ There are a number of ways to optimize costs in AWS. Some common cost optimizati
 
 AWS Organizations is a service that helps you to centrally manage your AWS accounts. Organizations allows you to create accounts for different departments or projects, and to manage permissions for those accounts.
 
-Organizations can be used to improve the security, compliance, and performance of your AWS environment.
+Service control policies (SCPs) set the maximum permissions for accounts in an organization, and consolidated billing combines charges for all member accounts.
 
 ### Explain the benefits of using AWS Fargate.
 
@@ -1504,13 +1492,11 @@ Some of the benefits of using AWS Fargate include:
 
 CloudWatch Alarms is a service that allows you to monitor your AWS resources and send notifications when certain conditions are met. For example, you could create a CloudWatch Alarm to notify you when your CPU utilization exceeds a certain threshold.
 
-CloudWatch Alarms can be used to monitor a variety of metrics, such as CPU utilization, memory utilization, network traffic, and database performance.
+Alarms can watch any metric, such as CPU utilization, network traffic, or RDS database connections. An alarm moves between OK, ALARM, and INSUFFICIENT_DATA states and can notify an SNS topic. Memory is a custom metric that comes from the CloudWatch agent.
 
 ### AWS Snowball service and when is it used?
 
-AWS Snowball is a service that allows you to transfer large amounts of data to and from AWS. Snowball devices are portable storage devices that are shipped to your location. Once you have loaded the data onto the Snowball device, you ship it back to AWS.
-
-Snowball is ideal for transferring large amounts of data to and from AWS, such as data migration, data archiving, and disaster recovery.
+AWS Snowball was a service for moving large datasets to AWS offline, using shipped devices. AWS no longer accepts new Snow Family orders, and support for Snowball Edge is ending. For new bulk transfers, use AWS DataSync over the network. Check the [Snowball Edge availability change notice](https://docs.aws.amazon.com/snowball/latest/developer-guide/snowball-edge-availability-change.html) before planning any Snowball job.
 
 ### Describe AWS CodePipeline and its components.
 
@@ -1519,63 +1505,63 @@ AWS CodePipeline is a continuous delivery service that helps you to automate the
 CodePipeline consists of the following components:
 
 * **Pipeline:** A pipeline is a sequence of stages that define the build, test, and deploy process for your application.
-* **Stage:** A stage is a step in the pipeline that performs a specific task, such as building your code, running tests, or deploying your application to a production environment.
-* **Action:** An action is the specific task that is performed in a stage. For example, there are actions for building code, running tests, and deploying applications to AWS services such as EC2 and S3.
+* **Stage:** A logical group of actions, such as Source, Build, Test, or Deploy. A stage runs its actions before the pipeline moves on to the next stage.
+* **Action:** A task inside a stage, such as a CodeBuild build or a CodeDeploy deployment. Action categories are Source, Build, Test, Deploy, Approval, and Invoke.
 
 ### What is AWS DataSync, and how does it work?
 
-AWS DataSync is a service that helps you to automate the transfer of data between on-premises storage systems and AWS storage services. DataSync supports a variety of on-premises storage systems, including NAS, SAN, and cloud storage. DataSync also supports a variety of AWS storage services, including S3, EFS, and FSx.
+AWS DataSync is a service that helps you to automate the transfer of data between on-premises storage systems and AWS storage services. DataSync copies to and from on-premises NFS and SMB file shares, HDFS, and self-managed object storage through a DataSync agent. DataSync also supports a variety of AWS storage services, including S3, EFS, and FSx.
 
 DataSync works by creating a task that defines the source location, the destination location, and the configuration and schedule for the transfer. Each task execution copies the data you specify; recurring executions can be scheduled, but DataSync does not continuously monitor the source for changes.
 
 ### Explain the concept of AWS Auto Scaling.
 
-AWS Auto Scaling is a service that automatically scales your applications based on demand. Auto Scaling can scale your applications up or down to ensure that they are always available and performant.
+AWS Auto Scaling is a service that automatically scales your applications based on demand. Auto Scaling adds or removes capacity as demand changes.
 
 Auto Scaling works by monitoring your applications and scaling them based on predefined metrics. For example, you could configure Auto Scaling to scale your application up when CPU utilization exceeds a certain threshold.
 
 ### How do you set up AWS Cross-Region Replication for S3?
 
-AWS Cross-Region Replication (CRR) for S3 is a service that automatically replicates your S3 buckets across multiple regions. CRR helps you to protect your data from regional outages and disasters.
+S3 Cross-Region Replication (CRR) is a bucket-level feature that asynchronously copies new objects to a bucket in another Region. It helps protect data against a regional outage.
 
-CRR works by creating a replication configuration. A replication configuration defines the source and destination buckets, and the schedule for the replication. CRR then copies the objects from the source bucket to the destination bucket.
+Setup:
 
-### What is AWS Inspector, and how does it enhance security?
+1. Enable versioning on the source and destination buckets.
+2. Create an IAM role that S3 can assume to replicate objects.
+3. Add a replication rule to the source bucket that names the destination bucket.
+
+Optionally, enable Replication Time Control (RTC) to replicate 99.9% of objects within 15 minutes.
+
+### What is Amazon Inspector, and how does it enhance security?
 
 Amazon Inspector is a service that helps you to identify and remediate security vulnerabilities in your AWS resources. Inspector scans your resources for vulnerabilities and provides you with a report of the findings.
 
-Inspector can enhance security by helping you to identify and remediate security vulnerabilities before they can be exploited by attackers. Inspector can also help you to improve your security posture by providing you with recommendations for how to remediate vulnerabilities.
+Inspector covers EC2 instances, container images in Amazon ECR, and Lambda functions. Findings are rated by severity and include remediation guidance.
 
 ### Describe AWS App Runner and its use cases.
 
-AWS App Runner is a fully managed service that makes it easy to deploy, run, and scale web applications and APIs. App Runner handles all the infrastructure details, such as provisioning and managing servers, scaling your application, and handling security. This allows you to focus on writing and deploying your code.
+AWS App Runner is a fully managed service that makes it easy to deploy, run, and scale web applications and APIs. App Runner manages the build, deployment, and scaling of your service. It deploys from a source repository or a container image.
 
-App Runner can be used to deploy a variety of applications, including:
-
-* Web applications
-* APIs
-* Mobile backends
-* IoT applications
-* Serverless applications
+App Runner suits web applications and APIs that do not need custom infrastructure.
 
 ### How do you back up and restore AWS RDS databases?
 
 There are two ways to back up and restore AWS RDS databases:
 
-* **Automated backups:** RDS automatically creates a daily backup of your databases and retains transaction logs, enabling point-in-time recovery. You configure the preferred backup window and the retention period.
-* **Manual backups:** You can also create manual backups of your databases. Manual backups are stored in S3.
+* **Automated backups:** RDS takes a daily snapshot during the backup window and uploads transaction logs about every five minutes. Together they enable point-in-time recovery (PITR). You set the retention period from 0 to 35 days; 0 disables automated backups.
+* **Manual snapshots:** Created on demand and kept until you delete them.
 
-To restore a database, you can use a snapshot from an automated backup or a manual backup. You can restore the database to the same instance type or to a different instance type.
+Restoring (PITR or from a snapshot) creates a new DB instance with a new endpoint. You choose the instance class for it, and the application must point to the new endpoint.
 
 ### What is Amazon S3 Select?
 
 Amazon S3 Select is a feature that lets you retrieve a subset of data from an S3 object using simple SQL expressions, without downloading the entire object. This can save time and bandwidth, especially when you are processing large objects.
 
-Note that AWS closed S3 Select to new customers on July 25, 2024, and it supports a limited subset of SQL (filtering and projecting columns) on one object at a time rather than general-purpose data processing.
+Note that AWS closed S3 Select to new customers on July 25, 2024, and it supports a limited subset of SQL (filtering and projecting columns) on one object at a time rather than general-purpose data processing. Existing customers can keep using it, but AWS does not add new features. For new work, consider Amazon Athena or S3 Object Lambda.
 
 ### Explain the features of Amazon EKS (Elastic Kubernetes Service).
 
-Amazon EKS is a managed Kubernetes service that makes it easy to deploy, run, and scale Kubernetes applications on AWS. EKS handles all the infrastructure details, such as provisioning and managing Kubernetes clusters, scaling your applications, and handling security. This allows you to focus on developing and deploying your applications.
+Amazon EKS is a managed Kubernetes service that makes it easy to deploy, run, and scale Kubernetes applications on AWS. EKS manages the Kubernetes control plane for you. You still manage worker nodes unless you use managed node groups or AWS Fargate.
 
 EKS provides a number of features that make it a good choice for running Kubernetes applications, including:
 
@@ -1585,17 +1571,17 @@ EKS provides a number of features that make it a good choice for running Kuberne
 
 ### How do you deploy a serverless application using AWS SAM?
 
-AWS Serverless Application Model (SAM) is a framework for building and deploying serverless applications on AWS. SAM provides a high-level abstraction for serverless applications, which can make it easier to develop and deploy serverless applications.
+SAM is an extension of CloudFormation for serverless resources, such as functions and APIs. You deploy it with the SAM CLI.
 
 To deploy a serverless application using SAM, you first need to create a SAM template. A SAM template is a JSON or YAML file that defines your serverless application and its resources.
 
-Once you have created a SAM template, you can deploy your application using the AWS SAM CLI. The SAM CLI will create and configure all of the resources that are defined in your SAM template.
+Run `sam build` to build the functions and layers into `.aws-sam`, then run `sam deploy --guided` for the first deployment. The guided prompts ask for a stack name, Region, and whether SAM can create IAM roles. They save the answers to `samconfig.toml`, so later runs can use `sam deploy`.
 
 ### Describe AWS Key Management Service (KMS) and its role in encryption.
 
-AWS Key Management Service (KMS) is a managed service that makes it easy to create and control the cryptographic keys that are used to protect your data. KMS uses hardware security modules (HSMs) validated at FIPS 140-3 Security Level 3 under the Cryptographic Module Validation Program to protect and validate your AWS KMS keys.
+AWS Key Management Service (KMS) is a managed service that makes it easy to create and control the cryptographic keys that are used to protect your data. KMS protects its keys in hardware security modules (HSMs) that are validated to FIPS 140-3 Security Level 3.
 
-KMS plays a crucial role in encryption by providing a centralized and secure way to manage encryption keys. Each AWS service and application must be configured to use KMS keys, so encryption at rest and in transit depends on that configuration, with key access controlled through key policies and IAM.
+KMS plays a crucial role in encryption by providing a centralized and secure way to manage encryption keys. Services such as S3, EBS, and RDS encrypt data at rest with KMS keys once you enable encryption for them. Access to keys is controlled through key policies and IAM.
 
 KMS can be used to encrypt a variety of data types, including:
 
