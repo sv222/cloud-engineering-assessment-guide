@@ -2403,7 +2403,7 @@ Microsoft Entra ID (formerly Azure Active Directory, renamed in 2023) is Microso
 16. What is Azure Logic Apps, and how are workflows created?
 17. Explain the concept of Microsoft Defender for Cloud (formerly Azure Security Center) and its role in security management.
 18. How do you implement high availability in Azure?
-19. What is Azure CDN (Content Delivery Network), and how does it compare with Azure Front Door? Azure CDN from Microsoft (classic) retires September 30, 2027.
+19. What is Azure CDN (Content Delivery Network), and how does it compare with Azure Front Door? Azure CDN Standard from Microsoft (classic) retires September 30, 2027.
 20. Describe the benefits of Azure Functions for event-driven applications.
 21. How does Azure Monitor (including its Log Analytics feature) work for cloud monitoring?
 22. What is Azure ExpressRoute, and how does it enable private network connections?
@@ -2519,7 +2519,7 @@ Microsoft Entra ID (formerly Azure Active Directory, renamed in 2023) is Microso
 35. What is Google Cloud Armor, and how does it protect web applications?
 36. Explain the concept of Google Cloud Healthcare API for healthcare data management.
 37. How do you use Google Cloud Endpoints for creating, deploying, and managing APIs?
-38. Google Cloud IoT Core was retired in August 2023 - what are the options for IoT device management on GCP today?
+38. Google Cloud IoT Core has been retired - what are the options for IoT device management on GCP today?
 39. Describe the benefits of Google Cloud Firestore for NoSQL document databases.
 40. How do you achieve data encryption in Google Cloud services?
 41. What is Google Cloud Service Catalog (formerly Private Catalog), and how does it help manage and distribute software catalogs?
@@ -2532,7 +2532,7 @@ Microsoft Entra ID (formerly Azure Active Directory, renamed in 2023) is Microso
 48. What is Google Cloud Dataflow, and how does it enable real-time and batch data processing?
 49. Explain the concept of Web Security Scanner in Security Command Center for web application security.
 50. How do you secure Google Cloud Endpoints for API protection?
-51. Google Cloud IoT Edge was retired alongside IoT Core in August 2023 - how would you extend cloud capabilities to edge devices on GCP today?
+51. Google Cloud IoT Edge was retired alongside IoT Core - how would you extend cloud capabilities to edge devices on GCP today?
 52. Describe the use of Gemini Enterprise Agent Platform (formerly Vertex AI, earlier AI Platform) for machine learning model development.
 53. What is Google Cloud Tasks, and how does it facilitate the handling of asynchronous tasks?
 54. How do you achieve data replication and synchronization in GCP?
