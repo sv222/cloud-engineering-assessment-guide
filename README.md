@@ -607,7 +607,7 @@ Cloud IAM typically includes the following components:
 
 ### Continuous integration and continuous deployment (CI/CD) in the cloud
 
-Continuous integration and continuous delivery (CI/CD) is a software development practice that automates the building, testing, and deployment of software. CI/CD can help to improve the quality and reliability of software, and it can also help to shorten the time it takes to release new software features.
+Continuous integration and continuous delivery or deployment (CI/CD) is a software development practice that automates the building, testing, and deployment of software. CI/CD can help to improve the quality and reliability of software, and it can also help to shorten the time it takes to release new software features.
 
 CI/CD is well-suited for cloud computing because cloud platforms offer a variety of services that can be used to automate the CI/CD process. For example, cloud providers offer services for building, testing, and deploying code, as well as services for managing infrastructure and monitoring applications.
 
@@ -626,10 +626,10 @@ There are a number of ways to achieve data replication in the cloud, including:
 A cloud DNS service is a DNS service that is hosted in the cloud. Cloud DNS services offer a number of advantages over traditional on-premises DNS services, such as:
 
 * **Scalability:** Cloud DNS services are highly scalable, so you can easily scale them up or down to meet your changing needs.
-* **Reliability:** Cloud DNS services are highly reliable, and cloud providers offer a variety of services to ensure the reliability of their DNS services.
-* **Security:** Cloud DNS services are secure, and cloud providers offer a variety of security services to protect your DNS data.
+* **Reliability:** Managed DNS services run on globally distributed name servers, which reduces the impact of individual server failures.
+* **Security:** Some managed DNS services support DNSSEC, which lets resolvers verify that DNS responses are authentic.
 
-Cloud DNS services work by resolving DNS queries for your domain names and returning the IP addresses of your servers. Cloud DNS services typically use a global network of servers to resolve DNS queries quickly and reliably.
+A cloud DNS service hosts the records for your domains (such as A, AAAA, and CNAME records) and answers queries for them from a globally distributed network of name servers. Examples include Amazon Route 53, Google Cloud DNS, and Azure DNS.
 
 ### Benefits of cloud serverless compute platforms
 
@@ -693,8 +693,8 @@ A resilient cloud architecture is an architecture that can withstand and recover
 Cloud cost optimization is the process of reducing your cloud costs without sacrificing performance or reliability. Here are some tips for achieving cloud cost optimization:
 
 * **Right-size your resources:** Choose the right cloud resources for your needs and avoid overprovisioning.
-* **Use reserved instances:** Reserved instances can offer significant discounts on cloud resources.
-* **Use spot instances:** Spot instances can offer even greater discounts on cloud resources, but they are also less reliable.
+* **Use reserved instances:** Reserved instances and savings plans can offer significant discounts for steady, predictable workloads.
+* **Use spot instances:** Spot instances can offer even greater discounts on cloud resources, but the provider can reclaim them at short notice, so use them only for interruptible workloads.
 * **Monitor your cloud usage:** Monitor your cloud usage to identify areas where you can reduce costs.
 
 ### Use of cloud-native application development
@@ -705,7 +705,7 @@ Here are some of the benefits of cloud-native application development:
 
 * **Scalability:** Cloud-native applications are highly scalable and can be easily scaled up or down to meet your changing needs.
 * **Agility:** Cloud-native applications can be developed and deployed quickly and easily.
-* **Resilience:** Cloud-native applications are highly resilient to failures.
+* **Resilience:** Well-designed cloud-native applications tolerate failures of individual components more gracefully.
 * **Cost savings:** Cloud-native applications can help you to save money on cloud costs.
 
 Cloud-native application development can be a good choice for a variety of workloads, such as:
@@ -729,7 +729,7 @@ There are a number of different IaC tools available, such as Terraform, AWS Clou
 To manage cloud resources using IaC, you can follow these steps:
 
 1. Define your infrastructure in code using an IaC tool.
-2. Apply the code to your cloud provider.
+2. Review the planned changes (for example, with `terraform plan`), then apply the code to your cloud provider.
 3. Monitor your infrastructure for changes and apply updates as needed.
 
 ### Cloud-native container orchestration platform
@@ -780,17 +780,13 @@ Here are some tips for achieving data governance in the cloud:
 
 Cloud access control policies define who has access to cloud resources and what they can do with those resources. Cloud access control policies are important for cloud security because they can help to protect cloud resources from unauthorized access and use.
 
-Cloud access control policies typically include the following components:
-
-* **Authentication:** Authentication is the process of verifying that a user is who they say they are.
-* **Authorization:** Authorization is the process of determining what a user is allowed to do with cloud resources.
-* **Auditing:** Auditing is the process of tracking user activity in the cloud.
+In practice, access control policies are expressed as IAM policies in AWS, role assignments in Azure role-based access control (RBAC), and IAM policy bindings in Google Cloud. Authentication, authorization, and auditing are covered in the IAM section above.
 
 ### Use of cloud-based message queues
 
 Cloud-based message queues are a way to decouple applications and services. Message queues allow applications to send and receive messages asynchronously. This can improve the performance, scalability, and reliability of applications.
 
-Some popular cloud-based message queues include:
+Some popular cloud-based messaging services include:
 
 * Amazon Simple Queue Service (SQS)
 * Google Cloud Pub/Sub
@@ -858,9 +854,7 @@ Cloud disaster recovery planning is the process of developing a plan to recover 
 
 Cloud API gateways are a way to manage and secure API access. Cloud API gateways can help you to:
 
-* Improve the performance and scalability of your APIs.
-* Improve the security of your APIs.
-* Implement rate limiting and other access control features.
+* Enforce authentication, rate limiting, and other access controls for your APIs.
 * Provide a single point of entry for your APIs.
 
 Some popular cloud API gateways include:
@@ -881,10 +875,10 @@ Cloud network segmentation is the process of dividing a cloud network into small
 
 There are a number of ways to achieve cloud network segmentation, including:
 
-* **Virtual private clouds (VPCs):** VPCs are isolated networks that you can create within your cloud provider's environment.
+* **Virtual networks:** Isolated networks you create within your cloud provider's environment. They are called VPCs in AWS and Google Cloud, and virtual networks (VNets) in Azure.
 * **Subnets:** Subnets are divisions of a VPC that you can use to further isolate your network.
-* **Security groups:** Security groups are firewall rules that you can use to control traffic between subnets.
-* **Network ACLs:** Network ACLs are firewall rules that you can use to control traffic between your VPC and the internet.
+* **Security groups:** Stateful firewall rules attached to instances or network interfaces (AWS). Azure uses network security groups (NSGs) for similar filtering.
+* **Network ACLs:** Stateless allow and deny rules applied at the subnet boundary (AWS).
 
 ### Role of a cloud management console
 
@@ -943,7 +937,7 @@ To design a cloud content delivery strategy, you need to consider the following 
 
 Once you have considered these factors, you can start to design your cloud content delivery strategy. Here are some key components of a cloud content delivery strategy:
 
-* **Content delivery network (CDN):** A CDN is a network of servers that are distributed around the world. CDNs can be used to deliver content to users quickly and reliably.
+* **Content delivery network (CDN):** A CDN is a network of servers that are distributed around the world. Examples include Amazon CloudFront, Azure Front Door, and Google Cloud CDN. CDNs can be used to deliver content to users quickly and reliably.
 * **Content caching:** Content caching can be used to store content closer to users, which can improve performance.
 * **Content optimization:** Content optimization can be used to reduce the size of content, which can improve performance and reduce bandwidth costs.
 
@@ -1041,11 +1035,7 @@ Cloud network optimization is the process of optimizing your cloud network to im
 
 Cloud-based container registries are repositories for storing and distributing container images. Container registries make it easy to share container images with other developers and to deploy containerized applications to production environments.
 
-Some of the benefits of using cloud-based container registries include:
-
-* **Scalability:** Cloud-based container registries are highly scalable, so you can easily scale them up or down to meet your changing needs.
-* **Reliability:** Cloud-based container registries are highly reliable, and cloud providers offer a variety of services to ensure the reliability of their container registries.
-* **Security:** Cloud-based container registries are secure, and cloud providers offer a variety of security services to protect your container images.
+Managed registries include Amazon Elastic Container Registry (ECR), Azure Container Registry (ACR), and Google Artifact Registry. Google Container Registry (gcr.io) has been retired and replaced by Artifact Registry, so new work should use Artifact Registry.
 
 ### Cloud access management strategy
 
