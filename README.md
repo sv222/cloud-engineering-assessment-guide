@@ -2454,9 +2454,39 @@ Azure provides core services like Compute, which includes virtual machines and c
 ### 3. What is Azure Resource Manager (ARM)?
 Azure Resource Manager (ARM) is a RESTful API and a deployment and management service for Azure. It provides a way to organize resources, apply access control, and manage them through templates. ARM ensures resources are deployed consistently and makes it easy to monitor and control access across all resources in a solution. Developers can use ARM to automate resource management tasks and enable a consistent and repeatable deployment process.
 
-4. Describe the differences between Azure IaaS, PaaS, and SaaS.
-5. How does Azure Virtual Network work, and what are its components?
-6. What is Microsoft Entra ID (formerly Azure Active Directory), and how is it used?
+### 4. Describe the differences between Azure IaaS, PaaS, and SaaS.
+
+The three service models differ in how much of the stack Azure manages and how much you manage yourself:
+
+- **IaaS (Infrastructure as a Service)**: Virtualized infrastructure such as VMs, storage, and networks. You manage the OS, runtime, applications, and data. Example: Azure Virtual Machines, where you handle OS updates and configuration.
+- **PaaS (Platform as a Service)**: A managed platform to develop, run, and manage applications. You focus on your application and data, while Azure manages the OS, runtime, and infrastructure. Example: Azure App Service.
+- **SaaS (Software as a Service)**: Fully managed software delivered over the internet. You use the application and manage only your data, users, and configuration. Example: Microsoft 365.
+
+As you move from IaaS to SaaS, Azure takes on more of the management responsibility.
+
+### 5. How does Azure Virtual Network work, and what are its components?
+
+Azure Virtual Network (VNet) is a private, isolated network in Azure that lets resources communicate securely with each other, the internet, and on-premises networks. Its main components are:
+
+- **Address space and subnets**: A CIDR address range for the VNet, divided into subnets to segment resources.
+- **Network security groups (NSGs)**: Filter inbound and outbound traffic using rules applied to subnets or network interfaces.
+- **VNet peering**: Links VNets in the same or different regions.
+- **VPN Gateway and ExpressRoute**: Connect the VNet to on-premises networks through site-to-site or point-to-site VPN, or a private ExpressRoute connection.
+- **Route tables (UDRs)**: Override Azure's default routing to control how traffic flows.
+- **Service endpoints and Private Link**: Provide private access to PaaS services such as Storage and SQL Database.
+- **DNS**: Name resolution through Azure-provided DNS or custom DNS servers.
+
+### 6. What is Microsoft Entra ID (formerly Azure Active Directory), and how is it used?
+
+Microsoft Entra ID (formerly Azure Active Directory, or Azure AD, renamed in 2023) is Microsoft's cloud-based identity and access management service. It is used for:
+
+- **Authentication**: User sign-in, single sign-on (SSO), and multifactor authentication (MFA).
+- **Conditional Access**: Policies that allow or block access based on user, device, location, and risk signals.
+- **Access management**: Role- and group-based access to Azure resources and applications, managed through app registrations and enterprise applications.
+- **Device identity**: Joining and registering devices to Entra ID, with device management through Microsoft Intune.
+- **Integration**: Built into Microsoft 365, Azure, and thousands of SaaS applications.
+- **External identities**: Collaboration with partner users (B2B) and customer sign-in (B2C-style) through Microsoft Entra External ID.
+
 7. Explain Azure App Service and its use cases.
 8. How does Azure Storage work, and what are its types?
 9. Describe Azure SQL Database and its features.
