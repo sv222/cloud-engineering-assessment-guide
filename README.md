@@ -2425,7 +2425,7 @@ AWS CodeGuru provides a number of features to help you improve the quality of yo
 ### End User Computing
 
 - **Amazon WorkSpaces:** A managed, secure cloud desktop service that provides users with a persistent, desktop computing experience in the cloud.
-- **Amazon AppStream 2.0:** A fully managed, secure application streaming service that delivers a high-quality app experience to users on any device, anywhere.
+- **Amazon WorkSpaces Applications (formerly Amazon AppStream 2.0):** A fully managed, secure application streaming service that delivers a high-quality app experience to users on any device, anywhere.
 
 ### Management Tools
 
