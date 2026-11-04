@@ -1853,7 +1853,7 @@ Here are some examples of when to use Amazon Data Firehose:
 
 * To load streaming data into a data lake, such as Amazon S3.
 * To load streaming data into a data store, such as Amazon Redshift or Amazon OpenSearch Service.
-* To load streaming data into an analytics service, such as Amazon Athena or Splunk.
+* To load streaming data into a supported destination, such as Splunk, or Amazon S3 for querying with Athena.
 
 ### How do you implement high availability in AWS?
 
