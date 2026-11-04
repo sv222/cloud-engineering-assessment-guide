@@ -1496,7 +1496,7 @@ Alarms can watch any metric, such as CPU utilization, network traffic, or RDS da
 
 ### AWS Snowball service and when is it used?
 
-AWS Snowball was a service for moving large datasets to AWS offline, using shipped devices. AWS no longer accepts new Snow Family orders, and support for Snowball Edge is ending. For new bulk transfers, use AWS DataSync over the network. Check the [Snowball Edge availability change notice](https://docs.aws.amazon.com/snowball/latest/developer-guide/snowball-edge-availability-change.html) before planning any Snowball job.
+AWS Snowball was a service for moving large datasets to AWS offline, using shipped devices. AWS no longer accepts new Snow Family orders, and support for Snowball Edge is ending. For new bulk transfers, use AWS DataSync over the network. Check the Snowball Edge availability change notice in the AWS docs before planning any Snowball job.
 
 ### Describe AWS CodePipeline and its components.
 
