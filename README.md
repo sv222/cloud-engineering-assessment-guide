@@ -2102,9 +2102,9 @@ AWS CodeGuru provides a number of features to help you improve the quality of yo
 
 - **Amazon Simple Storage Service (S3):** Object storage service for storing and retrieving data.
 - **Amazon Elastic Block Store (EBS):** Block storage service for EC2 instances.
-- **Amazon Elastic File System (EFS):** A fully managed, scalable file system for use with Amazon Web Services (AWS) cloud services and on-premises resources.
+- **Amazon Elastic File System (EFS):** A fully managed, scalable file system for AWS and on-premises workloads.
 - **Amazon S3 Glacier:** Low-cost archival storage classes of Amazon S3 for long-term data archiving (S3 Glacier Flexible Retrieval and S3 Glacier Deep Archive).
-- **Amazon S3 File Gateway** enables you to store file data as objects in Amazon S3 cloud storage for data lakes, backups, and ML workflows.
+- **AWS Storage Gateway (S3 File Gateway):** Stores file data as objects in Amazon S3, for data lakes, backups, and ML workflows.
 
 ### Databases
 
@@ -2112,36 +2112,38 @@ AWS CodeGuru provides a number of features to help you improve the quality of yo
 - **Amazon Aurora:** Relational database service that is MySQL- and PostgreSQL-compatible.
 - **Amazon Neptune:** Managed graph database service.
 - **Amazon Timestream:** Fully managed, serverless time-series database (Timestream for LiveAnalytics closed to new customers in June 2025; see Timestream for InfluxDB).
-- **Amazon Redshift:** A fully managed, petabyte-scale data warehouse service in the cloud, designed to handle large analytical workloads with high performance and scalability. Redshift is built on top of massively parallel processing (MPP) technology, which allows it to distribute queries across multiple nodes to process data in parallel.
-- **Amazon DynamoDB:** A fully managed, serverless, key-value and document database service that provides single-digit millisecond performance at any scale.
-- **Amazon DynamoDB Accelerator (DAX):** A fully managed, highly available, in-memory cache for DynamoDB that delivers up to 10x performance improvement.
-- **Amazon DocumentDB:** Fully managed, scalable, highly available, and durable document database that supports MongoDB workloads.
+- **Amazon Redshift:** Fully managed, petabyte-scale data warehouse that uses massively parallel processing (MPP) to run analytical queries in parallel.
+- **Amazon DynamoDB:** Fully managed, serverless key-value and document database with single-digit millisecond latency at any scale.
+- **Amazon DynamoDB Accelerator (DAX):** Fully managed, in-memory cache for DynamoDB that delivers up to 10x performance improvement.
+- **Amazon DocumentDB:** Fully managed document database compatible with MongoDB workloads.
+- **Amazon ElastiCache:** Fully managed in-memory data store and cache (Redis OSS, Valkey, and Memcached).
 - **Amazon Keyspaces (for Apache Cassandra):** A scalable, highly available, and managed Apache Cassandra–compatible database service.
 
 ### Networking
 
 - **Amazon Virtual Private Cloud (VPC):** Networking service to create isolated virtual networks.
 - **AWS VPC peering:** A networking connection between two VPCs that enables you to route traffic between them privately.
-- **Elastic Load Balancing (ELB):** Distributes incoming network traffic across multiple EC2 instances.
+- **Elastic Load Balancing (ELB):** Distributes incoming traffic across multiple targets, such as EC2 instances and containers.
 - **Amazon Route 53:** Scalable and highly available Domain Name System (DNS) web service.
 - **AWS Direct Connect:** A dedicated network connection from your on-premises data center to AWS.
 - **AWS Transit Gateway:** Service for connecting multiple VPCs and on-premises networks.
 - **AWS VPN CloudHub:** A hub-and-spoke model that connects multiple on-premises sites through a virtual private gateway over Site-to-Site VPN connections, allowing remote offices to communicate with each other and with AWS.
 - **AWS Transit Gateway Peering:** A service that allows you to connect two or more AWS Transit Gateways together.
-- **AWS Transit Gateway Network Manager:** A service that provides a unified view of your AWS Transit Gateway networks and helps you manage them centrally.
+- **AWS Network Manager:** Central view and management of Transit Gateway and AWS Cloud WAN networks.
 - **AWS Global Accelerator:** Improve application availability and performance using the AWS global network.
 - **AWS PrivateLink:** A secure way to connect two services that are running in a virtual private cloud (VPC) or on-premises network to services running in AWS.
-- **AWS Client VPN:** Managed VPN for secure remote access to AWS and on-premises resources, allows to connect your devices to your AWS account over a secure encrypted tunnel.
-- **AWS VPC endpoints:** allow resources in a VPC to connect to AWS services without requiring an internet gateway, NAT device, VPN connection, or AWS Direct Connect connection. Interface endpoints are elastic network interfaces powered by AWS PrivateLink; gateway endpoints are route table targets for Amazon S3 and DynamoDB.
+- **AWS Client VPN:** Managed client VPN for secure remote access to AWS and on-premises resources over an encrypted tunnel.
+- **Amazon VPC Lattice:** Application networking service for connecting, securing, and monitoring service-to-service traffic across VPCs and accounts.
+- **AWS VPC endpoints:** Let resources in a VPC connect to AWS services without requiring an internet gateway, NAT device, VPN connection, or AWS Direct Connect connection. Interface endpoints are elastic network interfaces powered by AWS PrivateLink; gateway endpoints are route table targets for Amazon S3 and DynamoDB.
 
 ### Content Delivery
 
 - **Amazon CloudFront:** Content delivery network (CDN) for fast content delivery.
 - **Amazon CloudFront Origin Access Control (OAC):** OAC (the successor to Origin Access Identity) restricts access to an Amazon S3 origin so that content can only be served through the associated CloudFront distribution.
-- **Amazon CloudFront Signed URL:** A CloudFront signed URL is a URL that has been signed with a CloudFront signing key. This type of URL is used to restrict access to specific objects in CloudFront.
+- **Amazon CloudFront Signed URL:** A URL signed with a CloudFront key pair or trusted key group, used to restrict access to specific objects.
 - **CloudFront Function:** A lightweight, JavaScript-only edge function that can modify or filter content at CloudFront edge locations; distinct from Lambda@Edge, which runs full Lambda functions.
-- **Amazon CloudFront Distribution:** A CloudFront distribution is a collection of resources that are delivered to viewers by CloudFront. A distribution can include one or more origins, such as Amazon S3 buckets or Amazon EC2 instances.
-- **Amazon CloudFront Edge Location:** A CloudFront edge location is a server that is located around the world. Edge locations are used to cache content and deliver it to viewers with low latency.
+- **Amazon CloudFront Distribution:** The configuration that serves content to viewers through one or more origins, such as Amazon S3 buckets or Amazon EC2 instances.
+- **Amazon CloudFront Edge Location:** Points of presence worldwide that cache content and serve viewers with low latency.
 
 ### Messaging
 
@@ -2157,22 +2159,23 @@ AWS CodeGuru provides a number of features to help you improve the quality of yo
 
 ### Machine Learning and AI
 
-- **Amazon SageMaker AI** (formerly Amazon SageMaker): A fully managed machine learning (ML) service that allows you to build, train, and deploy ML models quickly and easily.
+- **Amazon Bedrock:** Fully managed service for building generative AI applications with foundation models through a single API.
+- **Amazon SageMaker AI (formerly Amazon SageMaker):** Fully managed service to build, train, and deploy machine learning models.
 - **Amazon Rekognition:** Image and video analysis service for object detection and recognition.
 - **Amazon Polly:** Text-to-speech service.
 - **Amazon Comprehend:** Natural language processing service for text analysis.
 - **Amazon Translate:** Language translation service.
 - **Amazon Transcribe:** Automatic speech recognition service.
 - **Amazon Comprehend Medical:** Natural language processing for medical text.
-- **Amazon CodeGuru:** AI service for code reviews and application performance recommendations.
-- **Amazon Lookout for Vision:** Find defects in images using computer vision (end of support October 7, 2026).
+- **Amazon CodeGuru:** AI service for code reviews and application performance recommendations (CodeGuru Security reached end of support November 20, 2025).
+- **Amazon Lookout for Vision:** Find defects in images using computer vision (end of support October 31, 2025).
 - **Amazon Lookout for Equipment:** Detect abnormal equipment behavior using machine learning (end of support October 7, 2026).
-- **Amazon Lookout for Metrics:** Find anomalies in metrics using machine learning (end of support October 7, 2026).
-- **Amazon Fraud Detector:** Machine learning for detecting fraud by analyzing a variety of data points, such as transaction history, customer demographics, and device information.
+- **Amazon Lookout for Metrics:** Find anomalies in metrics using machine learning (end of support October 2025).
+- **Amazon Fraud Detector:** Detects fraud with machine learning models built on transaction history, customer demographics, and device information (closed to new customers November 7, 2025).
 - **Amazon Personalize:** A machine learning service that helps you create personalized experiences for your customers.
 - **Amazon Kendra:** A cloud-based enterprise search service that uses machine learning to index and search all of your enterprise content.
 - **Amazon SageMaker Canvas:** Quickly build, train, and deploy machine learning models without writing code.
-- **AWS Panorama:** A machine learning service that helps you build and deploy computer vision applications at scale.
+- **AWS Panorama:** Build and deploy computer vision applications on edge appliances (closed to new customers May 20, 2025; end of support May 31, 2026).
 
 ### Chat and Conversational Interfaces
 
@@ -2182,7 +2185,7 @@ AWS CodeGuru provides a number of features to help you improve the quality of yo
 
 - **AWS CodePipeline:** Continuous integration and continuous delivery (CI/CD) service.
 - **AWS CodeBuild:** A fully managed continuous integration (CI) service that compiles source code, runs tests, and produces software packages that are ready to deploy.
-- **AWS CodeDeploy:** Deployment service for applications to Amazon EC2 instances.
+- **AWS CodeDeploy:** Deployment service for applications on Amazon EC2, on-premises servers, AWS Lambda, and Amazon ECS.
 - **AWS CloudFormation:** Infrastructure as Code service for provisioning AWS resources.
 - **AWS Cloud9:** Cloud-based integrated development environment (IDE) (closed to new customers in July 2024).
 - **AWS Cloud Development Kit (CDK):** An open-source software development framework to model and provision your cloud application resources using familiar programming languages.
@@ -2197,21 +2200,22 @@ AWS CodeGuru provides a number of features to help you improve the quality of yo
 - **Amazon CloudWatch:** A monitoring and observability service that collects logs, metrics, and events to provide data and actionable insights to help you monitor your applications, infrastructure, and services.
 - **Amazon CloudTrail:** A service that helps you track and audit user activity and API usage across your AWS resources.
 - **AWS Systems Manager:** A collection of services and features that helps automate management of your AWS resources, including patch management, configuration management, fleet inventory, run command, and maintenance window.
-- **AWS OpsWorks:** A configuration-management service for Chef and Puppet that AWS retired in 2024; AWS Systems Manager is the recommended replacement.
+- **AWS OpsWorks:** Managed Chef Automate and Puppet Enterprise servers, both end of life in 2024 (Puppet on March 31, Chef on May 5); AWS recommends migrating to Chef SaaS or another alternative.
 - **AWS Config:** Configuration management service for assessing, auditing, and evaluating resources.
 - **AWS Systems Manager Automation:** Service for automating operational tasks.
 - **AWS Systems Manager Patch Manager:** Automate patch management for your instances.
 - **AWS CloudWatch Synthetics:** Service for testing application endpoints.
-- **AWS Systems Manager Application Discovery Service:** Service for discovering and tracking application assets.
-- **AWS Systems Manager Automation Runbook Designer:** Service for creating automation runbooks.
 - **Amazon DevOps Guru:** ML-powered service to improve application availability.
 - **AWS Control Tower:** A managed service that helps you set up and govern a secure, multi-account AWS environment.
 
 ### Security and Compliance
 
-- **Amazon GuardDuty:** An intelligent security service that uses machine learning to continuously monitor your AWS accounts and workloads for malicious activity and unauthorized behavior.
+- **AWS Identity and Access Management (IAM):** Control who can access AWS services and resources, through users, roles, and policies.
+- **AWS IAM Identity Center:** Centrally manage workforce access to multiple AWS accounts and business applications (formerly AWS Single Sign-On).
+- **AWS Secrets Manager:** Store, rotate, and retrieve database credentials, API keys, and other secrets.
+- **Amazon GuardDuty:** Uses machine learning to continuously monitor AWS accounts and workloads for malicious activity and unauthorized behavior.
 - **AWS Audit Manager:** Service for simplifying and automating compliance audits.
-- **AWS Security Hub:** Service for security and compliance.
+- **AWS Security Hub:** A cloud security posture management service that provides a comprehensive view of your security posture across your AWS accounts and Regions.
 - **AWS Shield:** Managed Distributed Denial of Service (DDoS) protection.
 - **AWS WAF:** Web Application Firewall for protecting web applications.
 - **AWS Firewall Manager:** Central management for AWS WAF and AWS Shield.
@@ -2223,9 +2227,6 @@ AWS CodeGuru provides a number of features to help you improve the quality of yo
 - **Amazon EventBridge:** Serverless event bus for connecting applications.
 - **AWS Step Functions:** Serverless orchestration service for coordinating distributed applications.
 - **Amazon Simple Email Service (SES):** Email sending and receiving service.
-- **Amazon Simple Queue Service (SQS):** Message queuing service for decoupling applications.
-- **Amazon Simple Workflow Service (SWF):** Workflow service for building scalable and resilient applications.
-- **Amazon CloudFormation:** Infrastructure as Code service for provisioning AWS resources.
 - **Amazon API Gateway:** Fully managed service for creating and managing APIs.
 
 ### Containers and Kubernetes
@@ -2234,14 +2235,14 @@ AWS CodeGuru provides a number of features to help you improve the quality of yo
 - **Amazon Elastic Kubernetes Service (EKS):** Managed Kubernetes service for container orchestration.
 - **Amazon EKS Anywhere:** Run Kubernetes clusters on your own infrastructure.
 - **Amazon EKS with Fargate:** Run Kubernetes pods on serverless Fargate compute.
-- **AWS App Runner:** Service for building and running containerized applications.
-- **AWS App Mesh:** Service mesh for microservices (reached end of support on September 30, 2026; Amazon VPC Lattice is the suggested replacement).
-- **AWS Fargate Spot:** Serverless compute engine using spare capacity.
+- **AWS App Runner:** Service for building and running containerized applications (closed to new customers April 30, 2026; Amazon ECS Express Mode is the suggested path).
+- **AWS App Mesh:** Service mesh for microservices (reached end of support September 30, 2026; use Amazon ECS Service Connect for ECS or Amazon VPC Lattice for EKS).
+- **AWS Fargate Spot:** Fargate capacity option that runs interruptible tasks on spare capacity at a lower price.
 - **Amazon Elastic Container Registry (ECR):** Fully managed Docker container registry.
 
 ### Data Services
 
-- **AWS Data Pipeline:** Service for moving data between different AWS services.
+- **AWS Data Pipeline:** Service for moving data between different AWS services (closed to new customers; AWS recommends other data integration services).
 - **Amazon Lake Formation:** Service to set up and manage a data lake.
 - **AWS Lake Formation Permissions:** Manage permissions in AWS Lake Formation.
 - **AWS Lake Formation Governed Tables:** Tables in AWS Lake Formation.
@@ -2260,27 +2261,23 @@ AWS CodeGuru provides a number of features to help you improve the quality of yo
 
 - **AWS IoT Core:** Internet of Things (IoT) service for connecting devices.
 - **AWS IoT Device Gateway:** Gateway for IoT devices to connect to AWS.
-- **AWS IoT Analytics:** Service for processing, storing, and analyzing IoT data.
-- **AWS IoT Greengrass:** Edge computing service for IoT devices.
+- **AWS IoT Analytics:** Service for processing, storing, and analyzing IoT data (closed to new customers July 2024; end of support December 15, 2025).
+- **AWS IoT Greengrass:** Edge computing service for IoT devices (Greengrass V1 reached end of support October 7, 2026; use Greengrass V2).
 - **AWS IoT FleetWise:** Fleet management for IoT devices.
-- **AWS IoT Greengrass ML Inference:** Run machine learning inference on edge devices.
 - **AWS IoT Edge:** Extend AWS IoT to edge devices for IoT applications.
 - **AWS IoT FleetWise Edge:** Manage IoT device fleets at the edge.
 - **AWS IoT SiteWise Edge:** Process IoT data locally at the edge.
 - **AWS IoT TwinMaker Edge:** Create digital twins at the edge.
-- **Amazon Monitron Edge:** Local monitoring of industrial equipment.
+- **Amazon Monitron:** Monitoring of industrial equipment with sensors and machine learning (closed to new customers October 31, 2024).
 - **AWS IoT Analytics Transfer for Apache Kafka:** Transfer data to and from Apache Kafka.
-- **AWS IoT Events Data Plane:** Detect and respond to IoT events.
-- **AWS IoT Events Rules Engine:** Define rules for handling IoT events.
+- **AWS IoT Events:** Detect and respond to IoT events (end of support May 20, 2026).
 
 ### Hybrid Cloud and Edge Computing
 
 - **AWS Outposts:** Extend AWS infrastructure and services to your data center.
 - **AWS Wavelength:** Deploy applications that require ultra low latency to mobile devices.
 - **AWS Local Zones:** AWS infrastructure and services close to large population centers.
-- **AWS Snow Family:** Physically transport large amounts of data into and out of AWS; Snowball Edge devices move terabytes to petabytes per job.
-- **AWS Greengrass:** Build, deploy, and manage IoT applications at the edge.
-- **AWS IoT Greengrass ML Inference:** Perform machine learning inference on edge devices.
+- **AWS Snow Family:** Physically transport large amounts of data into and out of AWS. Snowcone was discontinued (November 12, 2024), and Snowball Edge is closed to new customers (end of support December 31, 2026).
 
 ### Operations
 
@@ -2288,23 +2285,16 @@ AWS CodeGuru provides a number of features to help you improve the quality of yo
 - **AWS Trusted Advisor:** An online service that scans your environment and gives real-time recommendations across cost optimization, performance, security, fault tolerance, and service limits.
 - **AWS Well-Architected Tool:** Review and improve your cloud architectures.
 - **AWS Resilience Hub:** Prepare your business for disruptions and uncertainties.
-- **Amazon DevOps Guru:** Improve application availability with ML.
 
 ### Governance and Compliance
 
 - **AWS Organizations:** Centrally manage multiple AWS accounts.
-- **AWS Control Tower:** A service that helps you set up and govern a secure, multi-account AWS environment.
-- **Amazon Macie:** Discover, classify, and protect sensitive data using ML.
 - **AWS Key Management Service (KMS):** Managed service for creating and controlling encryption keys.
 - **AWS CloudHSM:** A cloud-based hardware security module (HSM) that enables you to generate and store cryptographic keys in the cloud.
-- **AWS CloudTrail:** Track user activity and API usage.
-- **AWS Config:** Track resource configuration changes.
-- **AWS Audit Manager:** Continuously audit your AWS usage.
-- **AWS Security Hub:** A cloud security posture management service that provides a comprehensive view of your security posture across your AWS accounts and Regions.
 
 ### Blockchain
 
-- **Amazon Managed Blockchain:** Create and manage scalable blockchain networks.
+- **Amazon Managed Blockchain:** Create and manage scalable blockchain networks (closed to new customers October 29, 2026; end of support September 29, 2027).
 - **Amazon Quantum Ledger Database (QLDB):** A fully managed ledger database that provides a transparent, immutable, and cryptographically verifiable transaction log (end of support July 31, 2025; Amazon Aurora PostgreSQL is the suggested replacement).
 
 ### Satellite
@@ -2313,7 +2303,7 @@ AWS CodeGuru provides a number of features to help you improve the quality of yo
 
 ### Robotics
 
-- **AWS RoboMaker:** Develop, simulate, and deploy intelligent robotics apps.
+- **AWS RoboMaker:** Develop, simulate, and deploy robotics apps (end of support September 10, 2025).
 
 ### Quantum Computing
 
@@ -2325,7 +2315,7 @@ AWS CodeGuru provides a number of features to help you improve the quality of yo
 - **Amazon Kinesis:** Real-time data streaming service for ingesting and processing large streams of data.
 - **Amazon Kinesis Data Streams:** A real-time data streaming service that can process millions of records per second.
 - **Amazon Data Firehose:** A fully managed service that delivers real-time streaming data to Amazon S3, Amazon Redshift, Amazon OpenSearch Service, Splunk, and supported HTTP endpoints (formerly Amazon Kinesis Data Firehose).
-- **Amazon EMR:** Managed Hadoop framework for big data processing and analysis.
+- **Amazon EMR:** Managed cluster platform for Apache Spark, Hadoop, and other big data frameworks.
 
 ### Customer Engagement
 
@@ -2333,12 +2323,12 @@ AWS CodeGuru provides a number of features to help you improve the quality of yo
 
 ### End User Computing
 
-- **Amazon WorkSpaces:** A managed, secure cloud desktop service that provides users with a persistent, desktop computing experience in the cloud.
-- **Amazon WorkSpaces Applications (formerly Amazon AppStream 2.0):** A fully managed, secure application streaming service that delivers a high-quality app experience to users on any device, anywhere.
+- **Amazon WorkSpaces:** Managed, secure cloud desktops for users.
+- **Amazon WorkSpaces Applications (formerly Amazon AppStream 2.0):** Fully managed application streaming service that delivers apps to users on any device.
 
 ### Management Tools
 
-- **AWS Service Catalog:** A service that makes it easy to create, manage, and deliver IT services to end users, allows to define and manage a catalog of standardized IT services.
+- **AWS Service Catalog:** Create, manage, and share catalogs of approved, standardized IT products for end users.
 - **AWS License Manager:** A service that helps you manage your software licenses across your AWS resources.
 - **AWS Systems Manager Parameter Store:** Store and retrieve configuration data.
 
@@ -2349,11 +2339,10 @@ AWS CodeGuru provides a number of features to help you improve the quality of yo
 ### Migration
 
 - **AWS Migration Hub:** A service that helps you plan, migrate, and manage your migrations to AWS.
-- **AWS Application Discovery Service (ADS):** A service that discovers applications running on your on-premises infrastructure, used to discover your on-premises applications and collect data about their dependencies, relationships, and usage patterns.
+- **AWS Application Discovery Service (ADS):** Discovers applications running on-premises and collects data about their dependencies, relationships, and usage patterns.
 - **Amazon Database Migration Service (DMS):** A service that helps you migrate databases from on-premises to AWS or from one AWS database service to another.
 - **AWS Application Migration Service (MGN):** Lift-and-shift applications to AWS with minimal downtime.
 - **AWS Server Migration Service (SMS):** AWS discontinued SMS in March 2022; its successor, AWS Application Migration Service (MGN, now AWS Transform MGN), automates lift-and-shift migrations with minimal downtime.
-- **AWS Snowball:** Transfer large amounts of data to and from AWS using secure devices.
 
 ## Microsoft Azure
 
