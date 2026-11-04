@@ -1714,10 +1714,12 @@ To implement disaster recovery in AWS, you can follow these steps:
 1. **Define your recovery time objective (RTO) and recovery point objective (RPO).** The RTO is the maximum amount of time that your applications can be unavailable after a disaster. The RPO is the maximum acceptable amount of time since the last data recovery point, in other words how much data you can afford to lose.
 2. **Choose a disaster recovery strategy.** The commonly used strategies are backup and restore, pilot light, warm standby, and multi-site active/active. They differ in how much of your environment is kept running in a second Region, and in their relative cost and recovery time.
 3. **Implement your disaster recovery strategy.** There are a number of AWS services that can help you implement your disaster recovery strategy, such as:
+
 * AWS Elastic Disaster Recovery (DRS): DRS is a managed service that helps you recover your on-premises or cloud-based applications to AWS quickly and easily.
 * AWS Backup: AWS Backup is a fully managed backup service that helps you protect your data across AWS services.
 * AWS Elastic Disaster Recovery (AWS DRS): a managed service that keeps your applications available by continuously replicating servers to AWS, allowing fast recovery into a secondary Region. AWS Backup complements it with centralized backup management.
 * AWS CloudFormation: AWS CloudFormation is a managed service that helps you model and provision AWS resources in a consistent and repeatable way.
+
 4. **Test your disaster recovery plan.** It is important to test your disaster recovery plan regularly to ensure that it works as expected.
 
 Here is an example of how to implement a pilot light disaster recovery strategy in AWS:
@@ -1941,13 +1943,13 @@ AWS Fargate is a serverless compute engine for Docker containers. AWS ECS is a c
 
 AWS Artifact enhances compliance and security in a number of ways.
 
-**Compliance**
+#### Compliance
 
 * AWS Artifact provides on-demand access to AWS security and compliance reports, such as SOC and ISO reports, as well as compliance agreements. This makes it easy to find and access the documents you need when preparing for audits.
 * AWS Artifact provides a variety of reports that can help you demonstrate compliance with specific AWS services and regulations.
 * AWS Artifact makes it easy to track the status of your AWS agreements, such as the Business Associate Addendum (BAA). This can help you ensure that you are always in compliance with your AWS agreements.
 
-**Security**
+#### Security
 
 * AWS Artifact uses a variety of security measures to protect your data, including encryption, access control, and auditing.
 * AWS Artifact integrates with AWS Identity and Access Management (IAM) to ensure that only authorized users can access your data.
@@ -2246,7 +2248,7 @@ AWS CodeGuru provides a number of features to help you improve the quality of yo
 
 ### Machine Learning and AI
 
-- **Amazon SageMaker AI** (formerly Amazon SageMaker): A fully managed machine learning (ML) service allows to build, train, and deploy ML models quickly and easily.
+- **Amazon SageMaker AI** (formerly Amazon SageMaker): A fully managed machine learning (ML) service that allows you to build, train, and deploy ML models quickly and easily.
 - **Amazon Rekognition:** Image and video analysis service for object detection and recognition.
 - **Amazon Polly:** Text-to-speech service.
 - **Amazon Comprehend:** Natural language processing service for text analysis.
@@ -2258,7 +2260,7 @@ AWS CodeGuru provides a number of features to help you improve the quality of yo
 - **Amazon Lookout for Equipment:** Detect abnormal equipment behavior using machine learning (end of support in October 2025).
 - **Amazon Lookout for Metrics:** Find anomalies in metrics using machine learning (end of support in October 2025).
 - **Amazon Fraud Detector:** Machine learning for detecting fraud by analyzing a variety of data points, such as transaction history, customer demographics, and device information.
-- **Amazon Personalize:**  A machine learning service that helps you create personalized experiences for your customers.
+- **Amazon Personalize:** A machine learning service that helps you create personalized experiences for your customers.
 - **Amazon Kendra:** A cloud-based enterprise search service that uses machine learning to index and search all of your enterprise content.
 - **Amazon SageMaker Canvas:** Quickly build, train, and deploy machine learning models without writing code.
 - **AWS Panorama:** A machine learning service that helps you build and deploy computer vision applications at scale.
@@ -2394,7 +2396,7 @@ AWS CodeGuru provides a number of features to help you improve the quality of yo
 ### Blockchain
 
 - **Amazon Managed Blockchain:** Create and manage scalable blockchain networks.
-- **Amazon Quantum Ledger Database (QLDB):**  A fully managed ledger database that provides a transparent, immutable, and cryptographically verifiable transaction log (end of support July 31, 2025; Amazon Aurora PostgreSQL is the suggested replacement).
+- **Amazon Quantum Ledger Database (QLDB):** A fully managed ledger database that provides a transparent, immutable, and cryptographically verifiable transaction log (end of support July 31, 2025; Amazon Aurora PostgreSQL is the suggested replacement).
 
 ### Satellite
 
@@ -2447,12 +2449,15 @@ AWS CodeGuru provides a number of features to help you improve the quality of yo
 ## Microsoft Azure
 
 ### 1. What is Microsoft Azure, and how does it work?
+
 Microsoft Azure is a cloud computing platform that provides a wide range of services, like storage, computing, and databases, hosted in Microsoft data centers. It lets businesses build, deploy, and manage applications globally, using tools and frameworks of their choice.
 
 ### 2. Explain the core services provided by Azure.
-Azure provides core services like Compute, which includes virtual machines and containers; Storage for data solutions like Blob and Disk Storage; Networking to manage connectivity with services like Virtual Network; and Databases including SQL Database and Cosmos DB. These core services help build, deploy, and manage applications in the cloud efficiently
+
+Azure provides core services like Compute, which includes virtual machines and containers; Storage for data solutions like Blob and Disk Storage; Networking to manage connectivity with services like Virtual Network; and Databases including SQL Database and Cosmos DB. These core services help build, deploy, and manage applications in the cloud efficiently.
 
 ### 3. What is Azure Resource Manager (ARM)?
+
 Azure Resource Manager (ARM) is a RESTful API and a deployment and management service for Azure. It provides a way to organize resources, apply access control, and manage them through templates. ARM ensures resources are deployed consistently and makes it easy to monitor and control access across all resources in a solution. Developers can use ARM to automate resource management tasks and enable a consistent and repeatable deployment process.
 
 ### 4. Describe the differences between Azure IaaS, PaaS, and SaaS.
@@ -2691,6 +2696,7 @@ Microsoft Entra ID (formerly Azure Active Directory, or Azure AD, renamed in 202
 We welcome contributions from the community. If you have any suggestions for new topics or answers, please feel free to open an issue or submit a pull request. See [CONTRIBUTING.md](CONTRIBUTING.md) for the guidelines.
 
 ## License
+
 The content of this handbook is licensed under [Creative Commons Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/) — see [LICENSE](LICENSE).
 
 Copyright 2026 Stanislav
