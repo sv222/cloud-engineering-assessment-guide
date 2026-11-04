@@ -1712,7 +1712,7 @@ Here are some of the benefits of using AWS Transit Gateway:
 
 AWS X-Ray is a service that helps you to debug and monitor your distributed applications. X-Ray provides a detailed view of your application's traces, which are records of how requests flow through your application.
 
-X-Ray can be used to identify performance bottlenecks, troubleshoot errors, and understand the behavior of your application. The X-Ray SDKs and daemon entered maintenance mode on February 25, 2026 and reach end of support on February 25, 2027. AWS recommends OpenTelemetry instrumentation for new work.
+X-Ray can be used to identify performance bottlenecks, troubleshoot errors, and understand the behavior of your application. The X-Ray SDKs and daemon entered maintenance mode on February 25, 2026. AWS recommends OpenTelemetry instrumentation for new work.
 
 Here are some of the benefits of using AWS X-Ray:
 
@@ -2175,7 +2175,7 @@ AWS CodeGuru provides a number of features to help you improve the quality of yo
 - **Amazon Personalize:** A machine learning service that helps you create personalized experiences for your customers.
 - **Amazon Kendra:** A cloud-based enterprise search service that uses machine learning to index and search all of your enterprise content.
 - **Amazon SageMaker Canvas:** Quickly build, train, and deploy machine learning models without writing code.
-- **AWS Panorama:** Build and deploy computer vision applications on edge appliances (closed to new customers May 20, 2025; end of support May 31, 2026).
+- **AWS Panorama:** Build and deploy computer vision applications on edge appliances (closed to new customers; end of support May 20, 2026).
 
 ### Chat and Conversational Interfaces
 
@@ -2200,7 +2200,7 @@ AWS CodeGuru provides a number of features to help you improve the quality of yo
 - **Amazon CloudWatch:** A monitoring and observability service that collects logs, metrics, and events to provide data and actionable insights to help you monitor your applications, infrastructure, and services.
 - **Amazon CloudTrail:** A service that helps you track and audit user activity and API usage across your AWS resources.
 - **AWS Systems Manager:** A collection of services and features that helps automate management of your AWS resources, including patch management, configuration management, fleet inventory, run command, and maintenance window.
-- **AWS OpsWorks:** Managed Chef Automate and Puppet Enterprise servers, both end of life in 2024 (Puppet on March 31, Chef on May 5); AWS recommends migrating to Chef SaaS or another alternative.
+- **AWS OpsWorks:** Managed Chef Automate and Puppet Enterprise servers, both end of life on May 1, 2024; AWS recommends migrating to Chef SaaS or another alternative.
 - **AWS Config:** Configuration management service for assessing, auditing, and evaluating resources.
 - **AWS Systems Manager Automation:** Service for automating operational tasks.
 - **AWS Systems Manager Patch Manager:** Automate patch management for your instances.
@@ -2235,7 +2235,7 @@ AWS CodeGuru provides a number of features to help you improve the quality of yo
 - **Amazon Elastic Kubernetes Service (EKS):** Managed Kubernetes service for container orchestration.
 - **Amazon EKS Anywhere:** Run Kubernetes clusters on your own infrastructure.
 - **Amazon EKS with Fargate:** Run Kubernetes pods on serverless Fargate compute.
-- **AWS App Runner:** Service for building and running containerized applications (closed to new customers April 30, 2026; Amazon ECS Express Mode is the suggested path).
+- **AWS App Runner:** Service for building and running containerized applications (no longer open to new customers; Amazon ECS Express Mode is the suggested path).
 - **AWS App Mesh:** Service mesh for microservices (reached end of support September 30, 2026; use Amazon ECS Service Connect for ECS or Amazon VPC Lattice for EKS).
 - **AWS Fargate Spot:** Fargate capacity option that runs interruptible tasks on spare capacity at a lower price.
 - **Amazon Elastic Container Registry (ECR):** Fully managed Docker container registry.
@@ -2261,7 +2261,7 @@ AWS CodeGuru provides a number of features to help you improve the quality of yo
 
 - **AWS IoT Core:** Internet of Things (IoT) service for connecting devices.
 - **AWS IoT Device Gateway:** Gateway for IoT devices to connect to AWS.
-- **AWS IoT Analytics:** Service for processing, storing, and analyzing IoT data (closed to new customers July 2024; end of support December 15, 2025).
+- **AWS IoT Analytics:** Service for processing, storing, and analyzing IoT data (closed to new customers; end of support December 15, 2025).
 - **AWS IoT Greengrass:** Edge computing service for IoT devices (Greengrass V1 reached end of support October 7, 2026; use Greengrass V2).
 - **AWS IoT FleetWise:** Fleet management for IoT devices.
 - **AWS IoT Edge:** Extend AWS IoT to edge devices for IoT applications.
@@ -2277,7 +2277,7 @@ AWS CodeGuru provides a number of features to help you improve the quality of yo
 - **AWS Outposts:** Extend AWS infrastructure and services to your data center.
 - **AWS Wavelength:** Deploy applications that require ultra low latency to mobile devices.
 - **AWS Local Zones:** AWS infrastructure and services close to large population centers.
-- **AWS Snow Family:** Physically transport large amounts of data into and out of AWS. Snowcone was discontinued (November 12, 2024), and Snowball Edge is closed to new customers (end of support December 31, 2026).
+- **AWS Snow Family:** Physically transport large amounts of data into and out of AWS. Snowcone was discontinued (November 12, 2024), and Snowball Edge is no longer available to new customers.
 
 ### Operations
 
@@ -2342,7 +2342,7 @@ AWS CodeGuru provides a number of features to help you improve the quality of yo
 - **AWS Application Discovery Service (ADS):** Discovers applications running on-premises and collects data about their dependencies, relationships, and usage patterns.
 - **Amazon Database Migration Service (DMS):** A service that helps you migrate databases from on-premises to AWS or from one AWS database service to another.
 - **AWS Application Migration Service (MGN):** Lift-and-shift applications to AWS with minimal downtime.
-- **AWS Server Migration Service (SMS):** AWS discontinued SMS in March 2022; its successor, AWS Application Migration Service (MGN, now AWS Transform MGN), automates lift-and-shift migrations with minimal downtime.
+- **AWS Server Migration Service (SMS):** AWS ended support for SMS on April 1, 2023; its successor, AWS Application Migration Service (MGN, now AWS Transform MGN), automates lift-and-shift migrations with minimal downtime.
 
 ## Microsoft Azure
 
