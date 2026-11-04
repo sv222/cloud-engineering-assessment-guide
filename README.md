@@ -1627,7 +1627,7 @@ Shield Standard applies automatic protection against common network and transpor
 
 ### Describe AWS CodeCommit, CodeBuild, and CodeDeploy.
 
-AWS CodeCommit is a managed Git repository service. AWS closed CodeCommit to new customers effective July 25, 2024. Existing customers can keep using it, but AWS recommends a hosted Git provider such as GitHub, GitLab, or Bitbucket for new repositories. CodeCommit provides the following features:
+AWS CodeCommit is a managed Git repository service. AWS closed CodeCommit to new customers on July 25, 2024, and the CodeCommit user guide lists it as available to new customers again from November 25, 2025. CodeCommit provides the following features:
 
 * **Security:** CodeCommit encrypts your code at rest and in transit.
 * **Integrations:** CodeCommit integrates with a variety of AWS services, such as CodeBuild and CodeDeploy.
