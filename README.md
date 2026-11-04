@@ -1594,17 +1594,16 @@ KMS can be used to encrypt a variety of data types, including:
 
 ### What is the AWS Lambda Dead Letter Queue (DLQ)?
 
-The AWS Lambda Dead Letter Queue (DLQ) is a queue where Lambda sends events that it cannot process successfully. This can happen for a variety of reasons, such as:
+The AWS Lambda Dead Letter Queue (DLQ) is an Amazon SQS queue or Amazon SNS topic that receives events from asynchronous invocations that Lambda cannot process successfully. This can happen when:
 
-* The event is in an invalid format.
-* The Lambda function returns an error.
-* The Lambda function times out.
+* The function returns an error on every attempt, including timeouts.
+* The event stays in the asynchronous invocation queue longer than the maximum event age.
 
-When a function is invoked asynchronously, Lambda retries failed events a set number of times, and the DLQ receives the events after those retries are exhausted so you can inspect and reprocess them.
+When a function is invoked asynchronously, Lambda retries failed events (two retries by default), and the DLQ receives the events after those retries are exhausted so you can inspect and reprocess them. AWS recommends on-failure destinations for new functions, which can be used instead of or alongside a DLQ.
 
 ### How does AWS WAF (Web Application Firewall) work?
 
-AWS WAF is a web application firewall that helps to protect your web applications from common attack vectors, such as SQL injection, cross-site scripting (XSS), and denial of service (DoS) attacks.
+AWS WAF is a web application firewall that helps to protect your web applications from common attack vectors, such as SQL injection and cross-site scripting (XSS). Rate-based rules can also limit HTTP floods.
 
 WAF works by inspecting incoming HTTP and HTTPS traffic and filtering out malicious requests. You associate a web ACL with supported resources, such as CloudFront distributions, API Gateway REST APIs, Application Load Balancers, AWS AppSync, or App Runner services.
 
@@ -1614,8 +1613,8 @@ AWS Glue is a fully managed data integration service that makes it easy to disco
 
 * **Data catalog:** Glue provides a data catalog that helps you to discover and manage your data.
 * **Data crawlers:** Glue provides data crawlers that can scan your data sources and create a schema for your data.
-* **Data transformers:** Glue provides data transformers that can be used to clean, transform, and load your data into a target data store.
-* **Data pipelines:** Glue provides data pipelines that can be used to automate the data transformation process.
+* **ETL jobs:** Glue jobs run Spark or Python shell scripts that clean, transform, and load your data into a target data store.
+* **Workflows:** Glue workflows chain crawlers and jobs together so they run as one pipeline.
 
 ### Explain AWS Shield and its role in DDoS protection.
 
@@ -1624,14 +1623,13 @@ AWS Shield is a managed DDoS protection service that protects your web applicati
 * **Shield Standard:** Shield Standard is included with all AWS accounts and provides basic protection against DDoS attacks.
 * **Shield Advanced:** Shield Advanced is a paid service that provides advanced protection against DDoS attacks.
 
-Shield works by monitoring your traffic and filtering out malicious traffic. Scaling your infrastructure to absorb legitimate traffic during an attack is handled separately, for example with Auto Scaling.
+Shield Standard applies automatic protection against common network and transport layer attacks at no additional cost. Shield Advanced adds attack visibility, access to the AWS DDoS Response Team, and cost protection for scaling charges. It requires a one-year commitment and a monthly fee, plus data transfer charges. Scaling your infrastructure to absorb legitimate traffic during an attack is handled separately, for example with Auto Scaling.
 
 ### Describe AWS CodeCommit, CodeBuild, and CodeDeploy.
 
-AWS CodeCommit is a managed Git repository service that makes it easy to store, manage, and collaborate on code. CodeCommit provides a number of features that make it a good choice for storing your code, such as:
+AWS CodeCommit is a managed Git repository service. AWS closed CodeCommit to new customers effective July 25, 2024. Existing customers can keep using it, but AWS recommends a hosted Git provider such as GitHub, GitLab, or Bitbucket for new repositories. CodeCommit provides the following features:
 
 * **Security:** CodeCommit encrypts your code at rest and in transit.
-* **Scalability:** CodeCommit can scale to handle large repositories and a large number of users.
 * **Integrations:** CodeCommit integrates with a variety of AWS services, such as CodeBuild and CodeDeploy.
 
 AWS CodeBuild is a managed build service that makes it easy to build and test your code. CodeBuild can build and test your code on a variety of platforms, including Linux, Windows, and macOS.
@@ -1644,7 +1642,7 @@ AWS CodeDeploy is a managed deployment service that makes it easy to deploy your
 * **Rollbacks:** CodeDeploy can roll back your deployments in case of a problem.
 * **Integrations:** CodeDeploy integrates with a variety of AWS services, such as CodeCommit and CodeBuild.
 
-Together, CodeCommit, CodeBuild, and CodeDeploy form a powerful continuous integration and continuous delivery (CI/CD) pipeline.
+Together with AWS CodePipeline, which orchestrates the stages, CodeCommit, CodeBuild, and CodeDeploy form a continuous integration and continuous delivery (CI/CD) pipeline.
 
 ### How do you implement disaster recovery in AWS?
 
@@ -1654,9 +1652,9 @@ To implement disaster recovery in AWS, you can follow these steps:
 2. **Choose a disaster recovery strategy.** The commonly used strategies are backup and restore, pilot light, warm standby, and multi-site active/active. They differ in how much of your environment is kept running in a second Region, and in their relative cost and recovery time.
 3. **Implement your disaster recovery strategy.** There are a number of AWS services that can help you implement your disaster recovery strategy, such as:
 
-* AWS Elastic Disaster Recovery (DRS): DRS is a managed service that helps you recover your on-premises or cloud-based applications to AWS quickly and easily.
-* AWS Backup: AWS Backup is a fully managed backup service that helps you protect your data across AWS services.
-* AWS Elastic Disaster Recovery (AWS DRS): a managed service that keeps your applications available by continuously replicating servers to AWS, allowing fast recovery into a secondary Region. AWS Backup complements it with centralized backup management.
+* AWS Elastic Disaster Recovery (AWS DRS): continuously replicates source servers to AWS so you can recover them quickly into a secondary Region.
+* AWS Backup: a fully managed backup service that centralizes backup policies and protects data across AWS services.
+* Amazon Route 53: health checks and failover routing that shift traffic to the recovery Region.
 * AWS CloudFormation: AWS CloudFormation is a managed service that helps you model and provision AWS resources in a consistent and repeatable way.
 
 4. **Test your disaster recovery plan.** It is important to test your disaster recovery plan regularly to ensure that it works as expected.
@@ -1670,19 +1668,19 @@ Here is an example of how to implement a pilot light disaster recovery strategy 
 5. Test the data replication process to ensure that it is working as expected.
 6. Regularly test the disaster recovery plan by failing over to the disaster recovery environment.
 
-When a disaster occurs, you can fail over to the disaster recovery environment by updating your DNS records to point to the disaster recovery environment. You can then route traffic to the disaster recovery environment.
+When a disaster occurs, fail over by updating DNS (for example, with Route 53 failover routing) so that traffic reaches the recovery environment.
 
-Once the disaster has been resolved, you can fail back to your production environment by updating your DNS records to point to the production environment. You can then route traffic back to the production environment.
+After the primary Region is restored, fail back by synchronizing data to the primary environment and updating DNS again.
 
 ### What is Amazon Cognito, and how is it used for user authentication?
 
 Amazon Cognito is a managed user identity and access management service that makes it easy to add user authentication and authorization to your web and mobile applications. Cognito provides a number of features that make it easy to authenticate users, including:
 
-* **Social login:** Cognito allows users to log in to your applications using their social media accounts, such as Facebook, Google, and Amazon.
-* **Custom login:** Cognito allows you to create your own custom login forms.
+* **Social login:** Cognito allows users to log in to your applications using their social media accounts, such as Apple, Facebook, Google, and Amazon, as well as SAML and OIDC identity providers.
+* **Hosted sign-in:** Cognito provides a hosted sign-in UI that you can customize, or you can build your own UI on the Cognito APIs.
 * **Multi-factor authentication (MFA):** Cognito supports MFA to help protect your users' accounts from unauthorized access.
 
-Cognito can also be used to authorize users to access your applications' resources. Cognito can be integrated with other AWS services, such as S3 and DynamoDB, to control access to your resources.
+Identity pools exchange user tokens for temporary AWS credentials. IAM roles attached to those credentials control access to services such as S3 and DynamoDB.
 
 ### How do you create a custom Amazon Machine Image (AMI)?
 
@@ -1692,9 +1690,9 @@ To create a custom AMI, you can use the EC2 Image Builder service. EC2 Image Bui
 
 EC2 Image Builder also provides a number of features that make it easy to create custom AMIs, such as:
 
-* **Recipes:** Recipes define the base image, components, and build configuration for an AMI; components contain the customization scripts.
-* **Components:** Components are software packages that can be installed on AMIs.
-* **Configuration:** Configuration can be used to customize AMIs, such as setting the AMI's name and description.
+* **Recipes:** Recipes define the base image and the components applied to it.
+* **Components:** Components are versioned documents (YAML or JSON) that define the build and test steps, such as installing software.
+* **Infrastructure and distribution settings:** Infrastructure configuration sets the instance type and subnet used for the build. Distribution configuration sets the AMI name, description, and target Regions and accounts.
 
 Once you have created a custom AMI, you can launch EC2 instances from it.
 
@@ -1702,20 +1700,19 @@ Once you have created a custom AMI, you can launch EC2 instances from it.
 
 AWS Transit Gateway is a network transit hub that makes it easy to connect your VPCs, on-premises networks, and other AWS services. Transit Gateway provides a central place to manage your network routing and to connect your network resources.
 
-Transit Gateway can be used to improve the performance and security of your network. Transit Gateway can also help you to reduce the cost of your network by eliminating the need for redundant routing devices.
+Transit Gateway routes traffic between attachments such as VPCs, VPN connections, and Direct Connect gateways, and its route tables control which attachments can reach each other.
 
 Here are some of the benefits of using AWS Transit Gateway:
 
 * **Centralized network routing:** Transit Gateway provides a central place to manage your network routing. This makes it easier to configure and manage your network.
-* **Improved network performance:** Transit Gateway can improve the performance of your network by optimizing traffic routing.
-* **Increased network security:** Transit Gateway can increase the security of your network by isolating your network resources from each other.
-* **Reduced network cost:** Transit Gateway can help you to reduce the cost of your network by eliminating the need for redundant routing devices.
+* **Attachments:** VPCs, VPN connections, Direct Connect gateways, and peering with other Transit Gateways, including in other Regions.
+* **Segmentation:** Separate route tables isolate groups of attachments from each other.
 
 ### What is AWS X-Ray, and how does it help in application tracing?
 
 AWS X-Ray is a service that helps you to debug and monitor your distributed applications. X-Ray provides a detailed view of your application's traces, which are records of how requests flow through your application.
 
-X-Ray can be used to identify performance bottlenecks, troubleshoot errors, and understand the behavior of your application.
+X-Ray can be used to identify performance bottlenecks, troubleshoot errors, and understand the behavior of your application. The X-Ray SDKs and daemon entered maintenance mode on February 25, 2026 and reach end of support on February 25, 2027. AWS recommends OpenTelemetry instrumentation for new work.
 
 Here are some of the benefits of using AWS X-Ray:
 
@@ -1730,25 +1727,26 @@ There are a number of things you can do to optimize your AWS S3 buckets for cost
 Here are some tips:
 
 * **Use the right storage class:** S3 offers a variety of storage classes, each with its own pricing and performance characteristics. Choose the storage class that is right for your needs.
-* **Use Lifecycle Manager:** S3 Lifecycle Manager allows you to automatically transition objects between different storage classes based on your usage patterns. This can help you to save money on storage costs.
-* **Use versioning:** S3 versioning allows you to keep multiple versions of your objects. This can be helpful for disaster recovery and for auditing purposes.
+* **Use lifecycle rules:** S3 Lifecycle rules transition objects to lower-cost storage classes or expire them automatically, based on age or usage patterns.
+* **Use versioning:** S3 versioning keeps earlier versions of objects, which protects against accidental overwrites and deletes. Noncurrent versions add storage cost, so pair versioning with lifecycle rules that expire them.
 * **Use compression:** Compressing your objects before storing them in S3 can reduce your storage costs.
-* **Use caching:** Caching your objects in a location that is close to your users can improve performance.
+* **Use CloudFront for delivery:** Serving frequently read objects through Amazon CloudFront caches them near users, which lowers latency and reduces load on the bucket.
 
 ### Describe AWS Systems Manager and its features.
 
 AWS Systems Manager is a service that helps you to manage your AWS resources. Systems Manager provides a number of features that make it easier to manage your resources, such as:
 
-* **Inventory:** Systems Manager provides an inventory of your AWS resources.
-* **Patching:** Systems Manager can help you to patch your AWS resources.
-* **Configuration:** Systems Manager can help you to configure your AWS resources.
-* **Automation:** Systems Manager can help you to automate your AWS resource management tasks.
+* **Inventory:** Inventory collects software and configuration metadata from managed nodes.
+* **Patching:** Patch Manager applies patches to managed nodes on a schedule.
+* **Configuration:** State Manager keeps managed nodes in a defined state.
+* **Automation:** Automation runbooks run multi-step tasks across resources.
+* **Session Manager:** Session Manager provides shell access to instances without opening SSH ports or using a bastion host.
 
 ### What is the AWS Snowball Edge device?
 
-AWS Snowball Edge is a device that can be used to transfer data to and from AWS. Note that AWS closed Snowball Edge to new customers in November 2025 and the service is in maintenance mode, so existing users should plan migrations to services such as AWS DataSync or AWS Data Transfer Terminal.
+AWS Snowball Edge is a device that can be used to transfer data to and from AWS. AWS stopped accepting new Snowball Edge customers on November 7, 2025. Existing customers can keep using the service. For new transfers, use AWS DataSync for online transfers, AWS Data Transfer Terminal for physical transfers, or AWS Partner solutions for offline transfers.
 
-Snowball Edge is also a good option for running edge computing applications. Edge computing applications are applications that are run on devices that are located close to the data source. This can reduce latency and improve performance.
+Existing Snowball Edge devices can still run edge computing applications; AWS recommends AWS Outposts for new edge deployments. Edge computing applications are applications that are run on devices that are located close to the data source. This can reduce latency and improve performance.
 
 ### How does Amazon CloudFront work for content delivery?
 
@@ -1758,7 +1756,7 @@ CloudFront can be used to deliver a variety of content, such as web pages, image
 
 ### What are AWS Resource Groups, and how do they simplify resource management?
 
-AWS Resource Groups are a way to group your AWS resources together. This can make it easier to manage your resources and to apply permissions to your resources.
+AWS Resource Groups are a way to group your AWS resources together so you can manage them as a set. Resource groups are not an access-control boundary; to grant permissions by tag, use IAM condition keys such as aws:ResourceTag.
 
 Resource Groups can be used to group resources by application, by environment, or by any other criteria that makes sense for you.
 
@@ -1770,13 +1768,14 @@ Step Functions provides a number of features that make it easy to build and run 
 
 * **Visual workflow designer:** Step Functions provides a visual workflow designer that makes it easy to create and edit state machines.
 * **Error handling and retries:** Step Functions lets you define Retry and Catch behavior per state, so failed steps can be retried or handled according to your workflow.
+* **Standard and Express workflows:** Standard workflows run for up to one year and suit long-running, auditable processes. Express workflows run for up to five minutes and suit high-volume, short-lived work.
 * **Integration with other AWS services:** Step Functions integrates with a variety of other AWS services, such as Lambda, ECS, and DynamoDB.
 
 ### What is the difference between Amazon Kinesis Data Streams and Kinesis Firehose?
 
 Amazon Kinesis Data Streams and Amazon Data Firehose are both services for ingesting and processing streaming data. However, there are some key differences between the two services.
 
-Kinesis Data Streams is a real-time data streaming service that can be used to ingest and process streaming data from a variety of sources, such as web applications, sensors, and social media feeds. Kinesis Data Streams provides a durable and scalable platform for processing streaming data in real time.
+Kinesis Data Streams is a real-time data streaming service that can be used to ingest and process streaming data from a variety of sources, such as web applications, sensors, and social media feeds. Kinesis Data Streams provides a durable and scalable platform for processing streaming data in real time. Records are retained for 24 hours by default. You can extend retention up to 365 days, which incurs additional charges.
 
 Amazon Data Firehose (formerly Amazon Kinesis Data Firehose) is a near-real-time data ingestion service that can be used to ingest and load data into data lakes, data warehouses, and other analytics destinations. It automatically buffers and delivers data; record transformation and format conversion can be enabled when needed.
 
@@ -1800,33 +1799,30 @@ There are a number of ways to implement high availability in AWS. Some common me
 
 * **Redundancy:** Deploy your applications and data across multiple Availability Zones (AZs). This will help to protect your applications and data from AZ outages.
 * **Load balancing:** Use load balancers to distribute traffic across your applications. This will help to improve the performance and availability of your applications.
-* **Autoscaling:** Use autoscaling to automatically scale your applications based on demand. This will help to ensure that your applications are always available to meet user demand.
+* **Auto Scaling:** Use Auto Scaling to add or remove capacity based on demand, which helps keep capacity matched to load.
 * **Disaster recovery:** Develop a disaster recovery plan to help you recover from a disaster, such as a regional outage or a natural disaster.
 
 ### Describe the use cases for AWS Greengrass.
 
 AWS IoT Greengrass is a service that extends AWS cloud capabilities to local devices. It allows devices to collect and analyze data closer to the source, while also securely communicating with each other on local networks.
 
-Some common use cases for AWS Greengrass include:
+Common use cases for AWS IoT Greengrass include:
 
-* **Industrial IoT:** Greengrass can be used to connect and manage industrial IoT devices, such as sensors and actuators. This can be used to improve efficiency, reduce costs, and enable new products and services.
-* **Smart cities:** Greengrass can be used to connect and manage smart city infrastructure, such as traffic lights, public transportation, and waste management systems. This can be used to improve the quality of life for residents and businesses.
-* **Retail:** Greengrass can be used to connect and manage retail devices, such as smart carts, cameras, and mobile apps. This can be used to improve customer experience, increase sales, and reduce costs.
-* **Healthcare:** Greengrass can be used to connect and manage healthcare devices, such as wearable devices and medical equipment. This can be used to improve patient care, reduce costs, and enable new products and services.
-
+* **Industrial IoT:** Greengrass can be used to connect and manage industrial IoT devices, such as sensors and actuators.* **Smart cities:** Greengrass can be used to connect and manage smart city infrastructure, such as traffic lights, public transportation, and waste management systems.* **Retail:** Greengrass can be used to connect and manage retail devices, such as smart carts, cameras, and mobile apps.* **Healthcare:** Greengrass can be used to connect and manage healthcare devices, such as wearable devices and medical equipment.
 ### What is AWS Global Accelerator, and when is it used?
 
 AWS Global Accelerator is a service that improves the performance and availability of your global applications. It routes user traffic over the AWS global network to the nearest healthy endpoint in your endpoint groups, which can reduce latency and improve availability for users around the world.
 
-Global Accelerator is a good choice for applications that need to be highly available and performant for users around the world. It is also a good choice for applications that have a lot of dynamic content, such as streaming video and live events.
+Global Accelerator suits TCP and UDP workloads, such as gaming, VoIP, and IoT, that need static IP addresses and fast failover across Regions. For HTTP content delivery and caching, CloudFront is usually the better fit.
 
 ### How do you secure data in Amazon S3 buckets?
 
 There are a number of ways to secure data in Amazon S3 buckets. Some common methods include:
 
-* **Server-side encryption (SSE):** SSE encrypts your data at rest in S3. You can choose to encrypt your data using AWS managed keys or your own encryption keys. Since January 2023, Amazon S3 applies SSE-S3 to all new objects by default.
-* **Client-side encryption (CSE):** CSE encrypts your data before it is uploaded to S3. You can choose to encrypt your data using AWS managed keys or your own encryption keys.
+* **Server-side encryption (SSE):** SSE encrypts data at rest. The options are SSE-S3 (keys managed by S3), SSE-KMS (AWS KMS keys, including customer managed keys), and SSE-C (keys you provide with each request). Since January 2023, Amazon S3 applies SSE-S3 to all new objects by default.
+* **Client-side encryption (CSE):** CSE encrypts your data before it is uploaded to S3, using keys from AWS KMS or keys that your application manages.
 * **Bucket policies:** Bucket policies can be used to control access to your S3 buckets. You can use bucket policies to restrict who can access your buckets and what they can do with them.
+* **Block Public Access:** Block Public Access settings override bucket policies and ACLs that would make data public.
 * **Object ACLs:** Object ACLs can be used to control access to individual objects in your S3 buckets. You can use object ACLs to restrict who can access the objects and what they can do with them. AWS recommends disabling ACLs where possible, and new buckets have ACLs disabled by default.
 
 ### Explain the concept of AWS Elemental MediaConvert.
@@ -1839,7 +1835,7 @@ MediaConvert is a good choice for converting video files for different devices a
 
 Amazon DocumentDB is a fully managed document database service that is compatible with MongoDB. DocumentDB provides a scalable, reliable, and secure way to run MongoDB workloads.
 
-The main difference between DocumentDB and MongoDB is that DocumentDB is fully managed. This means that AWS is responsible for managing the infrastructure and software for your DocumentDB instances.
+DocumentDB implements the MongoDB API, but it is not the MongoDB engine. It supports a subset of MongoDB features and operators, so check the compatibility list for the version you run (4.0, 5.0, and 8.0 are supported). AWS manages the infrastructure, patching, and backups.
 
 DocumentDB is a good choice for running MongoDB workloads that require high scalability, reliability, and security.
 
@@ -1850,19 +1846,22 @@ To create a VPC peering connection in AWS, follow these steps:
 1. Open the Amazon VPC console.
 2. In the navigation pane, choose **Peering connections**.
 3. Choose **Create peering connection**.
-4. Choose the VPC that you want to peer with.
-5. Choose the VPC that you want to accept the peering connection.
+4. Choose the requester VPC (the local VPC) and the accepter VPC, which can be in this account or another account or Region.
 6. Choose **Create peering connection**.
-7. The owner of the accepter VPC must accept the peering connection. Once the peering connection is accepted, it is active.
+7. The owner of the accepter VPC must accept the peering connection. Once accepted, it is active.
+8. Add a route in each VPC's route table that sends the other VPC's CIDR block to the peering connection ID.
+9. Update security groups and network ACLs so the traffic is allowed.
+
+Peering is not transitive, so traffic cannot pass through a peered VPC to reach a third VPC. The CIDR blocks of the two VPCs must not overlap.
 
 ### Describe the features of AWS Lambda@Edge.
 
-AWS Lambda@Edge is a service that allows you to run Lambda functions at the edge of the AWS network. This allows you to process data and deliver content closer to your users, which can improve performance and reduce latency.
+AWS Lambda@Edge runs Lambda functions in response to Amazon CloudFront events, such as viewer and origin requests and responses. You create the functions in the us-east-1 (N. Virginia) Region, and Lambda replicates them to CloudFront edge locations worldwide.
 
 Some of the features of AWS Lambda@Edge include:
 
 * **Low latency:** Lambda@Edge functions are executed at the edge of the AWS network, close to your users. This can reduce latency and improve performance for your users.
-* **Global reach:** Lambda@Edge functions can be deployed to edge locations around the world. This allows you to deliver content and process data closer to your users, regardless of where they are located.
+* **Global reach:** After you publish a function version and attach it to a CloudFront distribution, the function runs at CloudFront locations worldwide.
 * **Scalability:** Lambda@Edge functions can scale automatically to meet demand. This means that your applications can handle sudden spikes in traffic without any intervention from you.
 
 ### What is AWS Fargate and how is it different from ECS?
@@ -1871,12 +1870,12 @@ AWS Fargate is a serverless compute engine for Docker containers. AWS ECS is a c
 
 ### Fargate vs. ECS
 
-| Feature | Fargate | ECS |
+| Feature | Fargate | ECS (EC2 launch type) |
 |---|---|---|
 | Serverless | Yes | No |
-| Container orchestration | Yes | Yes |
-| Scaling | Task count managed by ECS Service Auto Scaling | EC2 Auto Scaling groups |
-| Pricing | Pay-as-you-go | Pay-as-you-go |
+| Container orchestration | No (runs tasks scheduled by ECS or EKS) | Yes |
+| Scaling | Task count managed by ECS Service Auto Scaling; no instances to manage | Task count managed by ECS Service Auto Scaling; instance capacity managed with EC2 Auto Scaling or capacity providers |
+| Pricing | Per vCPU and memory, billed per second | No ECS charge; you pay for the EC2 instances and resources |
 
 ### How does AWS Artifact enhance compliance and security?
 
@@ -1885,28 +1884,23 @@ AWS Artifact enhances compliance and security in a number of ways.
 #### Compliance
 
 * AWS Artifact provides on-demand access to AWS security and compliance reports, such as SOC and ISO reports, as well as compliance agreements. This makes it easy to find and access the documents you need when preparing for audits.
-* AWS Artifact provides a variety of reports that can help you demonstrate compliance with specific AWS services and regulations.
-* AWS Artifact makes it easy to track the status of your AWS agreements, such as the Business Associate Addendum (BAA). This can help you ensure that you are always in compliance with your AWS agreements.
+* AWS Artifact Agreements lets you review, accept, and track agreements such as the Business Associate Addendum (BAA).
 
 #### Security
 
-* AWS Artifact uses a variety of security measures to protect your data, including encryption, access control, and auditing.
-* AWS Artifact integrates with AWS Identity and Access Management (IAM) to ensure that only authorized users can access your data.
-* AWS Artifact logs all activity to CloudTrail, so that you can audit who accessed your data and what they did with it.
+* Access to reports and agreements is controlled with AWS Identity and Access Management (IAM) policies.
+* Agreement activity is logged to AWS CloudTrail, so you can audit who accepted or changed an agreement.
 
-Here are some specific examples of how AWS Artifact can be used to enhance compliance and security:
+Examples:
 
-* A healthcare organization can use AWS Artifact to store and manage its HIPAA compliance documents. This can help the organization prepare for HIPAA audits and demonstrate compliance with HIPAA regulations.
-* A financial services organization can use AWS Artifact to store and manage its PCI DSS compliance documents. This can help the organization prepare for PCI DSS audits and demonstrate compliance with PCI DSS regulations.
-* A government organization can use AWS Artifact to store and manage its FedRAMP compliance documents. This can help the organization prepare for FedRAMP audits and demonstrate compliance with FedRAMP requirements.
-
-AWS Artifact is a powerful tool that can help AWS customers of all sizes enhance their compliance and security posture.
+* A healthcare company subject to HIPAA can accept the BAA in AWS Artifact Agreements and download AWS audit reports for its own compliance reviews.
+* A payments company can download AWS's PCI DSS compliance report as evidence for its own PCI DSS assessment.
 
 ### What is AWS PrivateLink, and how does it improve network security?
 
-AWS PrivateLink is a service that allows you to securely connect your VPC to AWS services and other VPCs without using the public internet. PrivateLink traffic stays on the AWS network; for end-to-end protection of application payloads, use TLS or another application-level encryption.
+AWS PrivateLink lets you connect your VPC privately to AWS services and to services that other VPCs or accounts expose, without using the public internet. PrivateLink traffic stays on the AWS network; for end-to-end protection of application payloads, use TLS or another application-level encryption.
 
-PrivateLink improves network security by providing a private and encrypted way to connect your VPC to AWS services and other VPCs. This helps to reduce the risk of data breaches and other security attacks.
+With PrivateLink, traffic to the service does not need an internet gateway, NAT device, or public IP address.
 
 ### Explain the use of AWS Greengrass Core.
 
@@ -1921,60 +1915,62 @@ Greengrass Core can be used in a variety of ways, including:
 
 ### How do you set up AWS IAM Identity Center (formerly AWS SSO)?
 
-To set up AWS IAM Identity Center (the successor to AWS SSO), you enable it in your organization, connect your identity source, and then assign users and groups to accounts and applications through permission sets.
+To set up AWS IAM Identity Center (the successor to AWS SSO), follow these steps:
 
-Once you have configured AWS IAM Identity Center, you can enable users to log in to your applications using their IAM Identity Center credentials.
+1. Enable IAM Identity Center in the management account of your organization.
+2. Choose an identity source: the built-in Identity Center directory, Active Directory, or an external SAML 2.0 or OIDC identity provider.
+3. Create permission sets. Each one is deployed as an IAM role in the accounts you assign it to.
+4. Assign users and groups to accounts and applications with those permission sets.
+
+Users then sign in to the AWS access portal with their Identity Center credentials.
 
 ### What is AWS Cost Explorer, and how does it help in cost analysis?
 
 AWS Cost Explorer is a service that helps you to analyze your AWS costs. Cost Explorer provides a variety of reports and dashboards that can help you to understand your costs, identify areas where you can save money, and optimize your AWS usage.
 
-Cost Explorer can be used by a variety of users, including:
+Cost Explorer supports the following:
 
-* **Finance professionals:** Cost Explorer can help finance professionals to understand the cost of AWS usage and to identify areas where they can save money.
-* **IT professionals:** Cost Explorer can help IT professionals to optimize AWS usage and to troubleshoot cost spikes.
-* **Business users:** Cost Explorer can help business users to understand the cost of their AWS usage and to make informed decisions about AWS resource allocation.
+* **Filtering and grouping:** Break down costs by service, linked account, Region, or cost allocation tag.
+* **Forecasts:** Projects future spend based on historical usage.
+* **Recommendations:** Surfaces Savings Plans and Reserved Instance purchase recommendations.
 
 ### Describe the use cases for AWS Organizations.
 
 AWS Organizations is a service that helps you to manage multiple AWS accounts in a single place. Organizations provides a centralized way to create, manage, and audit AWS accounts.
 
-AWS Organizations can be used by a variety of users, including:
+Common uses include:
 
-* **Enterprise IT administrators:** Organizations can help enterprise IT administrators to manage multiple AWS accounts in a centralized and efficient way.
-* **Managed service providers (MSPs):** Organizations can help MSPs to manage their customers' AWS accounts in a centralized and efficient way.
-* **Non-profit organizations:** Organizations can help non-profit organizations to manage their AWS accounts in a centralized and efficient way.
+* **Account structure:** Group accounts into organizational units (OUs), for example by environment or business unit.
+* **Guardrails:** Apply service control policies (SCPs) to limit what accounts can do.
+* **Consolidated billing:** Combine usage into one bill for all member accounts.
+* **Account creation:** Create member accounts programmatically or through AWS Control Tower.
 
 ### What is the AWS CDK (Cloud Development Kit)?
 
-AWS CDK is a software development framework that allows you to define your AWS infrastructure as code. CDK supports a variety of programming languages, including Python, TypeScript, and Java.
+AWS CDK is a software development framework that allows you to define your AWS infrastructure as code. CDK supports TypeScript, JavaScript, Python, Java, C#, and Go.
 
-CDK can be used by a variety of developers, including:
-
-* **Infrastructure engineers:** CDK can help infrastructure engineers to define and manage their AWS infrastructure as code.
-* **Software developers:** CDK can help software developers to deploy and manage their AWS infrastructure as code.
-* **DevOps engineers:** CDK can help DevOps engineers to automate the deployment and management of AWS infrastructure.
+CDK apps are synthesized into CloudFormation templates. You deploy them with the CDK CLI (`cdk deploy`), and reusable building blocks are called constructs.
 
 ### How do you implement cross-account access in AWS?
 
 There are two main ways to implement cross-account access in AWS:
 
-1. **Role-based access control (RBAC):** RBAC allows users in one AWS account to access resources in another account. You create a role in the target account with a trust policy that allows the source principal to assume it, and then grant the source identity permission to assume that role.
+1. **Cross-account IAM roles:** Principals in one account assume a role in another account. The role's trust policy must allow the source principal, and the source identity needs `sts:AssumeRole` permission for that role.
 2. **Resource-based policies:** Resource-based policies allow you to specify who can access specific resources in your account. To do this, you attach a resource-based policy to the resource that you want to share.
 
 ### Explain the difference between Amazon Kinesis Data Streams and Kinesis Data Analytics.
 
 Amazon Kinesis Data Streams is a real-time data streaming service that allows you to ingest and process streaming data from a variety of sources, such as web applications, sensors, and social media feeds. Kinesis Data Streams provides a durable and scalable platform for processing streaming data in real time.
 
-Amazon Kinesis Data Analytics was a fully managed service for processing and analyzing streaming data with SQL and Java (Apache Flink). AWS ended support for the SQL variant on January 27, 2026; the current service is Amazon Managed Service for Apache Flink.
+Amazon Kinesis Data Analytics for SQL ended support on January 27, 2026. Kinesis Data Analytics for Apache Flink is now Amazon Managed Service for Apache Flink, which supports Java, Python, Scala, and SQL.
 
 ### What is AWS Snowmobile, and when is it used?
 
-AWS Snowmobile was a petabyte-scale data transfer service that moved exabyte-scale data volumes in shipping containers. AWS retired Snowmobile in 2024; use AWS Snowball Edge or AWS DataSync for large data transfers instead.
+AWS Snowmobile was a petabyte-scale data transfer service that moved exabyte-scale data volumes in shipping containers. AWS retired Snowmobile in 2024; use AWS DataSync or the AWS Data Transfer Terminal for large transfers instead.
 
 ### How do you use AWS Elastic Beanstalk with Docker containers?
 
-To use AWS Elastic Beanstalk with Docker containers, you first need to create a Docker image for your application. Once you have created a Docker image, you can deploy it to Elastic Beanstalk. Elastic Beanstalk will automatically provision and configure the resources that you need to run your Dockerized application.
+To use AWS Elastic Beanstalk with Docker containers, put a Dockerfile at the root of your project, run `eb init -p docker` to configure the project, and then run `eb create <environment-name>` to build and launch it. Elastic Beanstalk will automatically provision and configure the resources that you need to run your Dockerized application.
 
 ### Describe the features of AWS Control Tower.
 
@@ -1989,50 +1985,26 @@ AWS Control Tower is a service that helps you to set up and govern a secure, mul
 
 The AWS Partner Network (APN) is a global community of partners that leverage programs, expertise, and resources to build, market, and sell customer offerings. This diverse network features more than 130,000 partners from over 200 countries.
 
-The APN supports customers in a variety of ways, including:
+Customers work with partners for:
 
-* **Providing access to a wide range of AWS products and services:** APN partners offer a wide range of AWS products and services, including consulting, implementation, and managed services. This gives customers a single point of contact for all of their AWS needs.
-* **Helping customers to build and deploy AWS solutions:** APN partners can help customers to build and deploy AWS solutions that meet their specific needs. APN partners can also help customers to migrate their existing applications to AWS.
-* **Providing support and training:** APN partners can provide support and training to customers on AWS products and services. This helps customers to get the most out of their AWS investments.
+* **Consulting and implementation:** Partners design, build, and migrate workloads on AWS.
+* **Marketplace offerings:** Partners sell software and services through AWS Marketplace.
+* **Training and support:** Partners provide training and ongoing support for AWS products and services.
 
 ### How do you configure Amazon CloudFront with SSL?
 
-To configure Amazon CloudFront with SSL, you will need to create a CloudFront distribution and then configure the distribution to use SSL.
+To use your own domain name with HTTPS on CloudFront, attach an ACM certificate to the distribution and list the domain as an alternate domain name (CNAME). Follow these steps:
 
-To create a CloudFront distribution, follow these steps:
-
-1. Open the Amazon CloudFront console.
-2. In the navigation pane, choose **Distributions**.
-3. Choose **Create Distribution**.
-4. Choose the type of distribution that you want to create.
-5. Configure the distribution settings.
-6. Choose **Create Distribution**.
-
-Once you have created a CloudFront distribution, you can configure the distribution to use SSL. To do this, follow these steps:
-
-1. Open the Amazon CloudFront console.
-2. In the navigation pane, choose **Distributions**.
-3. Choose the distribution that you want to configure.
-4. In the **Distribution Settings** tab, choose **Edit**.
-5. In the **SSL Certificate** section, choose **Custom SSL certificate**.
-6. Choose a certificate from **AWS Certificate Manager (ACM)** or the IAM certificates store. Note that ACM certificates used with CloudFront must be requested or imported in the us-east-1 Region.
-7. Choose **Save**.
-
-### What is AWS OpsWorks, and how does it automate infrastructure management?
-
-AWS OpsWorks helped you automate the deployment and management of your applications with configuration-management tools. Note that AWS retired OpsWorks in 2024 (OpsWorks Stacks on May 26, 2024, Chef Automate on May 5, 2024, and Puppet Enterprise on March 31, 2024), and recommends AWS Systems Manager for ongoing management:
-
-* **Automatic deployment:** OpsWorks can automatically deploy your applications to AWS.
-* **Stack management:** OpsWorks allows you to manage your applications as stacks. A stack is a collection of AWS resources that are used to run your application.
-* **Monitoring and alerts:** OpsWorks monitors your applications and sends you alerts if there are any problems.
-* **Self-healing:** OpsWorks can automatically heal your applications if they fail.
+1. Request or import a certificate for your domain in AWS Certificate Manager (ACM) in the us-east-1 (N. Virginia) Region. CloudFront only accepts ACM certificates from that Region.
+2. Open the Amazon CloudFront console, choose your distribution, and choose **Edit** in its settings.
+3. Add your domain under **Alternate domain names (CNAMEs)**.
+4. Under **Custom SSL certificate**, choose the certificate from step 1.
+5. Set the **Viewer protocol policy**, for example to redirect HTTP to HTTPS, and choose a minimum TLS security policy.
+6. Save the changes, then create a DNS record that points your domain to the distribution's domain name.
 
 ### Explain the AWS Elastic Transcoder service.
 
 AWS Elastic Transcoder was a service that encoded media files for delivery across a variety of devices and platforms, supporting formats such as MP4, HLS, and MPEG-DASH. AWS discontinued Elastic Transcoder on November 13, 2025, and recommends AWS Elemental MediaConvert for transcoding workloads.
-
-Elastic Transcoder can be used to encode media files for delivery on websites, mobile devices, and streaming devices. Elastic Transcoder can also be used to encode media files for long-term storage.
-
 ### What is AWS Transit Gateway Network Manager?
 
 AWS Transit Gateway Network Manager (part of AWS Network Manager) helps you to manage and visualize your AWS Transit Gateway networks. It provides a number of features to help you manage your Transit Gateway networks, including:
@@ -2045,7 +2017,7 @@ AWS Transit Gateway Network Manager (part of AWS Network Manager) helps you to m
 
 AWS PrivateLink works with interface VPC endpoints to provide a private and secure way to connect your VPC to AWS services. Interface endpoints are elastic network interfaces powered by PrivateLink that allow you to connect to AWS services without using the public internet; gateway endpoints, by contrast, use route table entries for S3 and DynamoDB.
 
-When you create a service endpoint, you can choose to enable PrivateLink. If you enable PrivateLink, AWS will create a private connection between your VPC and the AWS service. This connection is isolated from the public internet and is only accessible to resources in your VPC.
+When you create an interface endpoint, AWS places elastic network interfaces with private IP addresses in the subnets you choose. Enable private DNS on the endpoint so the service's standard hostname resolves to those addresses, which requires no application changes. Control access with the endpoint policy and with security groups on the endpoint's network interfaces.
 
 ### Describe AWS DMS (Database Migration Service) and its use cases.
 
@@ -2053,32 +2025,30 @@ AWS DMS is a service that helps you to migrate your databases to AWS. DMS suppor
 
 DMS can be used to migrate databases for a variety of reasons, including:
 
-* **To move to a more scalable and reliable platform:** AWS DMS can help you to migrate your databases to AWS, which is a highly scalable and reliable platform.
-* **To reduce costs:** AWS DMS can help you to reduce the cost of running your databases by migrating them to AWS. DMS pricing is based on the replication instances and storage you use, and database discounts such as Reserved Instances or Savings Plans apply to the target databases.
-* **To improve performance:** AWS DMS can help you to improve the performance of your databases by migrating them to AWS. AWS offers a variety of high-performance database services, such as Amazon Aurora and Amazon RDS.
+* **One-time migrations:** Move a database to AWS with a full-load copy of the data.
+* **Continuous replication:** Keep the target in sync with ongoing changes (change data capture) until you cut over.
+* **Heterogeneous migrations:** Pair DMS with the AWS Schema Conversion Tool (SCT) to convert schemas between database engines.
+
+DMS pricing is based on the replication instances and storage you use.
 
 ### What is AWS Chime, and how does it facilitate video conferencing?
 
 Amazon Chime was a unified communications service that provided voice, video, messaging, and screen sharing capabilities. AWS ended support for the Amazon Chime service on February 20, 2026; the Amazon Chime SDK remains available for building custom meeting applications.
 
-Chime facilitates video conferencing by providing a number of features, including:
-
-* **High-quality video and audio:** Chime uses a global network of data centers to provide high-quality video and audio for your video conferencing meetings.
-* **Screen sharing:** Chime allows you to share your screen with other participants in your video conferencing meeting. This is useful for presenting slides or demonstrating software.
-* **Meeting recording:** Chime allows you to record your video conferencing meetings and share them with others. This is useful for creating training videos or sharing meetings with people who could not attend live.
+Teams that need video meetings inside their own applications can build on the Amazon Chime SDK.
 
 ### How do you use AWS Organizations to consolidate billing?
 
 AWS Organizations allows you to consolidate billing for your AWS accounts. This can be useful for organizations that have multiple AWS accounts and want to manage their billing centrally.
 
-To consolidate billing with AWS Organizations, you must create an organization and add your AWS accounts to the organization. Once you have added your AWS accounts to the organization, you can create a consolidated bill for all of your AWS accounts.
+To consolidate billing, create an organization from your management account and invite the other accounts. Consolidated billing is part of the all features set, which is the default when you create an organization.
 
-To create a consolidated bill, follow these steps:
+Steps:
 
-1. In the AWS Billing and Cost Management console, choose **Consolidated Billing**.
-2. Choose **Get started** and sign in to the Organizations console.
-3. Create an organization and invite the AWS accounts you want to include.
-4. Accept the invitations from each account.
+1. Sign in to the management account and open the AWS Organizations console.
+2. Choose **Create organization**. All features is the default set.
+3. Invite the accounts you want to include, by account ID or email address.
+4. Have each invited account accept the invitation.
 
 Once the accounts have joined the organization, their usage is combined into a single bill that you can view and download from the AWS Billing and Cost Management console.
 
@@ -2096,7 +2066,7 @@ Amazon Polly converts text to speech by following these steps:
 
 ### Explain the concept of AWS EventBridge.
 
-AWS EventBridge is a serverless event bus service that makes it easy to connect applications together and build event-driven applications. EventBridge delivers a stream of real-time events to targets such as AWS Lambda functions, Kinesis streams, and Amazon SNS topics.
+AWS EventBridge is a serverless event bus service that makes it easy to connect applications together and build event-driven applications. EventBridge delivers events to targets such as AWS Lambda functions, Amazon Kinesis Data Streams, and Amazon SNS topics.
 
 ### How to use AWS EventBridge
 
@@ -2110,7 +2080,7 @@ To use AWS Data Pipeline for data integration, you first need to create a pipeli
 
 ### Describe the features of AWS CodeGuru
 
-AWS CodeGuru is a service that helps you to improve the quality of your code. CodeGuru uses machine learning to analyze your code and identify potential problems, such as security vulnerabilities, performance bottlenecks, and bugs. Note that Amazon CodeGuru Reviewer closed to new customers in November 2025, and Amazon CodeGuru Security ended support on November 20, 2025.
+AWS CodeGuru is a service that helps you to improve the quality of your code. CodeGuru uses machine learning to analyze your code and identify potential problems, such as security vulnerabilities, performance bottlenecks, and bugs. Note that Amazon CodeGuru Reviewer closed to new customers on November 7, 2025, and Amazon CodeGuru Security ended support on November 20, 2025. For code security scanning in your IDE, AWS points to Amazon Q Developer.
 
 #### Features of AWS CodeGuru
 
